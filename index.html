@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+	<meta name="theme-color" content="#142d30">
+	<title>Warehouse Simulator</title>
+	<style>
+		:root { color-scheme: dark; --viewport-height: 100vh; }
+		* { box-sizing: border-box; }
+		html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+		body {
+			background: #142d30;
+			color: #f4f0e5;
+			font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+			touch-action: none;
+			overscroll-behavior: none;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+		#game-frame {
+			position: fixed;
+			top: env(safe-area-inset-top, 0px);
+			left: env(safe-area-inset-left, 0px);
+			right: env(safe-area-inset-right, 0px);
+			height: calc(var(--viewport-height) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+			overflow: hidden;
+		}
+		#canvas { display: block; width: 100%; height: 100%; border: 0; outline: 0; touch-action: none; }
+		[hidden] { display: none !important; }
+		.overlay {
+			position: absolute;
+			inset: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+			background: #142d30;
+			text-align: center;
+		}
+		#launch-overlay { z-index: 2; }
+		.launch-card { width: min(560px, 100%); }
+		.eyebrow { margin: 0 0 12px; color: #9fcac0; font-size: 12px; letter-spacing: .16em; }
+		h1 { margin: 0; font-size: clamp(24px, 4.4vw, 38px); line-height: 1.25; letter-spacing: -.025em; }
+		.tagline { margin: 12px 0 16px; font-size: 15px; line-height: 1.65; }
+		#status-message { min-height: 1.6em; margin: 10px 0; color: #c7d8d2; font-size: 14px; line-height: 1.6; }
+		#loading-progress { display: block; width: min(320px, 100%); height: 8px; margin: 12px auto 18px; accent-color: #ed6129; }
+		button {
+			min-width: 220px;
+			min-height: 48px;
+			padding: 10px 24px;
+			border: 0;
+			border-radius: 8px;
+			background: #ed6129;
+			color: #fffaf0;
+			font: inherit;
+			font-size: 16px;
+			font-weight: 700;
+			touch-action: manipulation;
+			cursor: pointer;
+		}
+		button:disabled { cursor: wait; opacity: .55; }
+		button:focus-visible { outline: 3px solid #fffaf0; outline-offset: 4px; }
+		.storage-note { margin: 14px 0 0; color: #9fb8b1; font-size: 12px; line-height: 1.6; }
+		#landscape-prompt { z-index: 3; }
+		#landscape-prompt h2 { margin: 16px 0 10px; font-size: 22px; line-height: 1.5; }
+		#landscape-prompt p { margin: 0; color: #c7d8d2; font-size: 15px; line-height: 1.7; }
+		.phone-symbol { width: 74px; height: 42px; margin: 0 auto; border: 3px solid #9fcac0; border-radius: 8px; }
+		@media (max-height: 350px) {
+			.overlay { padding: 12px; }
+			.eyebrow { margin-bottom: 6px; }
+			.tagline { margin: 8px 0; }
+			.storage-note { margin-top: 8px; }
+		}
+	</style>
+	<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+
+</head>
+<body>
+	<main id="game-frame">
+		<canvas id="canvas" tabindex="0" aria-label="Warehouse Simulator ゲーム画面">
+			このブラウザーはゲーム画面の表示に対応していません。
+		</canvas>
+		<section id="launch-overlay" class="overlay" aria-labelledby="game-title">
+			<div class="launch-card">
+				<p class="eyebrow">HAKO / LOGISTICS</p>
+				<h1 id="game-title">Warehouse Simulator</h1>
+				<p class="tagline">荷物を運び、倉庫を育てる。<br>7日間の倉庫経営チャレンジ。</p>
+				<p id="status-message" role="status" aria-live="polite">ゲームを読み込んでいます…</p>
+				<progress id="loading-progress" aria-label="ゲームの読み込み"></progress>
+				<button id="start-button" type="button" disabled>準備中…</button>
+				<button id="reload-button" type="button" hidden>もう一度読み込む</button>
+				<p class="storage-note">進捗はこのブラウザー内に保存します。<br>サイトのデータを消すと、進捗も削除されます。</p>
+			</div>
+		</section>
+		<section id="landscape-prompt" class="overlay" role="status" aria-live="polite" hidden>
+			<div>
+				<div class="phone-symbol" aria-hidden="true"></div>
+				<h2>端末を横向きにしてください</h2>
+				<p>画面が広くなり、操作しやすくなります。<br>横向きにするとゲーム画面へ戻ります。</p>
+			</div>
+		</section>
+	</main>
+	<noscript>このゲームを遊ぶには、ブラウザーのJavaScriptを有効にしてください。</noscript>
+	<script src="index.js"></script>
+	<script>
+		'use strict';
+		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":false,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":16519032,"index.wasm":37700666},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+		const GODOT_THREADS_ENABLED = false;
+
+		(function () {
+			const canvas = document.getElementById('canvas');
+			const frame = document.getElementById('game-frame');
+			const launch = document.getElementById('launch-overlay');
+			const start = document.getElementById('start-button');
+			const reload = document.getElementById('reload-button');
+			const status = document.getElementById('status-message');
+			const progress = document.getElementById('loading-progress');
+			const landscape = document.getElementById('landscape-prompt');
+			let ready = false;
+
+			function resizeCanvas() {
+				const visibleHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+				document.documentElement.style.setProperty('--viewport-height', `${visibleHeight}px`);
+				const width = Math.max(1, frame.clientWidth);
+				const height = Math.max(1, frame.clientHeight);
+				const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
+				const backingWidth = Math.max(1, Math.round(width * ratio));
+				const backingHeight = Math.max(1, Math.round(height * ratio));
+				canvas.style.width = `${width}px`;
+				canvas.style.height = `${height}px`;
+				if (canvas.width !== backingWidth) canvas.width = backingWidth;
+				if (canvas.height !== backingHeight) canvas.height = backingHeight;
+				window.warehouseCanvasCssRatio = Math.max(canvas.width / width, canvas.height / height);
+				const portrait = window.innerHeight > window.innerWidth;
+				landscape.hidden = !portrait;
+				if (portrait) canvas.blur();
+			}
+
+			// Godot 4.6 maps browser touchcancel to ordinary release. Cancel first,
+			// before its listener can activate a button under the interrupted finger.
+			canvas.addEventListener('touchcancel', function (event) {
+				if (event.cancelable) event.preventDefault();
+				event.stopImmediatePropagation();
+				canvas.blur();
+			}, { capture: true, passive: false });
+			canvas.addEventListener('touchmove', function (event) {
+				if (event.cancelable) event.preventDefault();
+			}, { passive: false });
+			window.addEventListener('resize', resizeCanvas);
+			if (window.visualViewport) window.visualViewport.addEventListener('resize', resizeCanvas);
+			if (typeof ResizeObserver !== 'undefined') new ResizeObserver(resizeCanvas).observe(frame);
+			resizeCanvas();
+
+			start.addEventListener('click', function () {
+				if (!ready || !landscape.hidden) return;
+				launch.hidden = true;
+				canvas.focus({ preventScroll: true });
+			});
+			reload.addEventListener('click', function () { window.location.reload(); });
+
+			function showFailure(error) {
+				console.error(error);
+				ready = false;
+				canvas.blur();
+				launch.hidden = false;
+				progress.hidden = true;
+				start.hidden = true;
+				reload.hidden = false;
+				status.textContent = 'ゲームを起動できませんでした。SafariまたはChromeを更新して、ページを開き直してください。';
+			}
+
+			try {
+				if (typeof Engine === 'undefined') throw new Error('The game runtime could not be loaded.');
+				const missing = Engine.getMissingFeatures({ threads: GODOT_THREADS_ENABLED });
+				if (missing.length) throw new Error(missing.join('\n'));
+				// The shell controls both CSS size and backing pixels, including safe areas.
+				GODOT_CONFIG.canvas = canvas;
+				GODOT_CONFIG.canvasResizePolicy = 0;
+				GODOT_CONFIG.focusCanvas = false;
+				const engine = new Engine(GODOT_CONFIG);
+				engine.startGame({
+					onProgress: function (current, total) {
+						if (current > 0 && total > 0) {
+							progress.max = total;
+							progress.value = current;
+							status.textContent = `ゲームを読み込んでいます… ${Math.floor(current / total * 100)}%`;
+						} else {
+							progress.removeAttribute('value');
+						}
+					}
+				}).then(function () {
+					ready = true;
+					progress.hidden = true;
+					status.textContent = '準備ができました。';
+					start.textContent = 'タップして遊ぶ';
+					start.disabled = false;
+					resizeCanvas();
+				}, showFailure);
+			} catch (error) {
+				showFailure(error);
+			}
+		}());
+	</script>
+</body>
+</html>
+
