@@ -92,3 +92,13 @@ ACC-PRG-06 第2倉庫解放後、OldとRegionalで輸送ルールが混ざらな
 - 数日ごとに発生する**Bill**についてプレイヤー実例あり。終業・翌日処理の受入テストには未払い/新請求のUIも追加する。
 - ライセンスとTierの前提「Tier1を満たしてLicense購入か、LicenseでTier1を解放か」は複数資料の表現が曖昧。現行原作で条件の向きを確認するまで**同じ値で相互に参照する循環依存を作らない**。
 - 実装は`ProgressionCatalog`にReferenceSource/ReferenceDate/Unverifiedを保持し、Codexが仮の依存順序を固定せず変更可能にする。
+
+
+
+## 2026-10-26 倉庫進行の確度を上げた更新（SPEC-17B）
+- 旧倉庫は**Tier14最終**（2026追記の実績攻略 + 2025コミュニティ計測で一致）。Conveyor Tier1、SmallRackや初期Scanner Tier2、Launcher Tier12。
+- **Regional Sorting Centreの購入費用は$500,000**（2026年対応の実績攻略とプレイヤー投稿で一致、B強度）。旧倉庫Tier14の後、Regional購入により「Tier15になる」との2026投稿がある。グローバルTierかWarehouse固有Tierかは実機で検証する。
+- **Tier18で地域倉庫の全12国別出荷口解放/最終段階**は2026年8月のプレイヤー報告（C強度）。
+- Regionalの拡張には単に$ではなく**累積Express出荷件数の条件**がある（2026年追記の実績攻略）。Tier15～18のそれぞれの必要件数と費用は未取得[U]、UnlockCatalogに未知フィールドを用意。
+- Pallet Build Mode Tier11、Auto Pauser Tier15/$30000は開発者2026-07-30公式。
+- 上記の出典: https://steamcommunity.com/sharedfiles/filedetails/?id=3505458195 ・ https://steamcommunity.com/app/2424010/discussions/0/583931831085259817/ ・ https://steamcommunity.com/app/2424010/announcements/
