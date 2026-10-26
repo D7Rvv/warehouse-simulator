@@ -4,7 +4,7 @@
 
 ## 現在の設計資料（2026-10-26）
 
-- [**詳細仕様・全22文書の目次**](docs/spec/00_MASTER_INDEX.md)
+- [**詳細仕様・全24文書の目次**](docs/spec/00_MASTER_INDEX.md)
 - [**参考作品の機能対照表**](docs/spec/01_REFERENCE_PARITY.md)
 - [**機能ごとの試験・受入基準**](docs/spec/11_QA_ACCEPTANCE.md)
 - [**Codex用実装順序と品質基準**](docs/spec/13_CODEX_EXECUTION.md)
@@ -28,7 +28,7 @@
 
 - [x] GitHub初期化
 - [x] 原作の公式資料/攻略/ユーザー画像から確認できた仕様を整理
-- [x] Codex向け22分冊の実装仕様、テスト、未確認リスト（草案）を作成
+- [x] Codex向け24分冊の実装仕様、テスト、未確認リスト（草案）を作成
 - [ ] 現行原作の全Tier/全設備/報酬式などの実機照合
 - [ ] 新設計に合うUnity 6 LTS/URPの再現可能なシーン・プロジェクト
 - [ ] 3Dワークステーションとタップ切替
@@ -58,3 +58,12 @@
 **重要な設計修正**: 2026年7月の開発者が返信した議論に、地域倉庫で出荷口15/16のまま手動出荷した実例がある。2026年9月の開発中Clear Doorsは終業時の別操作。**満杯でないと手動出荷不可**と全ゲートへ適用しない。
 
 **数値の確実性**: 第2倉庫$500,000やTier18=12ゲートはプレイヤー/ガイド由来。倉庫1の全Tier価格や主要設備の旧版価格は豊富に判明したが、未取得の全出荷曜日、報酬倍率、請求式、Tier15～18解放数は実機照合が必要。詳細はSPEC-14/17B/18。
+
+## 次のCodex実装タスク（S0/S1）
+- [**GitHub Issue #1: スマホ向けUnity基盤と3D拠点切替**](https://github.com/D7Rvv/warehouse-simulator/issues/1)
+- [SPEC-19: こちらで補完可能な暫定仕様と確定ルール](docs/spec/19_DECISION_REGISTER_AND_SAFE_DEFAULTS.md)
+- [SPEC-20: 画面・カメラ・タッチ・配置Preview・受入テスト](docs/spec/20_MOBILE_STATION_VERTICAL_SLICE.md)
+- [Codexへ渡す指示書](docs/tasks/CODEX_NEXT_S0_S1.md)
+- [S1限定の仮データ（**本番使用禁止**）](docs/data/prototype_station_fixture_v0_1.json)
+
+**現在の開発状態:** ここまでで設計書とIssueを作成済み。S0/S1のUnityコード、Editorコンパイル、ネイティブビルド、実機の発熱/FPSはまだ完了していない。原作の細かな数値が不明でも、実装値を捏造せずにUI/カメラの制作を先に進める。
