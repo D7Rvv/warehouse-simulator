@@ -142,3 +142,13 @@ PBT-009 所有者のない箱を意図的に読み込ませると、ロードを
 ## 11. 設計の優先順位
 このSPEC-15とSPEC-00のグローバル不変条件は、局所的な仕様説明に曖昧さがあるときの裁定基準。
 ただし原作の実機確認が取れた事実は高い優先順位を持つ。実機差分が発覚したら全関連Specとテストを同時更新する。
+
+
+
+## 2026-10-26 新たに判明したドメイン境界（SPEC-16）
+- `ContractId`は「荷物数/国/出荷区分/承認拒否等を満たす特別な注文」。`ContractVanRunId`は契約用の専用バン。**一般の`TruckRunId`/普通の`ShipmentId`と同じ意味にしない**。
+- `CONTRACT_VAN_SLOT`をOwnerRefの種類へ追加。荷物を専用バンへ入れたらHandSlot/トラック荷台から移したことを同一コマンドで記録する。
+- `ContractSubmissionEventId`は通常`GateSubmissionEventId`とは別。成功/失敗の条件・契約ボーナスはFeePolicyへ分離し、一度だけ支払う。
+- `BillId`,`BillPaymentEventId`を追加。Bill発行と支払いは別。ゲーム内の日付を参照し、画面切替やロードで二重発行・二重引落とししない。
+- 通常出荷の`SubmissionEvaluation`には`CorrectParcelValue`, `IncorrectParcelValue`, `HandlingCharge`の内訳を持ち、出荷報酬を単純に「箱数×固定単価」と断定しない。
+- 提出日のゲートカレンダー評価は、旧倉庫C2ゲートの曜日またぎ事例を再現できること。箱を入れた日ではなくSubmit時点の`calendarVersion`を使うモードを実装する。
