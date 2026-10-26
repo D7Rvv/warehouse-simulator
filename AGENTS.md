@@ -41,3 +41,13 @@
 - `Assets/Scripts/Phase1/` is legacy **walking prototype code**, NOT current functionality. Do not allow runtime auto-bootstrap into new project scene; isolate safely without losing git history.
 - Stage implementation M00..M14 in `docs/spec/13_CODEX_EXECUTION.md`; start with small vertical slice, test each and report.
 - Prioritize fixing spec discrepancies over blindly expanding features; no broad destructive rewrite without assessing impact.
+
+
+
+## New evidence, 2026-10-26
+- **Read docs/spec/16_ECONOMY_EXPORT_DEEP_RESEARCH.md before working on prices, licenses, warehouse tiers, exports, contracts, income, and calendar rules.**
+- Parcel Simulator appears to contain **special contract fulfillment via a dedicated van** and **recurring Bills** according to Steam firsthand player reports; prior exclusion as "not in the reference" was incorrect.
+- Known historical numbers include 14 original Tier prices, four license prices/per-box bonuses, parcel-type unlocks, equipment costs, batch and delivery upgrades. All require source/date tags and current-version reconciliation.
+- Screenshot IMG_0181 has a past batch of 16 correctly submitted parcels, +$1,008 correct parcel value, -$5 handling charge, +$1,003 net, while the gate itself currently reads 1/16. **Never multiply summary 16 by active gate 1/16** or assume universal unit value.
+- Do NOT fabricate all weekday flags for Air/Maritime. Community guide specifically supports Road daily and Rail not on weekends. Country Calendar resets Monday in second warehouse per official news.
+- Contracts, dedicated contract van, bill generation, and submit-day eligibility should be included in domain/test planning. Unknown amounts/formulas remain [U], with pluggable test-only [P] values.
