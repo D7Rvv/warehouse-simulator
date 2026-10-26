@@ -83,7 +83,7 @@ TrySubmitGate:
   POST: same SubmissionId never pays twice.
   FAIL: parcel buffers, money, gate state unchanged.
 ```
-重要: 原作の2026-09-25時点、容量未満ゲートを終業時にClearするボタンは「開発中」であった。基本ポリシーは[P]FULL_ONLY。容量未満の任意提出は自動で許さない。今後公式リリース確認後に追加する。
+重要: **手動部分出荷、満杯時自動出荷、終業時の複数ゲートClear Doorsは別々**。2026-07-21のRegional倉庫では15/16を手動Exportしたプレイヤー実例があり、2026-09-25公式が開発中としたのは終業時Clear Doors。従って共通の[P]FULL_ONLYを強制せず、WarehouseProfileごとのPolicyと証拠を採用。SPEC-18を優先。
 
 ## 5. 出荷可能曜日と物理受付不可の違い
 - `calendarAcceptsModeToday`：ゲーム内曜日の規則。正しい出荷として評価できるかどうか。
