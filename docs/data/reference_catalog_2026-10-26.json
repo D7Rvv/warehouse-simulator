@@ -14,7 +14,9 @@
     "F_REG_PRICE": "https://steamcommunity.com/app/2424010/discussions/0/589558792744857728/",
     "F_PARTIAL": "https://steamcommunity.com/app/2424010/discussions/0/570418436974366307/",
     "F_AUTO": "https://steamcommunity.com/app/2424010/discussions/0/591774738110508320/",
-    "F_BILLS": "https://steamcommunity.com/app/2424010/discussions/0/601917139265464619/"
+    "F_BILLS": "https://steamcommunity.com/app/2424010/discussions/0/601917139265464619/",
+    "F_ROAD_DAILY": "https://steamcommunity.com/app/2424010/discussions/0/591775577045821477/",
+    "F_REGIONAL_DENIAL": "https://steamcommunity.com/app/2424010/discussions/0/570418436974366307/"
   },
   "originalWarehouse": {
     "initialGridUnits": {
@@ -756,6 +758,30 @@
       "id": "CONTRACT_REWARD_FORMULA",
       "value": null,
       "sourceStatus": "UNKNOWN"
+    },
+    {
+      "id": "MANUAL_PARTIAL_EXPORT_DEVELOPER_FORUM_2026",
+      "value": "15 of 16 parcels submitted via manual export in regional warehouse; player reports, developer replies without disputing manual submission",
+      "sourceStatus": "PLAYER_REPORT_WITH_DEVELOPER_REPLY_2026_07_21",
+      "sourceId": "F_REGIONAL_DENIAL"
+    },
+    {
+      "id": "REGIONAL_REJECTED_CALENDAR_REVIEW",
+      "value": null,
+      "sourceStatus": "DEVELOPER_SUGGESTS_COUNTRY_CALENDAR_APPLIES_OR_BUG; NEED_GAME_TEST",
+      "sourceId": "F_REGIONAL_DENIAL"
+    },
+    {
+      "id": "SPEEDWAY_TOTAL_BUY_AND_TWO_UPGRADES_USD",
+      "value": 20000,
+      "sourceStatus": "COMMUNITY_UPDATED_2026",
+      "sourceId": "G_ACH"
+    },
+    {
+      "id": "ELEVATOR_TOTAL_BUY_AND_TWO_UPGRADES_USD",
+      "value": 40000,
+      "sourceStatus": "COMMUNITY_UPDATED_2026",
+      "sourceId": "G_ACH"
     }
   ],
   "originalWeeklyCargoCalendar": [
@@ -764,7 +790,7 @@
       "road": {
         "accepted": true,
         "sourceStatus": "PLAYER_REPORT_2025",
-        "sourceId": "F_AUTO"
+        "sourceId": "F_ROAD_DAILY"
       },
       "rail": {
         "accepted": null,
@@ -785,7 +811,7 @@
       "road": {
         "accepted": true,
         "sourceStatus": "PLAYER_REPORT_2025",
-        "sourceId": "F_AUTO"
+        "sourceId": "F_ROAD_DAILY"
       },
       "rail": {
         "accepted": null,
@@ -806,7 +832,7 @@
       "road": {
         "accepted": true,
         "sourceStatus": "PLAYER_REPORT_2025",
-        "sourceId": "F_AUTO"
+        "sourceId": "F_ROAD_DAILY"
       },
       "rail": {
         "accepted": null,
@@ -827,7 +853,7 @@
       "road": {
         "accepted": true,
         "sourceStatus": "PLAYER_REPORT_2025",
-        "sourceId": "F_AUTO"
+        "sourceId": "F_ROAD_DAILY"
       },
       "rail": {
         "accepted": null,
@@ -848,7 +874,7 @@
       "road": {
         "accepted": true,
         "sourceStatus": "PLAYER_REPORT_2025",
-        "sourceId": "F_AUTO"
+        "sourceId": "F_ROAD_DAILY"
       },
       "rail": {
         "accepted": null,
@@ -869,7 +895,7 @@
       "road": {
         "accepted": true,
         "sourceStatus": "PLAYER_REPORT_2025",
-        "sourceId": "F_AUTO"
+        "sourceId": "F_ROAD_DAILY"
       },
       "rail": {
         "accepted": false,
@@ -890,7 +916,7 @@
       "road": {
         "accepted": true,
         "sourceStatus": "PLAYER_REPORT_2025",
-        "sourceId": "F_AUTO"
+        "sourceId": "F_ROAD_DAILY"
       },
       "rail": {
         "accepted": false,
@@ -928,6 +954,8 @@
     "manual partial export for original warehouse",
     "current equipment prices after 2026 patches",
     "parcel value multiplier and penalty formula",
-    "new 2026 country calendar generated schedule"
+    "new 2026 country calendar generated schedule",
+    "Regional invalid/denied gate export weekday assessment",
+    "separate bulk Clear Doors button status in latest build"
   ]
 }
