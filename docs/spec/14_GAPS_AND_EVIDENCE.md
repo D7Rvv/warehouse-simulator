@@ -84,3 +84,10 @@ DesignChange?, CatalogChange?, RequiredTestIds.
 
 ## 7. この文書が埋まるまでの進捗
 GAP-001..022は現段階で概ね未解決。SPEC-03..12はCodexが進めるための「厳密な構造設計」であり、**完成した原作の完全仕様辞書ではない**。実機照合後に数値・仕様を変え、QAでreference parityを測定していく。
+
+
+## 重要な調査追加（2026-10-26）
+- GAP-054 [P0] 2026年10月現在「Clear Doors（容量未満出荷）」は正式実装か。2026-09-25開発者が開発中と発表。原作現行版で容量未満での手動提出が可能か・終業時制約を調べる。**当面 FULL_ONLY を暫定方針にする**。
+- GAP-055 [P1] LauncherのPower/Angle選択の段階数・弾道・レベルによるベルト速度変化。2025-09-29公式Update1.0.4を参照して実機検証。
+- GAP-056 [P0] 2025年のLicense→Warehouse Tier 1/2/4/6解放連鎖が2026年版の最初の倉庫にも適用されるか。ライセンス購入前後のShopとTier表示を記録。
+- GAP-057 [P1] 2026-09-25修正にあったCountry=NoneやCriteria=N/Aをどう正誤処理するか。原作現行データでは無条件に不正と扱わないケースがある。https://steamdb.info/patchnotes/25526810/
