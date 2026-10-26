@@ -89,3 +89,22 @@ S2 https://steamcommunity.com/app/2424010/announcements/
 S3 https://shippobox.com/archives/16245
 S4 https://shippobox.com/archives/16262
 S5 https://steamcommunity.com/sharedfiles/filedetails/?id=3509976176
+
+
+
+## 2026-10-26 追加必須要件（出典はSPEC-16）
+| REQ-ID | 再現対象 | 根拠・ステータス | 優先 |
+|---|---|---|---|
+| REF-051 | Contract（契約）の受注、数量/国/承認拒否/輸送種別条件 | E3b Steamプレイヤー実体験 / 現行U | 必須 |
+| REF-052 | 別室の契約用バンを呼び、契約箱を積んで確定・納品 | E3b 2025 Q&A / 現行U | 必須 |
+| REF-053 | 数日ごとのBill（電気料金とする報告あり）、支払/台帳 | E3b 2025 Steam投稿 / 発生式U | 必須（調査） |
+| REF-054 | ライセンスの購入価格と箱単位の加算報酬 | E3b 2026 Wiki / 現行U | 必須 |
+| REF-055 | 封筒・断熱箱・ハードケースの解放費用と報酬加算 | E3b Wiki / 現行U | 必須 |
+| REF-056 | Delivery Frequency, Batch Size, Conveyor Deliveries, Export Capacity, Automatic Exportsアップグレード | E3b Wiki+2025ガイド / 現行U | 必須 |
+| REF-057 | 出荷口の正誤倍率・箱価値・誤投入ペナルティ倍率・取扱手数料 | E2 ユーザー提供の精算画像 / 全計算式U | 必須 |
+| REF-058 | 旧倉庫のRoad/Rail曜日制限とAir/Maritime保管 | E3b 2026攻略 / 完全な曜日表U | 必須 |
+| REF-059 | 混合ゲートで前日置いた箱が提出日のルールで誤出荷になる | E3b Steam2026攻略例 / 実機U | 必須 |
+| REF-060 | 旧倉庫のTier1～14価格表と拡張総額 | E3a Wiki+Planner+古いガイド / 現行U | 必須 |
+| REF-061 | 旧倉庫の上位アップグレードで1ベイあたり26便×7箱/日 | E3b 2025/2026攻略者実測 / 現行U | 性能・進行の参考 |
+
+**参照作品の契約と請求書の存在を、原作と無関係なオリジナル案として排除しない。** 未確認なのは正確な仕様/数値であって、機能の存在を示す資料が無いという意味ではない。
