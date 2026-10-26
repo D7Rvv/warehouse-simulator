@@ -1,10 +1,13 @@
 # Warehouse Simulator — Codex/agent rules
 
 ## Source of truth (read in order)
-1. docs/GDD_V0_3_REFERENCE_PARITY_MOBILE.md — CURRENT game design, review draft.
-2. docs/PARCEL_SIMULATOR_RESEARCH_2026-10-26.md — grounded research, three user screenshots, uncertainties, 2026 updates.
-3. docs/PARCEL_FEATURE_MATRIX_V0_1.md — earlier checklist; use only with the more recent research.
-Previous GDD v0.1/v0.2 are superseded for conflicting matters. Never infer that unresolved design numbers are approved.
+1. docs/spec/00_MASTER_INDEX.md — CURRENT master specification, read before any code changes.
+2. docs/spec/01_REFERENCE_PARITY.md and 14_GAPS_AND_EVIDENCE.md — reference scope and blocked/unknown behaviors.
+3. docs/spec/02..12 and 15_DOMAIN_CONTRACTS_AND_FIXTURES.md — feature contracts and quality tests.
+4. docs/spec/13_CODEX_EXECUTION.md — implementation plan and acceptance policy.
+5. docs/spec/16_2025_REFERENCE_NUMBERS.md — legacy reference numbers only, NOT current verified values.
+6. docs/GDD_V0_3_REFERENCE_PARITY_MOBILE.md and older research docs — historical context only where not overridden.
+Never infer that unresolved values are approved. When source evidence conflicts, identify the version and consult the gaps list.
 
 ## Must preserve
 - Product: NATIVE iOS/Android 3D warehouse simulation. Unity/URP is the current candidate.
@@ -28,4 +31,4 @@ Previous GDD v0.1/v0.2 are superseded for conflicting matters. Never infer that 
 - Never turn the game into a menu-only instant auto-clicker just to remove player movement.
 
 ## Project scope
-Do not rework everything automatically just because research docs were updated. Use the user's next explicit implementation milestone. Avoid destructive deletes without review.
+Complete the design review first. Implement only an explicitly approved milestone. No destructive edits without review. Save source evidence/QA results alongside code. The native phone build and thermal verification are not yet done.
