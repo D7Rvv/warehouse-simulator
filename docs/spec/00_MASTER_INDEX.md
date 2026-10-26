@@ -92,3 +92,11 @@ SRC-MANUAL https://shippobox.com/archives/16245
 SRC-AUTO https://shippobox.com/archives/16262
 SRC-STATS https://steamcommunity.com/sharedfiles/filedetails/?id=3509976176
 SRC-PATCH https://steamdb.info/patchnotes/25526810/
+
+
+
+## 調査増補（2026-10-26、最新）
+- **SPEC-16 `docs/spec/16_ECONOMY_EXPORT_DEEP_RESEARCH.md`** を価格・報酬・出荷曜日・契約用バン・定期請求の最新調査として追加。SPEC-06/08の「原作未確認」の主張よりも、SPEC-16が提示する根拠つき追加発見を優先する。
+- 旧倉庫Tier1～14価格と合計、ライセンス価格・箱種類報酬、便ごとの段階強化、旧倉庫の曜日制限、提供画像での精算明細が具体化。
+- **Contracts（専用バンで納品）と数日ごとのBills（請求書）を見落としていたため、REQ/経済モデルへ追加**。現行の細かな計算式は引き続き未実機検証。
+- Codexは2025の参考価格を「2026最新一致」として定数化しない。原作出典のバージョンタグを持ったカタログとして読み込む。
