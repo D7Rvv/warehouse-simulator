@@ -106,3 +106,11 @@ Codexが仕様欠陥を見つけたら ISSUE（GapID）を登録→根拠（実�
 - 2025旧Launcherのレベル別飛距離説明は2025秋以降に使わず、Power/AngleとBeltSpeedLevelを分離。
 - すでに貼付されたApproved/Deniedシールが稀に誤判定されるのは2025バグ/ユーザーの構成問題の可能性がある。わざと一定の不正率を追加しない。
 - 実機/Unity Editorでテスト未実施なら未検証と記録し、作業を「完全再現完了」と報告しない。
+
+
+## 2026-10-26 次のスプリントの確定指示
+- **S0/S1の最優先タスク: [GitHub Issue #1](https://github.com/D7Rvv/warehouse-simulator/issues/1) と `docs/tasks/CODEX_NEXT_S0_S1.md`。**
+- 原作の数値不足を理由に停止させず、SPEC-19の[P]補完方針で**実際のUnityスマホUI・固定3Dステーション・プレビュー建設**を実装。
+- 無断で原作の単価・曜日・Tierに仮数値を入れず、テスト専用Fixture（`docs/data/prototype_station_fixture_v0_1.json`）を読み取り専用で表示。
+- 古い自由歩行Bootstrapは`RuntimeInitializeOnLoadMethod`が残っているため、Scriptの参照解除だけでは旧Playerが勝手に生成される。プロジェクト全体から起動フックを解除して検証する。
+- 次のS2は1箱のOwnership移動/検査/出荷を縦切りで実装。その前にS0/S1のテスト一覧をPASS/FAIL/NOT_RUNで報告。
