@@ -91,3 +91,19 @@ GAP-001..022は現段階で概ね未解決。SPEC-03..12はCodexが進めるた�
 - GAP-055 [P1] LauncherのPower/Angle選択の段階数・弾道・レベルによるベルト速度変化。2025-09-29公式Update1.0.4を参照して実機検証。
 - GAP-056 [P0] 2025年のLicense→Warehouse Tier 1/2/4/6解放連鎖が2026年版の最初の倉庫にも適用されるか。ライセンス購入前後のShopとTier表示を記録。
 - GAP-057 [P1] 2026-09-25修正にあったCountry=NoneやCriteria=N/Aをどう正誤処理するか。原作現行データでは無条件に不正と扱わないケースがある。https://steamdb.info/patchnotes/25526810/
+
+
+
+## 2026-10-26 調査進展と次の実機照合（SPEC-16）
+- GAP-PRICE-TIER: 旧倉庫Tier1～14価格と合計はE3aまで確定（700,1000,…4600; 合計37100）。現行版に変わっていないか最終E0実機照合を残す。
+- GAP-LIC-PRICE: 重量/番号/内容物/スタンプのLicense価格・報酬加算はE3bまで具体化（300/300/500/500、+10/+15/+10/+10）。
+- GAP-TYPE-PRICE: Small/Envelope, Insulated, Hardcaseの購入・報酬値もE3bまで具体化。
+- GAP-EXPORT-CALENDAR: Road毎日、Rail土日不可のガイド根拠は見つかった。Air/Maritimeの正確な曜日表はUのまま。
+- GAP-EXPORT-BATCH: C2混載の翌日誤提出事例により「ゲートへ箱を積んだ日ではなく**提出日**に評価」の仮説が強まった。現行原作E0検証が必要。
+- GAP-PAYOUT-DETAILS: IMG_0181で集計16/+$1008/-$0/-$5=+$1003の式が可視。実装用計算項目が分かるが、ベース単価・全バッチ倍率・誤配係数-10・丸め順はU。
+- GAP-HANDLING-FEE: この画像のSubmissionHandlingCharge-$5が全ゲート固定か不明。
+- GAP-CONTRACTS: **新規P0** 通常出荷とは別のContract Van / 複数箱納品 / 個数・国・判定・輸送区分の条件・報酬・解禁Tierを現行版で確認。
+- GAP-BILLS: **新規P0** 数日毎のBillが原作に存在するとの2025プレイヤー証言。電気料金として計算されるのか、何日ごとで何を消費するか実機で確認。
+- GAP-DELIVERY-SIZE: 初段3→5、次段数未確認（攻略では最大7）を実機で確認。
+- GAP-NEW-WAREHOUSE: 新倉庫の購入額・Tier上限・出荷曜日の変化を実機で確認。
+- 旧「電気代/契約は存在根拠がない」表現は今回の資料発見で訂正。
