@@ -72,3 +72,12 @@ ACC-PRG-05 すべての搬送設備を撤去しても最小の手動ルートへ
 ACC-PRG-06 第2倉庫解放後、OldとRegionalで輸送ルールが混ざらない。
 
 参照: S1,S2,S3,S4,S5はSPEC-01を参照。
+
+
+## 追加の参照ライセンス連鎖（2025年版攻略資料、2026版未照合）
+出典: https://steamcommunity.com/sharedfiles/filedetails/?id=3505458195
+- Weight Class Examination: Industrial Scalesを前提に購入可能 → Warehouse Tier 1解放。
+- Serial Number Verification: Serial Keypadを前提に購入可能 → Tier 2解放。
+- Contents Inspection – Prohibited: Tier 3から購入可能、Opening Toolboxを要する → Tier 4解放。
+- Stamp Authentication: Tier 5から購入可能、追加専用道具は不要との記載 → Tier 6解放。
+- **注意**: ここに書いた数字は2025年の案内に由来し、2026年の倉庫2や新しい価格と無条件に整合するとみなさない。ライセンスそのものの入手条件、順序、Shop購入の単位を`ProgressionCatalog`から差し替え可能にする。
