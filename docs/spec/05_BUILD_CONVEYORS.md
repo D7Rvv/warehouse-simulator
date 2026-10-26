@@ -124,3 +124,12 @@ Tick(fixedStep):
 - Launcherモデルに `launchPowerSettingId`, `launchAngleSettingId`, `beltSpeedLevel` を**別々の保存値**として追加。射出先算出はpower+angle+設定基準によって決め、levelUpで飛距離が勝手に変更されない。
 - [U]角度/パワーの個々の段数、距離、重さとの関係は現行原作の画面と実測で確定。検証まではテスト用パラメータで柔軟にする。
 - アート側に2つの操作面に相当する独自デザインの設定UIを設ける（原作モデル/画面はコピーしない）。
+
+
+
+## 2026-10-26 仕様監査追加：機器とKnown Bugs（SPEC-17B）
+- 2026年の公式性能改修ではコンベアCPU処理、箱/ラベル/矢印のDraw Call/VRAM、見えないエリアのカリングなどを改善。仕様として**可視物は必要な時だけ、物流データは常時継続**を守る。https://steamcommunity.com/app/2424010/announcements/
+- 旧作で離れた非接続ベルト間へ箱が瞬間移動する不具合を2026-07-30に修正したことが明記。**距離が近いだけ、見た目がつながるだけでグラフ接続しない**。明示port同士で確認する。
+- 2025ユーザーから建設/Shopを開いたときScannerの分岐が乱れたという報告あり。これは再現したいゲーム機能ではなく、**並行状態更新のバグ回避テスト対象**。https://steamcommunity.com/app/2424010/discussions/0/591775243562972679/
+- ContentsDiverterは開封必要箱を分岐、ContentsScannerは中身の禁制品判定。違う機器としてライン上に存在する。https://steamcommunity.com/app/2424010/discussions/0/591775243562981284/
+- Launcherはpower/angle独立、レベルは送りベルト速度であり射出距離の倍率ではない。2025-09-29公式変更。https://steamdb.info/patchnotes/20175356/
