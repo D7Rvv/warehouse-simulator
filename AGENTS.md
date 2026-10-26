@@ -62,3 +62,13 @@
 - Regional Sorting Centre purchase ~$500,000 is supported by achievement guide and player statements; Tier 18 unlocks 12 country gates (player report). Source statuses must be retained.
 - 2025 automatic exports can submit an incorrectly timed full gate: **AutoWhenFull is not an intelligent weekday limiter**. Do not auto-correct player mistakes.
 - Early player reports disagree about pre-stickered parcels sometimes being wrong due to bugs. Do not create random intentional invalid pre-stickers without an explicit evidence-backed rule. Test scanner/inventory race conditions separately.
+
+
+## Implementation milestone S0/S1 (2026-10-26; next Codex assignment)
+- **Work ticket:** https://github.com/D7Rvv/warehouse-simulator/issues/1
+- **Read before implementing:** `docs/tasks/CODEX_NEXT_S0_S1.md`, `docs/spec/19_DECISION_REGISTER_AND_SAFE_DEFAULTS.md`, `docs/spec/20_MOBILE_STATION_VERTICAL_SLICE.md`, `docs/data/prototype_station_fixture_v0_1.json`.
+- User accepts *safe provisional design decisions* for UX/architecture/performance/mock fixtures, but **not fabricated game-reference revenue, weekdays, upgrades or Tier prices**. All unknown reference values remain tagged [U], mocks [P].
+- S0/S1 only: create actual Unity LTS/URP project skeleton, disable the **legacy `RuntimeInitializeOnLoadMethod` free-walk `WarehouseBootstrap`**, add fixed camera anchors and mobile tap navigation, 3D warehouse/loading/inspection/export/build views and preview-only conveyor ghost.
+- Do **not** implement live purchasing, automatic parcel transport, real export/ledger, or road truck schedules in this sprint. Only preview/demo UI and fixtures; explicitly label prototype values.
+- Preserve the mobile-first high-fidelity goal while doing a blockout. Avoid excessive real-time physics, shadow overdraw or synchronous object churn on station switch.
+- Acceptance: SPEC-20 S0-01..06 and S1-01..12 with actual PASS/FAIL/NOT_RUN, Unity build/phone hardware tested only when truly run.
