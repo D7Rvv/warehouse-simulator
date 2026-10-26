@@ -1,35 +1,43 @@
-# Warehouse Simulator — Codex/agent rules
+# Developer / Codex instructions — Warehouse Simulator
 
-## Source of truth (read in order)
-1. docs/spec/00_MASTER_INDEX.md — CURRENT master specification, read before any code changes.
-2. docs/spec/01_REFERENCE_PARITY.md and 14_GAPS_AND_EVIDENCE.md — reference scope and blocked/unknown behaviors.
-3. docs/spec/02..12 and 15_DOMAIN_CONTRACTS_AND_FIXTURES.md — feature contracts and quality tests.
-4. docs/spec/17_CROSS_SPEC_REVIEW.md — critical cross-module invariants; two distinct time domains, scanner output count, test ID aliases.
-5. docs/spec/13_CODEX_EXECUTION.md — implementation plan and acceptance policy.
-6. docs/spec/16_2025_REFERENCE_NUMBERS.md — legacy reference numbers only, NOT current verified values.
-7. docs/GDD_V0_3_REFERENCE_PARITY_MOBILE.md and older research docs — historical context only where not overridden.
-Never infer that unresolved values are approved. When source evidence conflicts, identify the version and consult the gaps list.
+## Source of truth
+1. Read `docs/spec/00_MASTER_INDEX.md` first (project constraints, status tags, requirements, phase gates).
+2. Read `docs/spec/01_REFERENCE_PARITY.md` (feature trace, evidence and date).
+3. Read `docs/spec/02_GAMEFLOW_PROGRESSION.md` through `docs/spec/14_GAPS_AND_EVIDENCE.md` for the feature you're implementing.
+4. `docs/spec/11_QA_ACCEPTANCE.md` defines regression and sign-off.
+5. `docs/spec/13_CODEX_EXECUTION.md` defines work units and reporting format.
+6. Old `docs/GDD_V0_2_STATION_BASED.md` and `docs/GDD_V0_3_REFERENCE_PARITY_MOBILE.md` are superseded for conflicting details.
 
-## Must preserve
-- Product: NATIVE iOS/Android 3D warehouse simulation. Unity/URP is the current candidate.
-- Preserve Parcel Simulator's manual parcel inspection/approval/denial, cargo type exports, weekday restrictions, storage, conveyors, scanners, stickers, licenses, Warehouse Tiers, shops and expansion.
-- Replace only navigation UI: NO free walking character, virtual walking joystick, WASD, or time-consuming player movement.
-- Menu/equipment tap instantly switches station camera, with 3D inspection and warehouse graphics (not a 2D-only business dashboard).
-- A cargo category, an export gate, a shipment and a truck run are SEPARATE logical entities.
-- Truck incoming/unloading/outgoing should be visible and tied to game time, not spawned randomly per camera view.
-- Manual pickup still involves a real parcel ID and transfer of ownership. Do not teleport items without an explicit player transfer action or auto conveyor route.
-- Green ghost-preview grid-based placement with rotation and flip is crucial to the game.
-- High visual fidelity using independently authored textures, meshes and UI — do not copy actual Parcel Simulator art/code or copyrighted assets.
+## Product requirements
+- **Native iOS/Android high-fidelity 3D warehouse game**; final product is not a browser-only prototype.
+- Preserve Parcel Simulator's manual box inspections, approvals/rejections, cargo categories, weekday export rules, racks, pallets, shop inventory, license unlocks, warehouse tiers, grid-based ghost construction, conveyors, routing, scanners and progressive automation.
+- **Never add free-walk characters, walking joysticks, WASD character locomotion, or navigation travel time.** Taps/menu select immediate 3D station camera changes.
+- Keep direct 3D parcel work and construction. Avoid replacing gameplay with a 2D management button that automatically finishes all parcels.
+- A parcel's transport owner, inspection truth, visible label, submitted batch, export gate, shipment and physical truck are distinct concepts. Prevent data duplication/loss.
+- Logical trucks follow game-time schedules and remain consistent whether visible or not, including incoming/outgoing/road travel.
+- High-quality realistic warehouse graphics must use original art/meshes/textures/UI/audio — not copied copyrighted reference-game assets/screenshots.
+- High visual quality plus stable mobile 30 FPS, optional 60 where supported, plus thermal testing. **Never report verified FPS/low heating without actual representative phone tests.**
 
-## Legacy and validation
-- Assets/Scripts/Phase1 contains superseded walking prototype code; do not treat it as Phase 1 success.
-- Build in vertical slices: station navigation/3D → manual intake/inspect/export → automation → logistics and expansion.
-- Each feature must have states, failure cases, and acceptance tests before full implementation.
-- Target stable 30fps; optional 60fps after REAL phone tests. No unverified performance/thermal claims.
-- Separate simulation data from 3D rendering. Avoid continuous rigidbody simulation for large volumes of parcels.
-- Verify with Unity and actual iPhone/Android where possible; report untested parts clearly.
-- A proposed cost/capacity/tier rule not verified in the current reference must be labeled provisional.
-- Never turn the game into a menu-only instant auto-clicker just to remove player movement.
+## Evidence and uncertainty
+- The documentary requirements are tagged [R] reference-observed, [D] project-decision, [P] provisional implementation rule, [U] reference-unknown.
+- [R] from 2025 may be historical. Values (prices, Tier unlocks, exact capacities, clock speed, export batch rules, payout) require current original-game checking before "exact match".
+- **2026-09-25 official patch labels partial-gate Clear Doors as still being worked on; do not assume arbitrary partial shipments are available. Use source-cited FULL_ONLY provisional rule.**
+- 2025-09-29 official Update 1.0.4 Launcher: adjustable power and angle separately; upgrade level changes belt speed, not launch distance.
+- Add reproducible screenshots/videos/game version and source dates for reference-parity claims.
+- Unverified reference mechanics must be source-tagged configuration values rather than fabricated constants.
 
-## Project scope
-Complete the design review first. Implement only an explicitly approved milestone. No destructive edits without review. Save source evidence/QA results alongside code. The native phone build and thermal verification are not yet done.
+## Engineering
+- Simulation authority belongs to deterministic, testable domain data. 3D game objects are presentation; camera change cannot modify parcel owner/clock/money.
+- Owned parcels are identified by unique IDs and have exactly one owner at a time.
+- Export, item purchase and truck events must be idempotent; no double charges/rewards.
+- Building ghost does not spend money or alter the actual conveyor graph until committed.
+- Manual HandSlot transfer requires explicit player action; do not silently teleport boxes because camera changed.
+- Moving equipment with cargo, full export gates and stalled conveyors must have safe error behavior and tests.
+- All scanner/launcher/upgrades change deterministic data; animation/render frequency does not change logical results.
+- Mobile-oriented LOD, static lighting, pool, cull hidden geometry and avoid continuous hundreds of Rigidbodies.
+- Build/compile in Unity Editor when available and test native mobile. Report what was actually tested, never invent verified results.
+
+## Legacy and scope
+- `Assets/Scripts/Phase1/` is legacy **walking prototype code**, NOT current functionality. Do not allow runtime auto-bootstrap into new project scene; isolate safely without losing git history.
+- Stage implementation M00..M14 in `docs/spec/13_CODEX_EXECUTION.md`; start with small vertical slice, test each and report.
+- Prioritize fixing spec discrepancies over blindly expanding features; no broad destructive rewrite without assessing impact.
