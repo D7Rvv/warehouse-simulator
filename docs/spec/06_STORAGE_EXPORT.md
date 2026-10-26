@@ -90,3 +90,11 @@ EXP-12 出荷口画面を見ていなくてもコンベアが搬送し、帰還�
 
 ## 10. 未確定事項と参照
 原作の全曜日表・デイリー運行表、ゲートごと容量/拡張Tier、評価明細、1/16の意味、便の実物トラックとの対応は未実機照合。参照 https://store.steampowered.com/app/2424010/Parcel_Simulator/ と https://shippobox.com/archives/16245 ・ https://shippobox.com/archives/16262。
+
+
+## 11. 2026-10-26 再調査による重要な優先補正（本節を第6/7節より優先）
+- **[R/2026-09-25 開発者告知]** 「終業時に容量未満の出荷口をクリアするボタン」は *現在開発中* と明記された。**2026-09-25時点で既存機能と断定できない**。出典 https://steamcommunity.com/app/2424010/announcements/ 、https://steamdb.info/patchnotes/25526810/
+- **[P 基本動作]** `GateSubmissionPolicy` を `FULL_ONLY` / `ALLOW_PARTIAL_AT_DAY_CLOSE` / `CUSTOM` としてデータ化する。原作同等性を確認するまでは `FULL_ONLY` を優先し、`RequestManualShipment` は `readyToSubmit=true` かつ必要数量充足で成功する。容量未満で無条件に手動提出できるUIを正式機能にしない。
+- **[R/2025資料]** `AutomaticExports` はゲート充填後の提出操作を自動化する機能。手動提出コマンドが「1箱のみ」でも機能することを意味しない。
+- **[U]** 原作2026年10月26日までの以後パッチでClear Doorsが正式実装されたかは最新実機確認が必要。確認までは部分提出は拡張候補に留める。
+- **テストの補正**: 1箱単位の入金テストを行う場合は *テスト専用ゲート容量1* を設定して満杯にする。通常本編の最大数が1という意味ではない。
