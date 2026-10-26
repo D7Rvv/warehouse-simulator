@@ -117,3 +117,10 @@ Tick(fixedStep):
 - ACC-CVY-08 2階Elevatorでも荷物が一意で、上下移動できる。
 - ACC-CVY-09 FPSを落としても装置のスキャン処理時間が変わらない。
 - ACC-CVY-10 リロード後の各ポート接続は保存前のグラフと一致。
+
+
+## 9. 2025-09-29公式Launcher仕様の優先補正
+- **[R/公式Update 1.0.4]** Launcherは本体側の2画面から発射 **power（強度）** と **angle（角度）** を各選択肢に設定可能。設備レベルの強化は**ベルトの移動速度だけに作用し、発射強度/角度を変更しない**。出典 https://steamdb.info/patchnotes/20175356/
+- Launcherモデルに `launchPowerSettingId`, `launchAngleSettingId`, `beltSpeedLevel` を**別々の保存値**として追加。射出先算出はpower+angle+設定基準によって決め、levelUpで飛距離が勝手に変更されない。
+- [U]角度/パワーの個々の段数、距離、重さとの関係は現行原作の画面と実測で確定。検証まではテスト用パラメータで柔軟にする。
+- アート側に2つの操作面に相当する独自デザインの設定UIを設ける（原作モデル/画面はコピーしない）。
