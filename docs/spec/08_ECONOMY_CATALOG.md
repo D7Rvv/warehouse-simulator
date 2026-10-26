@@ -1,0 +1,101 @@
+# 経済・ショップ・ライセンス・倉庫Tier・アップグレード
+文書ID: SPEC-08 / REQ: REF-019..021,034..036,043..047 / 状態: 2025参考値と未知の経済式を分離
+
+## 1. お金のデータと収益
+- `MoneyMinorUnit`: 最小通貨単位の符号付64bit整数で管理し、floatの丸め誤差を資金計算へ混ぜない。
+- 正しい提出で売上、間違った出荷で罰則、ショップ・Upgrade・License・Tier購入で費用。**承認シールを貼っただけでは売上を計上しない**。
+- 参考作品に無い/未確認の給料、電気代、借金利息、保険、輸送燃料費、契約ボーナスなどを勝手に既存再現要件に追加しない。
+- 提出ごとの資金/ミスを`LedgerEntry`として記録。イベントに`submissionId,parcelId,ruleVersion,reasonCode`を保持。
+- 同じSubmissionIDとParcelIDへの二重入金を冪等キーで防ぐ。
+
+### PaymentEngine interface
+```text
+CalculateSubmission(submission, ruleSnapshot, feeCatalog) ->
+ {correctItems:[{parcelId, amount}], incorrectItems:[{parcelId, reason, amount}], net}
+PostLedger(submissionId, result, idemKey) -> Applied | AlreadyApplied | Rejected
+```
+正確な原作の報酬式・違反時罰金は実機で未検証[U]。`feeCatalog`は根拠バージョン付き構成として差替可能にする。テスト専用の仮金額（例: 正常+20、違反-10）は**[P]であり本番の再現値ではない**。
+
+## 2. LicenseとTierとUpgradeの違い
+- **License**: 新しい検査項目を有効化し、荷物単価を上げる。購入しなければ新検査は要求されない[R/S3@2025]。
+- **WarehouseTier**: 倉庫敷地、設備購入枠、ベイ/出荷口、新しい設備・設備レベルを解放。
+- **FunctionalUpgrade**: Conveyor Deliveries、Automatic Exports、Pallet Build Mode、RackSigns等の機能が使えるようになる。
+- **EquipmentLevel**: 置いてある機械ごとのレベルで、搬送速度/検査時間が変わる。
+- **WarehouseProfile**: ORIGINALとREGIONALは別の解放マトリクス。
+- 必要条件は`ALL(requiredLicenses,minimumTier,previousUpgrades,availableBalance)`。[P]全依存グラフは実機調査で埋める。
+
+## 3. 2025コミュニティ参考値（2026最新版とは限らない）
+これらの数値には`sourceId=S5,sourceYear=2025,status=R_HISTORICAL`を付与し、2026ゲームとの一致未検証を保持。
+
+| 設備 | 購入価格 | Lv2 | Lv3 | 補足 |
+|---|---:|---:|---:|---|
+| Straight / Corner | $100 | $50 | $100 | ベルト |
+| Joiner | $350 | $50 | $100 | 合流 |
+| Bridger | $500 | $50 | $100 | 交差 |
+| Pauser | $125 | $50 | $100 | 停止 |
+| Sticker Checker | $1,200 | $2,000 | $4,000 | 既貼付を検出 |
+| Scanner(Weight/Serial/Country/Cargo/Stamp) | $1,500 | $5,000 | $10,000 | 検査 |
+| Scanner(ContentsProhibited) | $2,000 | $5,000 | $10,000 | 禁止品 |
+| Contents Diverter | $1,250 | $50 | $100 | 開封要否 |
+| Sticker Applier Approve/Deny | $3,000 | $50 | $100 | シール |
+| Cargo Type Diverter | $1,200 | $50 | $100 | 便別 |
+| Smart Splitter | $800 | $50 | $100 | 3分岐 |
+| Launcher | $650 | $250 | $500 | 射出 |
+| Loader / Unloader | $600 | $50 | $100 | ラック接続 |
+| Rack S/M/L | $500/$900/$1,600 | - | - | 8/12/16箱 |
+| Pallet S/M/L | $125/$500/$2,000 | - | - | 6/12/30箱 |
+
+- 2025資料: 一般スキャナーLv1/2/3の検査時間が10/5/1秒。
+- 2025コミュニティ実測コメント: ベルト1区画のLv1/2/3通過時間が約2/1.33/1秒。厳密な現行値ではない。
+- 2025コミュニティ: 最初の拡張が重量秤+重量ライセンスを前提に$700との記述。現行の全Tier表ではない。
+- 2026-07-30公式: Pallet Build ModeはTier11、Auto PauserはTier15で価格$30,000に変更。
+- 2026-09-25公式: T-Joiner / RackSigns / Shop Order History。価格は未確認[U]。
+- 2025コミュニティScanner表のLv3は誤植らしき`1,0000`を含む。2025日本語ガイドの$10,000と合わせて注記するが、現在の正確な価格は要照合。
+
+## 4. ショップ・在庫・配置の一意な金銭処理
+```text
+CatalogItem {
+ id, kind: Device|License|Tier|Upgrade|Cosmetic,
+ warehouseProfiles[], requiredUnlockIds[], minTier?,
+ purchasePriceMinor, defaultDeliveryDepotId?, stackLimit?,
+ sourceStatus:R|D|P|U, sourceId, sourceDate, catalogVersion, visualId
+}
+Order {
+ orderId, lines:[{itemId,quantity}], deliveryDestinationId,
+ status: Basket|Purchased|WaitingDelivery|Delivered|Collected|Closed,
+ chargedAtEventId?, shopDeliveryRunId?, inventoryReceiptIds[]
+}
+```
+- 購入ボタンで資金チェック→1回だけ決済→Order作成。`orderId`を一意に管理。
+- 倉庫へ納品された場合はInventoriedItemに移し、設置時は「在庫-1、設備Instance+1」。購入代金を再請求しない。
+- 即購入即設置の別UIがあれば決済は設置確定時の一度だけ。注文済み在庫を使う場合は即購入扱いにしない。
+- 購入履歴からの再注文は**新しいOrderId**と別の支払いを作る。過去の注文を二重納品しない。
+- 2026-07パッチではショップ配送先選択が睡眠/セーブ後も記憶される。[R/S2]
+- 売却返金率・全額返金・取り消し可能時間は未確認[U]。原作実機を調べるまで固定しない。
+- シャッターへ来る通常荷物とショップの納品物は異なる台帳・運行便で管理。
+
+## 5. 必要なTierマスターの列
+`warehouseProfile,tierId,cost,requiredLicenseIds[],requiredTierId,unlockedCellSet[],newInboundDockIds[],newExportGateIds[],newCatalogIds[],maxLevelMap,sourceId,sourceDate,verificationCaptureUri`
+- 全Tierの価格と形は現行実機で確認して登録する。10×20→10×10はあくまで2025初期倉庫資料に対応。
+- プレイヤーが資金不足でも手動の荷物検査と出荷で復帰可能な流れを維持。
+- 新しいライセンスのルールは購入時に解放し、未購入なら突然検査対象にしない。
+- コストはエディタ/カタログデータで修正できるようにし、C#ハードコード禁止。
+
+## 6. 例外・検証
+- 重複Submit: Ledgerは一度だけ計上。
+- Submit中にOSから終了: セーブ時ジャーナルで確定/未確定を区別。
+- Wrong cargo/day/sticker: 結果内訳に理由が保存される。
+- Shop購入直後に強制終了: 二重決済・納品の重複なし。
+- 受取済み在庫→配置→売却→再注文でも個体数と金額の保存が一致。
+- WarehouseTier購入中にセーブ: 敷地拡張・設備解禁・費用を一括適用。
+
+QA-ECO-01 残高不足注文は全データ不変。
+QA-ECO-02 購入済み機械1個を配置して支払い1回のみ。
+QA-ECO-03 提出とトラック出発で同一箱に二重報酬なし。
+QA-ECO-04 License購入前は未解放検査が荷物へ現れない。
+QA-ECO-05 Tier変更と倉庫拡張/ショップ解放が一致。
+QA-ECO-06 ショップ再注文で注文別IDと決済/納品が各1回。
+QA-ECO-07 参考価格は変更可能なデータにありコード定数でない。
+QA-ECO-08 セーブ・ロード後も残高/売上履歴/アイテム数が一致。
+
+出典 S3=https://shippobox.com/archives/16245 / S4=https://shippobox.com/archives/16262 / S5=https://steamcommunity.com/sharedfiles/filedetails/?id=3509976176 / S2=https://steamcommunity.com/app/2424010/announcements/
