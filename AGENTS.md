@@ -3,7 +3,7 @@
 ## Source of truth
 1. Read `docs/spec/00_MASTER_INDEX.md` first (project constraints, status tags, requirements, phase gates).
 2. Read `docs/spec/01_REFERENCE_PARITY.md` (feature trace, evidence and date).
-3. Read `docs/spec/02_GAMEFLOW_PROGRESSION.md` through `docs/spec/14_GAPS_AND_EVIDENCE.md` for the feature you're implementing.
+3. Read `docs/spec/02_GAMEFLOW_PROGRESSION.md` through `docs/spec/15_DOMAIN_CONTRACTS.md` for the feature you're implementing; SPEC-15 resolves cross-system contract ambiguities.
 4. `docs/spec/11_QA_ACCEPTANCE.md` defines regression and sign-off.
 5. `docs/spec/13_CODEX_EXECUTION.md` defines work units and reporting format.
 6. Old `docs/GDD_V0_2_STATION_BASED.md` and `docs/GDD_V0_3_REFERENCE_PARITY_MOBILE.md` are superseded for conflicting details.
