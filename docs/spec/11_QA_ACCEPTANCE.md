@@ -1,0 +1,133 @@
+# テスト仕様・受入条件・原作照合
+文書ID: SPEC-11 / QA管理の基準 / 状態: 設計済み・実行未実施
+
+## 1. 品質判定の基本
+合格とは「コードがある」ことではなく、「決めた条件で何を操作し、どのデータがどう変わるか」を再現できること。
+テストの結果ステータス:
+- NOT_RUN: まだ実行していない
+- PASS_LOGIC: Unit/純C#で成功（Unity実行不要なもの）
+- PASS_EDITOR: Unity Editorでコンパイル/PlayMode成功
+- PASS_DEVICE: iOS/Android実機で成功
+- PASS_REFERENCE: 同じ機能を2026時点の原作品実機と比較し、一致・明示的な差分まで記録
+- FAIL: 発生条件・ログ・動画付き
+- BLOCKED: 必要資料/端末/ビルド欠如
+
+全機能を`PASS_REFERENCE`にしない限り「原作品を完全に再現済み」と名乗らない。操作方式は異なるので同じクリック位置や歩行モーションを求めず、ルール・状態・結果を比較する。
+
+## 2. システムごとのテストマトリクス
+| Group | 該当参照要件 | 主要検証 | 達成判定 |
+|---|---|---|---|
+| UI | OWN-001..004 | メニュー・タップ・カメラ・保持中の箱 | 操作が競合せず意図先へ切替 |
+| Receiving | REF-001..003,021 | 手動搬入・自動荷下ろし・シャッター | 箱IDの総数保存、車内残量一致 |
+| Inspection | REF-004..011 | 6条件と既ラベル/開封・認証 | 計算した正解と判定結果の比較 |
+| Export | REF-012..018 | モード別/曜日/ゲート/自動発送 | 正誤・容量・一意な提出と入金 |
+| Construction | REF-022..025, OWN-004 | ゴースト・位置・回転・反転・重複 | 価格・占有・接続の一貫性 |
+| Automation | REF-026..031 | スキャナ/StickerChecker/Diverter | 分岐先が1つで、詰まりを防止 |
+| Storage | REF-017,032..033 | ラック容量、Loader/Unloader、パレット | ID一意・正しい保管/取り出し |
+| Progression | REF-019..020,034..037 | License/Tier/Upgrade/日変わり | 実際の解放条件に一致 |
+| New Warehouse | REF-038..044,048 | Express国別・2階・国カレンダー | 正しい分類と運用 |
+| Extras | REF-045..050 | RackSigns、T-Joiner、ショップ履歴、セーブ | 各機器/保存が機能 |
+| Logistics | OWN-005 | 道路進入→接車→荷役→退出 | 時刻/便ID/画面と実データ一致 |
+| Performance | OWN-006..007 | FPS/熱/画質/メモリの持続性 | 代表端末で目標達成 |
+
+## 3. 参照再現「1日を完全に通す」シナリオ
+RUN-DAY-001: 新規セーブ、初期Warehouse、チュートリアル初期規則、初期残高。
+1. [搬入]をタップ→荷台に箱A（正常）と箱B（国旗ミス）を用意→手動でAを検査台へ搬送。
+2. Aのラベルを見てCargo/Countryが合格→Approvedシール→当日受付可能な正しいモードのゲートへ運搬。
+3. BはCountryで不一致→Deniedシール→拒否ゲートへ。
+4. ゲート提出を手動で行う→「正しく出荷した箱2個」と収益/得点の結果が表示。金銭イベント各1回。
+5. その日は受付不可のCargoModeの箱Cを手動で保管ラックへ→日付更新して受付可能になってから回収して送る。
+6. 収益を用いStraight Conveyorをショップ注文→納品/配置→手動搬送を少し減らす。
+7. 以後アップグレードでConveyor Deliveriesを購入し、接続したコンベアへ自動荷下ろしできる。
+8. Save→Loadを行いA/B/Cの結果、資金、日時、ゲート、機器、荷物残数が一致。
+※原作品の各価格/分量/利益額は現行実機を計測するまで[P]で、上の箱はテスト用に明示生成する。
+
+RUN-BELT-002: InboundDock → Straight → StickerChecker → (preapproved/pre-denied/unlabeled) → Scanner chain → StickerApplier → CargoDiverter → 目的ゲート。
+- ケースは有効、貨物アイコン偽、重量超過、番号が無効、内容物禁止、スタンプ無効、すでにDeniedの7種。
+- 全箱がいずれか1つの進路を走り、消失・重複せず正しいゲートに投入される。
+- 他のゲートが満杯ならそのラインだけ正しく詰まり、空き回復で再稼働。
+- ライセンス未購入の条件は箱/スキャナーで適切に無効。例外の扱いはSPEC-04のポリシー。
+
+RUN-COUNTRY-003: Regional Warehouseを解放後、12地域のExpress貨物を国別Diverterへ。
+- ProgrammableGateに国グループを登録。
+- CountryCalendarの受入不可の国をRackへ保持。
+- 月曜更新（ランダム/固定モード別）、出荷可能になればUnloaderから搬出。
+- 2階のElevatorで箱が同一IDのまま上下移動し、ゲート提出できる。
+- 週の切替/セーブ/再起動でも行先と申請結果が一致。
+
+RUN-TRUCK-004: 実ゲーム時計に到着予定を2便設定、1ベイだけある。
+- 1便目は道路から見えて接車、荷台に10箱。
+- 手作業で1箱受取→残9。コンベア購入後は荷台から自動排出。
+- 2便目は入場待ちで重複接車なし。荷役詰まりで車両が箱を失わない。
+- 別の作業画面で検査し、ヤードへ戻っても便は元の時刻に同期する。
+- 出発後は車が外へ走り、提出金額に二重加算がない。
+
+## 4. 主要な境界テスト
+| TEST-ID | セットアップ | 操作 | 期待結果 |
+|---|---|---|---|
+| TC-INS-001 | 重量ClassA, 実測5.00kg | 検査 | 合格（2025基準） |
+| TC-INS-002 | 重量ClassA, 実測5.01kg | 検査 | 拒否 |
+| TC-INS-003 | 番号数字9桁 | 手入力照合 | 形式合格、認証は別結果 |
+| TC-INS-004 | 英字混じり9文字 | 入力照合 | 形式拒否 |
+| TC-INS-005 | 1つ以上の禁制品 | 開封→再梱包 | 最終判断でDenied |
+| TC-INS-006 | 承認済みシール | StickerApplierを通過 | 同じシールのまま、重複しない |
+| TC-INS-007 | 複数項目のうち1つ不正 | Approvedを貼り出荷 | 正解扱いしない |
+| TC-INS-008 | カメラを変えた検査Draft | 戻る | 検査途中入力と箱IDが一致 |
+| TC-CVY-001 | ポートが向かい合っていない隣接ベルト | 荷物搬送 | 異なるノードへ飛ばない |
+| TC-CVY-002 | 2入力同時合流 | Tick | 1箱ずつ公平、残りは待機 |
+| TC-CVY-003 | 全出力が塞がれたScanner | 入力 | 中で保持、上流へBackpressure |
+| TC-CVY-004 | 0所持在庫 | ゴースト設置 | 失敗・残高不変 |
+| TC-CVY-005 | 置き済み装置と同セル | 設置 | 拒否、理由表示 |
+| TC-CVY-006 | 設置ゴーストを取消 | 50回 | 保有数・資金・ノード変化ゼロ |
+| TC-CVY-007 | 内部に箱がいるScanner | 撤去 | 安全処理を求め、箱消滅なし |
+| TC-EXP-001 | 満杯ゲート | 次の箱搬入 | 挿入できない、前のOwnerに残る |
+| TC-EXP-002 | Air荷物をRoadゲートに入れる | 提出 | 誤提出として収支へ反映 |
+| TC-EXP-003 | 受付不可曜日 | 間違って提出 | ゲームルール通りのミス計上 |
+| TC-EXP-004 | 満杯・AutomaticExportsなし | 待つ | 自動で提出しない |
+| TC-EXP-005 | 満杯・AutomaticExportsあり | 待つ | 提出一回だけ |
+| TC-RCK-001 | SmallRackに8箱 | 9箱目 | 受け付けず元Ownerに残る（2025値） |
+| TC-RCK-002 | RackとPallet | Loader試行 | Rackのみ直接接続可（2025基準） |
+| TC-ECO-001 | 残高不足 | 購入 | 価格と残高変化ゼロ |
+| TC-ECO-002 | 注文済み機材1個 | 配置 | 購入費用二重請求なし |
+| TC-ECO-003 | 同一SubmissionId | 完了コマンド2回 | Ledger1行 |
+| TC-CLK-001 | 予定時刻を0.3分飛び越え | Tick | 便到着1回 |
+| TC-CLK-002 | 一つのDockへ2台 | 到着 | 1台だけ接車、1台待機 |
+| TC-CLK-003 | OS時刻1日進む | アプリ復帰 | ゲーム時計を勝手に1日進めない |
+| TC-SAVE-001 | 手持ちBoxでSave | Load | HandSlotと元Containerが一意 |
+| TC-SAVE-002 | 開封中のBoxでSave | Load | 中身・repack状態を再生 |
+| TC-SAVE-003 | カメラ切替の間にSave | Load | 進行中のTruckは同じrunId |
+| TC-SAVE-004 | 保存中ファイル切断 | Load | 正常なバックアップで復元 |
+| TC-SAVE-005 | 原作Configと新Configのバージョン差 | Load | migrationか安全な拒否 |
+| TC-UI-001 | 2本指/ボタン同時 | 操作 | 指IDが干渉しない |
+| TC-UI-002 | 建設視点から急に検査へ | 切替 | 資金/在庫/検査Draft保持 |
+| TC-UI-003 | ノッチあり横長iPhone | 表示 | 重要ボタン欠けなし |
+| TC-PERF-001 | 1000論理箱/非表示部分 | 30分 | 実機にてp95/p99・熱を記録 |
+| TC-PERF-002 | 1000回カメラ切替 | 実機/Profiler | 永続的メモリ増加なし |
+| TC-PERF-003 | 低fpsを強制 | ゲーム時計と箱移動 | 論理速度変動・箱消滅なし |
+
+## 5. ランダムベースと長時間負荷
+- Property test: 入力seedを変えた1000ケースで`荷物総数=ライブ所有＋完了の総数`、全Owner一意、Conveyor容量内、Dockの同時占有なし。
+- Stress test: コンベア500台＋箱1000個[P試験値]、ベイ2、Gate複数、倉庫2階。連続30分、CPU/GPU/メモリ/熱の時系列。
+- Soak test: 端末熱・バッテリー条件を変え、最初5分と30分後を比較する。
+- Repro test: Seed + CommandJournal + CatalogVersionで同じスナップショットハッシュが得られる。
+- Fuzz test: 随時建設、撤去、保存、日付更新、作業カメラ切替、同時購入を混在させる。
+- Screenshot compare: 原作提供画像の**リアルさ・見える情報・機能の配置**を定性的に比較。原作画像をそのままUI/テクスチャに使用しない。
+
+## 6. テストインフラとCI
+- Domain/EditMode単体: Unity Test FrameworkかC# Test Runner（Editor不要なロジックを別アセンブリで切り出す）。
+- PlayMode: シーンロード、CameraAnchors、タップ入力、建設プレビュー、破損コンベア復帰。
+- Build validation: Unityのエディタバージョンが合った場合だけWindows Editor/Android/iOSコンパイル。ビルドが失敗した場合はCOMPILE_FAILとして報告する。
+- Native: Android機・iPhoneでタッチ、FPS、熱、OS割込み、メモリ警告。
+- PR説明に`Requirement IDs, Test Results, Devices, Evidence, Known Gaps`を記載。
+- CodexがUnity Editorや実機を使えない場合は成功と装わず`NOT_RUN`を付ける。
+- [U]の値はテストデータの[P]に留め、実機同等性が確認できない限りPASS_REFERENCEにしない。
+
+## 7. フェーズゲートとDoD
+- Phase 1: 3D倉庫/3画像のエリア/メニュー/カメラ/ゴースト配置。UI-001..007、CVY-005/006をPass EditorまたはDevice。
+- Phase 2: 1箱の手動搬入→検査→承認/拒否→Gate→金銭。RUN-DAY-001がローカルで全Pass。
+- Phase 3: 各条件/カレンダー/保管/ライセンス。INS/EXP/RCKの境界テスト全Pass。
+- Phase 4: 自動化全種/アップグレード/ショップ。RUN-BELT-002と20種類以上のNode定義を通過。
+- Phase 5: 時間とトラック。RUN-TRUCK-004が可視/不可視で整合。
+- Phase 6: REGIONALのCountry、2階、Elevator、ショップ新機能。RUN-COUNTRY-003。
+- Phase 7: 独自アート完成/長時間品質試験/端末比較/セーブの耐久/障害復旧。
+全Phaseとも**設計一致→コンパイル→実行→データ検証→性能確認→報告**の順番で承認。
