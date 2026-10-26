@@ -1,0 +1,933 @@
+{
+  "document": "SPEC-DATA-01",
+  "version": "2026-10-26-v0.5",
+  "IMPORTANT": "Historical research catalog only. DO NOT automatically load as current game rules without explicit source review and approval. Null indicates unknown not zero.",
+  "references": {
+    "O_NEWS": "https://steamcommunity.com/app/2424010/announcements/",
+    "O_JUL30": "https://steamcommunity.com/app/2424010/allnews/?l=japanese",
+    "O_LAUNCHER": "https://steamdb.info/patchnotes/20175356/",
+    "G_ACH": "https://steamcommunity.com/sharedfiles/filedetails/?id=3505458195",
+    "G_STATS": "https://steamcommunity.com/sharedfiles/filedetails/?id=3509976176",
+    "G_PLANNER": "https://parcelplanner.app/",
+    "G_WIKI": "https://www.namu.moe/w/Parcel%20Simulator",
+    "F_REG_TIER": "https://steamcommunity.com/app/2424010/discussions/0/583931831085259817/",
+    "F_REG_PRICE": "https://steamcommunity.com/app/2424010/discussions/0/589558792744857728/",
+    "F_PARTIAL": "https://steamcommunity.com/app/2424010/discussions/0/570418436974366307/",
+    "F_AUTO": "https://steamcommunity.com/app/2424010/discussions/0/591774738110508320/",
+    "F_BILLS": "https://steamcommunity.com/app/2424010/discussions/0/601917139265464619/"
+  },
+  "originalWarehouse": {
+    "initialGridUnits": {
+      "width": 10,
+      "length": 20,
+      "sourceStatus": "COMMUNITY_2025"
+    },
+    "perTierExpansion": {
+      "width": 10,
+      "length": 10,
+      "sourceStatus": "COMMUNITY_2025"
+    },
+    "tier1To14TotalUSD": 37100
+  },
+  "constants": [
+    {
+      "id": "ORIGINAL_TIER_1",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 1,
+      "priceUSD": 700,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_2",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 2,
+      "priceUSD": 1000,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_3",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 3,
+      "priceUSD": 1300,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_4",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 4,
+      "priceUSD": 1600,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_5",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 5,
+      "priceUSD": 1900,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_6",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 6,
+      "priceUSD": 2200,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_7",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 7,
+      "priceUSD": 2500,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_8",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 8,
+      "priceUSD": 2800,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_9",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 9,
+      "priceUSD": 3100,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_10",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 10,
+      "priceUSD": 3400,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_11",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 11,
+      "priceUSD": 3700,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_12",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 12,
+      "priceUSD": 4000,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_13",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 13,
+      "priceUSD": 4300,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_TIER_14",
+      "kind": "warehouseTier",
+      "warehouse": "ORIGINAL",
+      "level": 14,
+      "priceUSD": 4600,
+      "status": "COMMUNITY_HISTORICAL",
+      "sourceIds": [
+        "G_PLANNER",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "REGIONAL_CENTRE",
+      "kind": "warehouseUnlock",
+      "warehouse": "REGIONAL",
+      "priceUSD": 500000,
+      "status": "COMMUNITY_CORROBORATED",
+      "sourceIds": [
+        "G_ACH",
+        "F_REG_PRICE"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "ORIGINAL_MAX_TIER",
+      "kind": "tierBoundary",
+      "warehouse": "ORIGINAL",
+      "maxTier": 14,
+      "status": "COMMUNITY_CORROBORATED",
+      "sourceIds": [
+        "G_ACH",
+        "G_STATS"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "REGIONAL_LAST_TIER",
+      "kind": "tierBoundary",
+      "warehouse": "REGIONAL",
+      "maxTier": 18,
+      "exportDoorsAtMax": 12,
+      "status": "PLAYER_2026",
+      "sourceIds": [
+        "F_REG_TIER"
+      ],
+      "verifyCurrentBuild": true
+    },
+    {
+      "id": "CONVEYOR_STRAIGHT",
+      "kind": "equipment",
+      "priceUSD": 100,
+      "upgradeUSD": [
+        50,
+        100
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "CONVEYOR_CORNER",
+      "kind": "equipment",
+      "priceUSD": 100,
+      "upgradeUSD": [
+        50,
+        100
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "CONVEYOR_BRIDGER",
+      "kind": "equipment",
+      "priceUSD": 500,
+      "upgradeUSD": [
+        50,
+        100
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "CONVEYOR_JOINER",
+      "kind": "equipment",
+      "priceUSD": 350,
+      "upgradeUSD": [
+        50,
+        100
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "CONVEYOR_PAUSER",
+      "kind": "equipment",
+      "priceUSD": 125,
+      "upgradeUSD": [
+        50,
+        100
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "CONVEYOR_LOADER",
+      "kind": "equipment",
+      "priceUSD": 600,
+      "upgradeUSD": [
+        50,
+        100
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "CONVEYOR_UNLOADER",
+      "kind": "equipment",
+      "priceUSD": 600,
+      "upgradeUSD": [
+        50,
+        100
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "SCANNER_STICKER",
+      "kind": "equipment",
+      "priceUSD": 1200,
+      "upgradeUSD": [
+        2000,
+        4000
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "SCANNER_WEIGHT",
+      "kind": "equipment",
+      "priceUSD": 1500,
+      "upgradeUSD": [
+        5000,
+        10000
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "SCANNER_SERIAL",
+      "kind": "equipment",
+      "priceUSD": 1500,
+      "upgradeUSD": [
+        5000,
+        10000
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "SCANNER_COUNTRY",
+      "kind": "equipment",
+      "priceUSD": 1500,
+      "upgradeUSD": [
+        5000,
+        10000
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "SCANNER_CARGO",
+      "kind": "equipment",
+      "priceUSD": 1500,
+      "upgradeUSD": [
+        5000,
+        10000
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "SCANNER_STAMP",
+      "kind": "equipment",
+      "priceUSD": 1500,
+      "upgradeUSD": [
+        5000,
+        10000
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "SCANNER_CONTENTS",
+      "kind": "equipment",
+      "priceUSD": 2000,
+      "upgradeUSD": [
+        5000,
+        10000
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "CARGO_DIVERTER",
+      "kind": "equipment",
+      "priceUSD": 1200,
+      "upgradeUSD": [
+        50,
+        100
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "CONTENTS_DIVERTER",
+      "kind": "equipment",
+      "priceUSD": 1250,
+      "upgradeUSD": [
+        50,
+        100
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "SMART_SPLITTER",
+      "kind": "equipment",
+      "priceUSD": 800,
+      "upgradeUSD": [
+        50,
+        100
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "STICKER_APPLIER_APPROVE",
+      "kind": "equipment",
+      "priceUSD": 3000,
+      "upgradeUSD": [
+        50,
+        100
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "STICKER_APPLIER_DENY",
+      "kind": "equipment",
+      "priceUSD": 3000,
+      "upgradeUSD": [
+        50,
+        100
+      ],
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "LAUNCHER",
+      "kind": "equipment",
+      "priceUSD": 650,
+      "upgradeUSD": [
+        250,
+        500
+      ],
+      "unlockTier": 12,
+      "launchPower": null,
+      "launchAngle": null,
+      "upgradeAffects": "belt_speed_only",
+      "status": "PRICE_COMMUNITY_2025_MECHANIC_OFFICIAL_2025",
+      "sourceIds": [
+        "G_STATS",
+        "G_ACH",
+        "O_LAUNCHER"
+      ]
+    },
+    {
+      "id": "SPEEDWAY",
+      "kind": "equipment",
+      "priceUSD": 5000,
+      "upgradeUSD": [
+        5000,
+        10000
+      ],
+      "status": "COMMUNITY_UPDATED_2026",
+      "sourceIds": [
+        "G_ACH"
+      ]
+    },
+    {
+      "id": "ELEVATOR",
+      "kind": "equipment",
+      "priceUSD": 10000,
+      "upgradeUSD": [
+        10000,
+        20000
+      ],
+      "status": "COMMUNITY_UPDATED_2026",
+      "sourceIds": [
+        "G_ACH"
+      ]
+    },
+    {
+      "id": "COUNTRY_DIVERTER",
+      "kind": "equipment",
+      "priceUSD": 10000,
+      "upgradeUSD": null,
+      "status": "PLANNER_UNVERIFIED",
+      "sourceIds": [
+        "G_PLANNER",
+        "O_NEWS"
+      ]
+    },
+    {
+      "id": "AUTO_PAUSER",
+      "kind": "equipment",
+      "priceUSD": 30000,
+      "unlockTier": 15,
+      "upgradeUSD": null,
+      "status": "OFFICIAL_2026",
+      "sourceIds": [
+        "O_JUL30"
+      ]
+    },
+    {
+      "id": "RACK_SMALL",
+      "kind": "storage",
+      "capacity": 8,
+      "priceUSD": 500,
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "RACK_MEDIUM",
+      "kind": "storage",
+      "capacity": 12,
+      "priceUSD": 900,
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "RACK_LARGE",
+      "kind": "storage",
+      "capacity": 16,
+      "priceUSD": 1600,
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "PALLET_SMALL",
+      "kind": "storage",
+      "capacity": 6,
+      "priceUSD": 125,
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "PALLET_MEDIUM",
+      "kind": "storage",
+      "capacity": 12,
+      "priceUSD": 500,
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "PALLET_LARGE",
+      "kind": "storage",
+      "capacity": 30,
+      "priceUSD": 2000,
+      "status": "COMMUNITY_2025",
+      "sourceIds": [
+        "G_STATS"
+      ]
+    },
+    {
+      "id": "LICENSE_WEIGHT",
+      "kind": "license",
+      "priceUSD": 300,
+      "bonusPerParcelUSD": 10,
+      "status": "WIKI_WEAK_UNVERIFIED",
+      "sourceIds": [
+        "G_WIKI"
+      ]
+    },
+    {
+      "id": "LICENSE_SERIAL",
+      "kind": "license",
+      "priceUSD": 300,
+      "bonusPerParcelUSD": 15,
+      "status": "WIKI_WEAK_UNVERIFIED",
+      "sourceIds": [
+        "G_WIKI"
+      ]
+    },
+    {
+      "id": "LICENSE_CONTENTS",
+      "kind": "license",
+      "priceUSD": 500,
+      "bonusPerParcelUSD": 10,
+      "status": "WIKI_WEAK_UNVERIFIED",
+      "sourceIds": [
+        "G_WIKI"
+      ]
+    },
+    {
+      "id": "LICENSE_STAMP",
+      "kind": "license",
+      "priceUSD": 500,
+      "bonusPerParcelUSD": 10,
+      "status": "WIKI_WEAK_UNVERIFIED",
+      "sourceIds": [
+        "G_WIKI"
+      ]
+    },
+    {
+      "id": "UNLOCK_SMALLBOX",
+      "kind": "parcelType",
+      "priceUSD": 100,
+      "bonusPerParcelUSD": 5,
+      "status": "WIKI_WEAK_UNVERIFIED",
+      "sourceIds": [
+        "G_WIKI"
+      ]
+    },
+    {
+      "id": "UNLOCK_INSULATEDBOX",
+      "kind": "parcelType",
+      "priceUSD": 1000,
+      "bonusPerParcelUSD": 7,
+      "status": "WIKI_WEAK_UNVERIFIED",
+      "sourceIds": [
+        "G_WIKI"
+      ]
+    },
+    {
+      "id": "UNLOCK_HARDCASE",
+      "kind": "parcelType",
+      "priceUSD": 5000,
+      "bonusPerParcelUSD": 15,
+      "status": "WIKI_WEAK_UNVERIFIED",
+      "sourceIds": [
+        "G_WIKI"
+      ]
+    }
+  ],
+  "mechanics": [
+    {
+      "id": "REGIONAL_12_COUNTRY_GATE",
+      "value": 12,
+      "sourceStatus": "OFFICIAL_2026",
+      "sourceId": "O_NEWS"
+    },
+    {
+      "id": "REGIONAL_COUNTRY_CALENDAR_WEEKLY_REFRESH",
+      "day": "MON",
+      "sourceStatus": "OFFICIAL_2026",
+      "sourceId": "O_NEWS"
+    },
+    {
+      "id": "REGIONAL_COUNTRY_CALENDAR_FIXED_OPTION",
+      "value": true,
+      "sourceStatus": "OFFICIAL_2026",
+      "sourceId": "O_NEWS"
+    },
+    {
+      "id": "PALLET_BUILD_MIN_TIER",
+      "value": 11,
+      "sourceStatus": "OFFICIAL_2026",
+      "sourceId": "O_JUL30"
+    },
+    {
+      "id": "AUTO_EXPORT_WHEN_FULL_CAN_IGNORE_WRONG_DAY",
+      "value": true,
+      "sourceStatus": "PLAYER_OBS_2025",
+      "sourceId": "F_AUTO"
+    },
+    {
+      "id": "REGIONAL_MANUAL_PARTIAL_EXPORT",
+      "value": true,
+      "sourceStatus": "PLAYER_OBS_WITH_DEVELOPER_REPLY_2026",
+      "sourceId": "F_PARTIAL"
+    },
+    {
+      "id": "ORIGINAL_MANUAL_PARTIAL_EXPORT",
+      "value": null,
+      "sourceStatus": "UNKNOWN"
+    },
+    {
+      "id": "END_OF_DAY_CLEAR_ALL_PARTIAL_GATES",
+      "value": null,
+      "sourceStatus": "IN_DEVELOPMENT_AS_OF_2026_09_25",
+      "sourceId": "O_NEWS"
+    },
+    {
+      "id": "RECURRING_BILL_MAX_USD",
+      "value": 500,
+      "sourceStatus": "PLAYER_REPORTED_OBSERVATION_ONLY",
+      "sourceId": "F_BILLS"
+    },
+    {
+      "id": "PAYOUT_FORMULA",
+      "value": null,
+      "sourceStatus": "UNKNOWN"
+    },
+    {
+      "id": "CONTRACT_REWARD_FORMULA",
+      "value": null,
+      "sourceStatus": "UNKNOWN"
+    }
+  ],
+  "originalWeeklyCargoCalendar": [
+    {
+      "weekday": "MON",
+      "road": {
+        "accepted": true,
+        "sourceStatus": "PLAYER_REPORT_2025",
+        "sourceId": "F_AUTO"
+      },
+      "rail": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN",
+        "sourceId": null
+      },
+      "air": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      },
+      "maritime": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      }
+    },
+    {
+      "weekday": "TUE",
+      "road": {
+        "accepted": true,
+        "sourceStatus": "PLAYER_REPORT_2025",
+        "sourceId": "F_AUTO"
+      },
+      "rail": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN",
+        "sourceId": null
+      },
+      "air": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      },
+      "maritime": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      }
+    },
+    {
+      "weekday": "WED",
+      "road": {
+        "accepted": true,
+        "sourceStatus": "PLAYER_REPORT_2025",
+        "sourceId": "F_AUTO"
+      },
+      "rail": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN",
+        "sourceId": null
+      },
+      "air": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      },
+      "maritime": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      }
+    },
+    {
+      "weekday": "THU",
+      "road": {
+        "accepted": true,
+        "sourceStatus": "PLAYER_REPORT_2025",
+        "sourceId": "F_AUTO"
+      },
+      "rail": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN",
+        "sourceId": null
+      },
+      "air": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      },
+      "maritime": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      }
+    },
+    {
+      "weekday": "FRI",
+      "road": {
+        "accepted": true,
+        "sourceStatus": "PLAYER_REPORT_2025",
+        "sourceId": "F_AUTO"
+      },
+      "rail": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN",
+        "sourceId": null
+      },
+      "air": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      },
+      "maritime": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      }
+    },
+    {
+      "weekday": "SAT",
+      "road": {
+        "accepted": true,
+        "sourceStatus": "PLAYER_REPORT_2025",
+        "sourceId": "F_AUTO"
+      },
+      "rail": {
+        "accepted": false,
+        "sourceStatus": "PLAYER_REPORT_2025",
+        "sourceId": "F_BILLS"
+      },
+      "air": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      },
+      "maritime": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      }
+    },
+    {
+      "weekday": "SUN",
+      "road": {
+        "accepted": true,
+        "sourceStatus": "PLAYER_REPORT_2025",
+        "sourceId": "F_AUTO"
+      },
+      "rail": {
+        "accepted": false,
+        "sourceStatus": "PLAYER_REPORT_2025",
+        "sourceId": "F_BILLS"
+      },
+      "air": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      },
+      "maritime": {
+        "accepted": null,
+        "sourceStatus": "UNKNOWN"
+      }
+    }
+  ],
+  "observedExample": {
+    "source": "User-provided 2026-10-26 screenshot IMG_0181.jpeg",
+    "currentlyInGateCount": 1,
+    "gateCapacityObserved": 16,
+    "lastSubmissionCorrectCount": 16,
+    "lastSubmissionCorrectValueUSD": 1008,
+    "lastSubmissionIncorrectCount": 0,
+    "lastSubmissionIncorrectValueUSD": 0,
+    "lastSubmissionHandlingChargeUSD": 5,
+    "lastSubmissionNetValueUSD": 1003,
+    "warning": "the 1/16 current gate fill is not the past submitted batch count"
+  },
+  "unresolved": [
+    "all air/maritime weekdays",
+    "regional tier15-18 prices and required express count",
+    "contracts exact payout",
+    "bill timing and formula",
+    "exact license bonus eligibility",
+    "manual partial export for original warehouse",
+    "current equipment prices after 2026 patches",
+    "parcel value multiplier and penalty formula",
+    "new 2026 country calendar generated schedule"
+  ]
+}
