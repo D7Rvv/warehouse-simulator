@@ -24,6 +24,7 @@
 | 12_ASSET_ART_DIRECTION.md | オリジナル3DアートとUIの具体的品質仕様 |
 | 13_CODEX_EXECUTION.md | Codexの開発単位、実装順、PR・レポート定型 |
 | 14_GAPS_AND_EVIDENCE.md | 再現を妨げる未確認条件・調査記録のフォーマット |
+| 15_DOMAIN_CONTRACTS.md | 全サブシステムを横断する識別子/所有権/コマンド/時刻/保存/数値の厳密な共通契約 |
 | 15_DOMAIN_CONTRACTS_AND_FIXTURES.md | ID/状態/コマンド/セーブ仕様・再現テスト用データ |
 | 16_2025_REFERENCE_NUMBERS.md | 出典付きの旧版価格・容量・処理速度（現行未検証） |
 | 17_CROSS_SPEC_REVIEW.md | 時間軸・Ownership・入金・テストIDなどの横断的な設計矛盾の解決 |
