@@ -94,3 +94,15 @@ Codexが仕様欠陥を見つけたら ISSUE（GapID）を登録→根拠（実�
 - 旧倉庫Air/Maritimeの正確な曜日カレンダーは未確認。完全な曜日表を架空に作らず、7日分の調査をSPEC-14へ残す。
 - 2026公式で明示されている倉庫2の月曜の国別カレンダー更新と、2026旧倉庫攻略の「提出日に出荷可否を評価」という例を別ロジックとして扱う。
 - M01 DomainにContractId, ContractVanRunId, BillId, FeePolicyIdを抽象定義、実際のUI/契約処理は後続PRとして実装。
+
+
+
+## 2026-10-26 調査成果を実装へ反映する優先作業
+- **22本のMarkdown設計書（SPEC-00～18、枝番Bあり）**の一意のDocumentIdはSPEC-00目次で確認し、数値のみの`SPEC-16`や`SPEC-17`参照は避ける。フルパスを使う。
+- **必読**: `docs/spec/17_2026_REFERENCE_VERIFICATION_AUDIT.md`（SPEC-17B）、`docs/spec/18_EXPORT_REVENUE_RULE_RECONCILIATION.md`（SPEC-18）、`docs/data/reference_catalog_2026-10-26.json`。
+- 新倉庫15/16で個別手動出荷の参考事例があるため、Legacy `FULL_ONLY`を無条件に全ゲートへ適用しない。手動/AutoWhenFull/終業一括Clearを別コマンドとする。旧倉庫との違いはConfig。
+- 新倉庫の全12出荷口はTier18で解放という報告。Express出荷数のTier必要件数が未知なら、仮のゲーム用テスト値を置いても[P]を消してはいけない。
+- 発注処理とContractVanは別、Billの金額上限$500はプレイヤー報告で公式計算式ではない。
+- 2025旧Launcherのレベル別飛距離説明は2025秋以降に使わず、Power/AngleとBeltSpeedLevelを分離。
+- すでに貼付されたApproved/Deniedシールが稀に誤判定されるのは2025バグ/ユーザーの構成問題の可能性がある。わざと一定の不正率を追加しない。
+- 実機/Unity Editorでテスト未実施なら未検証と記録し、作業を「完全再現完了」と報告しない。
