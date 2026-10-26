@@ -105,3 +105,18 @@ QA-ECO-08 セーブ・ロード後も残高/売上履歴/アイテム数が一�
 - **[R/2025コミュニティ攻略]** Weight licenseにはIndustrial Scales→Tier1、Serial licenseにはSerial Keypad→Tier2、ContentsにはTier3とOpening Toolbox→Tier4、Stamp licenseはTier5→Tier6という解放連鎖の記述がある。https://steamcommunity.com/sharedfiles/filedetails/?id=3505458195
 - **[R/2025-09-29公式]** LauncherのLv2/Lv3は**ベルト送り速度**を上げる。発射角度/強度は機器側の独立設定で変更する。https://steamdb.info/patchnotes/20175356/
 - 2025年参照価格表・Tier依存は2026年現行版で再検証するまでステータス`R_HISTORICAL`を維持。
+
+
+
+## 2026-10-26 調査上書き（最優先：SPEC-16）
+**旧節の「参考作品に無い/未確認の電気代、契約ボーナスを再現しない」は再調査で不正確。機能の存在を示す資料が見つかった。**
+- 契約（Contracts）: 別室の契約バンを呼び、条件に合う複数箱を積み込み、専用の納品操作で確定する。2025 SteamのQ&A複数投稿に手順がある。条件は個数/国/貨物タイプ/承認拒否。原作の単価と出現間隔はU。通常出荷Gateと別のContractLedgerを設ける。
+- 定期Bill: 数日ごとにBillが来るというSteam2025の体験報告。Electricityと説明するレビューもあるが、従量計算は未確認。Bill due/reason/amountと支払いイベントの型を用意し、**架空のコンベア電力単価を固定しない**。
+- ライセンス価格/報酬加算（韓国コミュニティWiki 2026-10-10）: Weight 300/+10、Serial 300/+15、Contents 500/+10、Stamp 500/+10。古い価格から変わった可能性はU。
+- 箱の種類（同Wiki）: Envelope/Small $100/+5、Insulated $1000/+7、Hardcase $5000/+15。
+- 入荷頻度強化 $500/$1000/$1500、搬入数強化 $500/$1000（初段3→5）、ConveyorDeliveries $1500/$3000/$4500、出荷容量強化 $1000/$2000（12→16）、AutomaticExports $3000、床材 $5000。全てE3b、現行の再確認はU。
+- 旧倉庫Tier価格はTier1=700からTier14=4600まで+300、合計37100。複数資料の一致確認あり。SPEC-16の価格テーブルをCatalogへ登録する。
+- ユーザーの出荷ゲートIMG_0181に、CorrectParcelValue+1008、IncorrectParcelValue-0、HandlingCharge-5、Total+1003の明細が見える。**HandlingChargeという経費項目は資料上確認できる**。ただし全バッチで-$5かはU。
+- 原作の収益は**荷物単価/LicenseBonus/ParcelTypeBonus/正誤と倍率/提出手数料**で分解して計算。未確認のBaseValueや係数をC#定数で固定しない。画面に見える平均$63を全箱の基本単価と断定しない。
+- 請求書、契約、Submissionの3種類はLedgerEntryKindで区別し、いずれもCommandId/SourceEventIdで二重精算防止。
+- 従業員給与・銀行利息・燃料価格などは現在も明確な原作根拠がないため必須にしない。
