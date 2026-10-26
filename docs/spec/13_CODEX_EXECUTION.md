@@ -82,3 +82,15 @@ TicketID / 機能と目的 / Requirements / SourceEvidence / Constraints / Domai
 
 ## 7. 設計書の更新フロー
 Codexが仕様欠陥を見つけたら ISSUE（GapID）を登録→根拠（実機、公式、他資料）を追記→設計レビュー→仕様/fixture更新→テスト追加→コード変更。仕様が未確定でもS1のような独立部分だけは仮設計を明示したうえで先行可能。
+
+
+
+## 2026-10-26 追加入念指示
+- **必読: `docs/spec/16_ECONOMY_EXPORT_DEEP_RESEARCH.md`**。価格/収益/曜日/契約/定期Billの最新の確認状況であり、SPEC-02/06/07/08の古い「契約/請求書が無い」という主張より優先。
+- `Contracts`と`PeriodicBills`は原作に存在する可能性が資料で高まった。少なくとも型と予定処理とモバイル操作（[契約]→専用バン固定カメラ→荷物積載→納品）を実装計画へ追加。正確なTier、単価、請求額は[P/U]にし原作の実機照合が取れるまで「完全再現」を宣言しない。
+- 通常の出荷ゲートと契約バンは別目的の所有先として`PackageID`を一意に転送する。契約便の運行IDは一般配送便のIDと別。
+- `CorrectParcelValue`, `IncorrectParcelValue`, `HandlingCharge`, `CorrectMultiplier`, `IncorrectMultiplier`を別々に精算表示・保存。IMG_0181の+$1008-$5=+$1003の例をFixtureにするが、係数が普遍であると仮定しない。
+- Tierや設備、License、Upgradeの現行未確認数字を`ReferenceCatalog`でソースごとに管理、C#ハードコード禁止。
+- 旧倉庫Air/Maritimeの正確な曜日カレンダーは未確認。完全な曜日表を架空に作らず、7日分の調査をSPEC-14へ残す。
+- 2026公式で明示されている倉庫2の月曜の国別カレンダー更新と、2026旧倉庫攻略の「提出日に出荷可否を評価」という例を別ロジックとして扱う。
+- M01 DomainにContractId, ContractVanRunId, BillId, FeePolicyIdを抽象定義、実際のUI/契約処理は後続PRとして実装。
