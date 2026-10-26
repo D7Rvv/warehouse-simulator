@@ -112,6 +112,9 @@ namespace Warehouse.Presentation
             if (!pointers.TryGetValue(pointerId, out pointer)) return;
             if (phase == StationPointerPhase.Cancel)
             {
+                // OS gesture cancellation must also invalidate a queued uGUI
+                // release/click. Other pointers keep their captured ownership.
+                unchecked { cancellationVersion++; }
                 Remove(pointerId);
                 return;
             }

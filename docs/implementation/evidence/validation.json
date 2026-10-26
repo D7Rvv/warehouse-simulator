@@ -1,0 +1,285 @@
+{
+  "generated_at": "2026-10-26T09:40:57.636728+00:00",
+  "static_checks": [
+    {
+      "id": "STATIC-001 EditorAndPackagesPinned",
+      "status": "PASS",
+      "scope": "static_configuration"
+    },
+    {
+      "id": "STATIC-002 NativeProjectAndStartupScene",
+      "status": "PASS",
+      "scope": "static_configuration"
+    },
+    {
+      "id": "STATIC-003 LegacyFreeWalkInactive",
+      "status": "PASS",
+      "scope": "static_configuration"
+    },
+    {
+      "id": "STATIC-004 CanonicalFixtureParity",
+      "status": "PASS",
+      "scope": "static_configuration"
+    },
+    {
+      "id": "STATIC-005 AssemblyAndTestBoundaries",
+      "status": "PASS",
+      "scope": "static_configuration"
+    },
+    {
+      "id": "STATIC-006 UrpAssetsBound",
+      "status": "PASS",
+      "scope": "static_configuration"
+    },
+    {
+      "id": "STATIC-007 HonestNativeProfiles",
+      "status": "PASS",
+      "scope": "static_configuration"
+    },
+    {
+      "id": "STATIC-008 StableAssetGuids",
+      "status": "PASS",
+      "scope": "static_configuration"
+    }
+  ],
+  "pure_csharp": {
+    "status": "PASS_LOGIC",
+    "scope": "actual_pure_csharp_no_unity_engine",
+    "exit_code": 0,
+    "passed": 43,
+    "checks": [
+      {
+        "id": "FIXTURE-001",
+        "label": "FIXTURE-001 PrototypeBoundary",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "FIXTURE-002",
+        "label": "FIXTURE-002 NoProductionPromotion",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "FIXTURE-003",
+        "label": "FIXTURE-003 NoReferenceCatalogOverride",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "FIXTURE-004",
+        "label": "FIXTURE-004 NoNavigationAutomation",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "FIXTURE-005",
+        "label": "FIXTURE-005 NoRealSubmission",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "FIXTURE-006",
+        "label": "FIXTURE-006 NoMoneyMutation",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "FIXTURE-007",
+        "label": "FIXTURE-007 NoPlacementTransaction",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "FIXTURE-008",
+        "label": "FIXTURE-008 UniqueParcelIds",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "FIXTURE-009",
+        "label": "FIXTURE-009 UniqueOwnerSlots",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "FIXTURE-010",
+        "label": "FIXTURE-010 ExactTruckManifest",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "FIXTURE-011",
+        "label": "FIXTURE-011 DeepCopyIsolation",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "FIXTURE-012",
+        "label": "FIXTURE-012 CurrentAndPreviousBatchSeparate",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "FIXTURE-013",
+        "label": "FIXTURE-013 NoInspectionTruthInPresentation",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "NAV-001",
+        "label": "NAV-001 FiftySwitchesPreserveWorld",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "NAV-002",
+        "label": "NAV-002 InvalidStationKeepsSelection",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "NAV-003",
+        "label": "NAV-003 LockedStationHasReason",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "NAV-004",
+        "label": "NAV-004 HandAndDraftSurviveSwitch",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "NAV-005",
+        "label": "NAV-005 SelectedEntityRetained",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "NAV-006",
+        "label": "NAV-006 RemovedTargetFallsBack",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "NAV-007",
+        "label": "NAV-007 UnknownTargetRejected",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "NAV-008",
+        "label": "NAV-008 MissingAnchorKeepsSelection",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "GHOST-001",
+        "label": "GHOST-001 ThirtyPreviewCyclesDoNotMutateWorld",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "GHOST-002",
+        "label": "GHOST-002 OccupiedCellRejected",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "GHOST-003",
+        "label": "GHOST-003 BoundsRejected",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "GHOST-004",
+        "label": "GHOST-004 RotationAndFlipRoundTrip",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "GHOST-005",
+        "label": "GHOST-005 CancelClearsPreviewOnly",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "GHOST-006",
+        "label": "GHOST-006 InvalidFloorRejected",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-001",
+        "label": "INPUT-001 UiCaptureNeverLeaksToWorld",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-002",
+        "label": "INPUT-002 CancelNeverTaps",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-003",
+        "label": "INPUT-003 ModeChangeCancelsCapture",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-004",
+        "label": "INPUT-004 PinchSuppressesBothTaps",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-005",
+        "label": "INPUT-005 PinchRemainderCannotDragOrTap",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-006",
+        "label": "INPUT-006 DragDoesNotSelect",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-007",
+        "label": "INPUT-007 FixedCameraIgnoresPanPinch",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-008",
+        "label": "INPUT-008 UiDoesNotJoinWorldPinch",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-009",
+        "label": "INPUT-009 PinchBlocksUiCommands",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-010",
+        "label": "INPUT-010 NonFinitePointerCancels",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-011",
+        "label": "INPUT-011 UiReleaseCannotClearWorldGestureGuard",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-012",
+        "label": "INPUT-012 UiPressStartedDuringPinchStaysRejected",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-013",
+        "label": "INPUT-013 UiPressBeforePinchCannotFireAfterPairReleased",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-014",
+        "label": "INPUT-014 CancelInvalidatesHeldUiPress",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-015",
+        "label": "INPUT-015 FreshUiPressWorksAfterGestureEnds",
+        "status": "PASS_LOGIC"
+      },
+      {
+        "id": "INPUT-016",
+        "label": "INPUT-016 IndividualUiCancelInvalidatesPressWithoutDroppingOtherFinger",
+        "status": "PASS_LOGIC"
+      }
+    ],
+    "fixture_sha256": "89602b7aedc9b0b9bbd6465ca64805a8aad7bf1be15db0238e97a5ada7d27930",
+    "compiled_source_sha256": {
+      "Assets/Warehouse/Domain/MobileStationRegistry.cs": "3e7d58015d9ae314e6a9766d947fc048c7f55ad4dc21b099b1971430e0159628",
+      "Assets/Warehouse/Domain/PlacementPreview.cs": "436a909024d7cf1ad482e3d8b050f00a5c1bfbd5b8e00cb229d0209c13d677d9",
+      "Assets/Warehouse/Domain/PrototypeFixtureData.cs": "2d24ad27c0d9007fabef82d7a7674b98451786ae2466d59a8cf8c6c5ee138ea0",
+      "Assets/Warehouse/Domain/ReadOnlyMockWorld.cs": "03fc351f13a66a989894b947d3f2218b6c261254527b8cb3139a8aa3151d78e3",
+      "Assets/Warehouse/Presentation/Input/StationPointerOwnership.cs": "20b6cf4027b4eba0e9dff3c8f97ff5eb03aa6e54c5b1fcc3818fe11d941557e8",
+      "Assets/Warehouse/Tests/EditMode/DomainScenarios.cs": "93c4821f266434cecbc31d30cd6f1b390a739b89a6cfad31e75fdb4bba648e4f",
+      "Assets/Warehouse/Tests/EditMode/PointerScenarios.cs": "16501e22238105977b7a393fb2c058a214f888a69b7758d58aeb966c368d2aec",
+      "Assets/Warehouse/Tests/Standalone/RunDomainTests.cs": "e5d1f748be2590b671604e8cd19246a14776d307a7df4401985f2d416d2dabe4"
+    },
+    "log": "builds/s01/logic-tests.log"
+  },
+  "unity_editor": "NOT_RUN_BY_THIS_COMMAND",
+  "unity_playmode": "NOT_RUN_BY_THIS_COMMAND",
+  "android_device": "NOT_RUN",
+  "ios_device": "NOT_RUN",
+  "thermal_30_minutes": "NOT_RUN"
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "file": "Assets/Scripts/Phase1/AdaptiveMobileQuality.cs",
+    "original_content_preserved": true,
+    "original_sha256": "b1dc3266aff07c9320db4bc87ed2c18594aed46d961a22955f9df66a43b5dda1"
+  },
+  {
+    "file": "Assets/Scripts/Phase1/MobileHud.cs",
+    "original_content_preserved": true,
+    "original_sha256": "bcab4dc1c70689db486e6102ca1b8c85d8ef9a04df539299439a2b8a135d5cfa"
+  },
+  {
+    "file": "Assets/Scripts/Phase1/MobilePlayerController.cs",
+    "original_content_preserved": true,
+    "original_sha256": "5f63f8b45cb23f61a86152a265a3fac38c67d749c7834495b74ab6ed8eeab155"
+  },
+  {
+    "file": "Assets/Scripts/Phase1/WarehouseBootstrap.cs",
+    "original_content_preserved": true,
+    "original_sha256": "b9a9d4199187c8fcaf51f9d385cba864fb6af961e70c81d79c9fbce1cbbd4df3"
+  },
+  {
+    "file": "Assets/Scripts/Phase1/WarehouseWorld.cs",
+    "original_content_preserved": true,
+    "original_sha256": "e919fe49bc2506f1dbae2b8ccf4d5c88e62de52b25280160b7c2b6c0552101da"
+  }
+]
