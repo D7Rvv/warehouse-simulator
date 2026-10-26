@@ -99,3 +99,9 @@ QA-ECO-07 参考価格は変更可能なデータにありコード定数でな�
 QA-ECO-08 セーブ・ロード後も残高/売上履歴/アイテム数が一致。
 
 出典 S3=https://shippobox.com/archives/16245 / S4=https://shippobox.com/archives/16262 / S5=https://steamcommunity.com/sharedfiles/filedetails/?id=3509976176 / S2=https://steamcommunity.com/app/2424010/announcements/
+
+
+## 7. 追加確認：ライセンス解放関係とLauncher
+- **[R/2025コミュニティ攻略]** Weight licenseにはIndustrial Scales→Tier1、Serial licenseにはSerial Keypad→Tier2、ContentsにはTier3とOpening Toolbox→Tier4、Stamp licenseはTier5→Tier6という解放連鎖の記述がある。https://steamcommunity.com/sharedfiles/filedetails/?id=3505458195
+- **[R/2025-09-29公式]** LauncherのLv2/Lv3は**ベルト送り速度**を上げる。発射角度/強度は機器側の独立設定で変更する。https://steamdb.info/patchnotes/20175356/
+- 2025年参照価格表・Tier依存は2026年現行版で再検証するまでステータス`R_HISTORICAL`を維持。
