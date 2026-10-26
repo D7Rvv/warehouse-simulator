@@ -21,7 +21,7 @@
 ## Evidence and uncertainty
 - The documentary requirements are tagged [R] reference-observed, [D] project-decision, [P] provisional implementation rule, [U] reference-unknown.
 - [R] from 2025 may be historical. Values (prices, Tier unlocks, exact capacities, clock speed, export batch rules, payout) require current original-game checking before "exact match".
-- **2026-09-25 official patch labels partial-gate Clear Doors as still being worked on; do not assume arbitrary partial shipments are available. Use source-cited FULL_ONLY provisional rule.**
+- **Important correction (SPEC-18):** A July 21, 2026 Regional Warehouse player describes manual export at 15/16 parcels and developer replies on the same thread. The September 25 'Clear Doors' in development is an end-of-day bulk action, NOT proof that individual manual partial submissions are unavailable. Keep ManualSubmit / AutoWhenFull / EndOfDayClearAll separate and do not enforce FULL_ONLY globally.
 - 2025-09-29 official Update 1.0.4 Launcher: adjustable power and angle separately; upgrade level changes belt speed, not launch distance.
 - Add reproducible screenshots/videos/game version and source dates for reference-parity claims.
 - Unverified reference mechanics must be source-tagged configuration values rather than fabricated constants.
