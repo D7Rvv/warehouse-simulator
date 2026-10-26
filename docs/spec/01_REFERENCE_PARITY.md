@@ -108,3 +108,30 @@ S5 https://steamcommunity.com/sharedfiles/filedetails/?id=3509976176
 | REF-061 | 旧倉庫の上位アップグレードで1ベイあたり26便×7箱/日 | E3b 2025/2026攻略者実測 / 現行U | 性能・進行の参考 |
 
 **参照作品の契約と請求書の存在を、原作と無関係なオリジナル案として排除しない。** 未確認なのは正確な仕様/数値であって、機能の存在を示す資料が無いという意味ではない。
+
+
+
+## 2026-10-26 出典再検証で増えた再現機能（SPEC-17B / SPEC-18、最新優先）
+| REQ-ID | 機能/注意 | 根拠 | 実装 |
+|---|---|---|---|
+| REF-062 | Regional Warehouseの購入価格$500,000 | B: 2026更新実績攻略 + Steamプレイヤー | 経営カタログ、要実機照合 |
+| REF-063 | 旧倉庫Tier14、Regional最終Tier18で全12国ゲート | B/C: 実績攻略+2026年8月プレイヤー | マップ/Tier/ゲート開放 |
+| REF-064 | Speedway $5,000(+5,000/+10,000)、Elevator $10,000(+10,000/+20,000) | B: 2026攻略 | 機械カタログ、要照合 |
+| REF-065 | **Regionalでは15/16の手動部分出荷が成立した報告** | B: 2026-07-21開発者返信スレッド | 個別ManualSubmitのPartialを許すプロファイルを用意 |
+| REF-066 | 自動出荷は曜日不正ゲートを満杯で勝手に出荷し得る | C: 2025複数Steam出荷実験 | AutoWhenFullで自動判断してプレイヤーミスを取り除かない |
+| REF-067 | 終業時まとめClear Doorsは2026-09-25時点開発中 | A: 公式開発者ニュース | ManualSubmitから分離 |
+| REF-068 | RegionalのDenied出荷でもCountryCalendarで誤提出になる可能性 | B: 2026-07開発者の国カレンダー確認返信 | Country/Deny別政策、現行U |
+| REF-069 | Shop配送トラックを空にしなくても就寝できる | A: 2026-08-04公式 | Sleep前提 |
+| REF-070 | Country/CriteriaのNone/N/A誤扱いを修正、当時のバグを模倣しない | A: 2026-09公式 | RuleDefinition |
+| REF-071 | 箱の既貼付シールがたまに誤りとの報告が2025にあるが、同時に大半正常との異論あり | C: 2025スキャナー不具合議論 | 初期はTrue prechecked、意図的ミス生成は未証明 |
+| REF-072 | Cargoの全7曜日、精算の倍率/手数料・契約/請求式は依然U | A/B/Cの公開資料でも全式無し | 動作試験と動画照合が必要 |
+
+Sources:
+- https://steamcommunity.com/sharedfiles/filedetails/?id=3505458195
+- https://steamcommunity.com/app/2424010/discussions/0/583931831085259817/
+- https://steamcommunity.com/app/2424010/discussions/0/570418436974366307/
+- https://steamcommunity.com/app/2424010/discussions/0/591774738110508320/
+- https://steamcommunity.com/app/2424010/discussions/0/591775243562972679/
+- https://steamcommunity.com/app/2424010/announcements/
+
+必須: **ゲーム内ルールの再現と、過去に発生した不具合の複製を区別する**。都合の良いショートカットで出荷結果を必ず正解にしない。
