@@ -118,3 +118,12 @@ ACC-INS-07 シールのみが貼られても売上が二重発生しない。
 ACC-INS-08 画面外にした箱の論理検査状態と近景に戻した際の表示が同じ。
 
 出典: S3 https://shippobox.com/archives/16245 / S4 https://shippobox.com/archives/16262
+
+
+
+## 2026-10-26 既貼付シールとScannerバグの注意（SPEC-17B）
+- 2025-06/07のSteam報告では、すでにApproved/Deniedシールがある箱は正常に分類できたという数千箱規模の体験と、シールが間違っているケースがあった/スキャナーが不正な荷物を通したという報告が混在する。https://steamcommunity.com/app/2424010/discussions/0/591775243562972679/
+- 2025のゲーム実装バグや、プレイヤーの設備構成ミスが原因の可能性があり、「原作では一定確率で**意図的に誤シールが付く**」と確定してはならない。
+- 内部モデルに`PreCertifiedSticker`と`InspectionTruth`の独立性を残し、**データとして不一致を表現できる**ようにする。ただしデフォルトの生成器は原作の現行実機で意図的な誤シールを確認するまで無作為に生成しない。
+- ContentsInspectionDiverterは「**要開封かどうか**」で分岐、ContentsProhibitedScannerは「**開封内容が禁止品か**」を検査する。互いを同じ機器として実装しない。https://steamcommunity.com/app/2424010/discussions/0/591775243562981284/
+- 日付・プログラム変更時の誤出荷を、Scannerがランダムに嘘を付くゲーム機能として再現しない。真値/状態バグが起きているなら、Codexはテストで再現し原因を修正する。
