@@ -1,23 +1,31 @@
-# Development instructions for Warehouse Simulator
+# Warehouse Simulator — Codex/agent rules
 
-## Current source of truth
-- Read `docs/GDD_V0_2_STATION_BASED.md` before changing gameplay.
-- This file describes a REVIEW DRAFT, not approval of all unresolved game-design choices.
-- iOS/Android smartphone game is the end product. Unity/URP is the current candidate.
-- **Do not reintroduce free-roam character movement, WASD navigation, virtual walk joystick, or walking between stations.**
-- The player taps a menu or equipment to switch instantly to a fixed station camera. Warehouse overhead is reserved for overview and building.
-- Preserve inspection depth: labels, barcode, weight, opening/contraband, changing criteria, approval/denial, and automated expansion.
-- Truck arrivals, loading, departures and game clock must stay logically consistent with the warehouse systems.
-- All expensive visual representations should be separable from the simulation data.
-- Prior Phase1 scripts in `Assets/Scripts/Phase1/` belong to the superseded walking prototype; treat them as legacy experiments.
+## Source of truth (read in order)
+1. docs/GDD_V0_3_REFERENCE_PARITY_MOBILE.md — CURRENT game design, review draft.
+2. docs/PARCEL_SIMULATOR_RESEARCH_2026-10-26.md — grounded research, three user screenshots, uncertainties, 2026 updates.
+3. docs/PARCEL_FEATURE_MATRIX_V0_1.md — earlier checklist; use only with the more recent research.
+Previous GDD v0.1/v0.2 are superseded for conflicting matters. Never infer that unresolved design numbers are approved.
 
-## Engineering quality
-- Mobile-first performance: baseline 30 FPS, optional 60 FPS for capable devices after measured validation.
-- Minimize CPU/GPU work when switching stations; do not reload the entire warehouse scene for navigation.
-- Optimize after measurement, preserve close-up visual quality, avoid excessive Rigidbody usage on many parcels.
-- Do not claim Unity compilation, native builds, thermal safety, or verified frame rates without actually running those tests.
-- Use independent IDs and state machines for parcels, conveyors, trucks and financial events; prevent duplicate shipment/revenue updates.
-- Before implementation of a feature, define interactions, edge cases and test criteria.
+## Must preserve
+- Product: NATIVE iOS/Android 3D warehouse simulation. Unity/URP is the current candidate.
+- Preserve Parcel Simulator's manual parcel inspection/approval/denial, cargo type exports, weekday restrictions, storage, conveyors, scanners, stickers, licenses, Warehouse Tiers, shops and expansion.
+- Replace only navigation UI: NO free walking character, virtual walking joystick, WASD, or time-consuming player movement.
+- Menu/equipment tap instantly switches station camera, with 3D inspection and warehouse graphics (not a 2D-only business dashboard).
+- A cargo category, an export gate, a shipment and a truck run are SEPARATE logical entities.
+- Truck incoming/unloading/outgoing should be visible and tied to game time, not spawned randomly per camera view.
+- Manual pickup still involves a real parcel ID and transfer of ownership. Do not teleport items without an explicit player transfer action or auto conveyor route.
+- Green ghost-preview grid-based placement with rotation and flip is crucial to the game.
+- High visual fidelity using independently authored textures, meshes and UI — do not copy actual Parcel Simulator art/code or copyrighted assets.
 
-## Scope gate
-- Do not restart a full implementation solely because this document exists. Wait until design scope is explicitly confirmed.
+## Legacy and validation
+- Assets/Scripts/Phase1 contains superseded walking prototype code; do not treat it as Phase 1 success.
+- Build in vertical slices: station navigation/3D → manual intake/inspect/export → automation → logistics and expansion.
+- Each feature must have states, failure cases, and acceptance tests before full implementation.
+- Target stable 30fps; optional 60fps after REAL phone tests. No unverified performance/thermal claims.
+- Separate simulation data from 3D rendering. Avoid continuous rigidbody simulation for large volumes of parcels.
+- Verify with Unity and actual iPhone/Android where possible; report untested parts clearly.
+- A proposed cost/capacity/tier rule not verified in the current reference must be labeled provisional.
+- Never turn the game into a menu-only instant auto-clicker just to remove player movement.
+
+## Project scope
+Do not rework everything automatically just because research docs were updated. Use the user's next explicit implementation milestone. Avoid destructive deletes without review.
