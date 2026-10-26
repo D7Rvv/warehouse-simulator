@@ -4,9 +4,10 @@
 1. docs/spec/00_MASTER_INDEX.md — CURRENT master specification, read before any code changes.
 2. docs/spec/01_REFERENCE_PARITY.md and 14_GAPS_AND_EVIDENCE.md — reference scope and blocked/unknown behaviors.
 3. docs/spec/02..12 and 15_DOMAIN_CONTRACTS_AND_FIXTURES.md — feature contracts and quality tests.
-4. docs/spec/13_CODEX_EXECUTION.md — implementation plan and acceptance policy.
-5. docs/spec/16_2025_REFERENCE_NUMBERS.md — legacy reference numbers only, NOT current verified values.
-6. docs/GDD_V0_3_REFERENCE_PARITY_MOBILE.md and older research docs — historical context only where not overridden.
+4. docs/spec/17_CROSS_SPEC_REVIEW.md — critical cross-module invariants; two distinct time domains, scanner output count, test ID aliases.
+5. docs/spec/13_CODEX_EXECUTION.md — implementation plan and acceptance policy.
+6. docs/spec/16_2025_REFERENCE_NUMBERS.md — legacy reference numbers only, NOT current verified values.
+7. docs/GDD_V0_3_REFERENCE_PARITY_MOBILE.md and older research docs — historical context only where not overridden.
 Never infer that unresolved values are approved. When source evidence conflicts, identify the version and consult the gaps list.
 
 ## Must preserve
