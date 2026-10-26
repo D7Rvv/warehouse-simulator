@@ -3,10 +3,12 @@
 ## Source of truth
 1. Read `docs/spec/00_MASTER_INDEX.md` first (project constraints, status tags, requirements, phase gates).
 2. Read `docs/spec/01_REFERENCE_PARITY.md` (feature trace, evidence and date).
-3. Read `docs/spec/02_GAMEFLOW_PROGRESSION.md` through `docs/spec/15_DOMAIN_CONTRACTS.md` for the feature you're implementing; SPEC-15 resolves cross-system contract ambiguities.
-4. `docs/spec/11_QA_ACCEPTANCE.md` defines regression and sign-off.
-5. `docs/spec/13_CODEX_EXECUTION.md` defines work units and reporting format.
-6. Old `docs/GDD_V0_2_STATION_BASED.md` and `docs/GDD_V0_3_REFERENCE_PARITY_MOBILE.md` are superseded for conflicting details.
+3. Read `docs/spec/17_2026_REFERENCE_VERIFICATION_AUDIT.md` (SPEC-17B) and `docs/spec/18_EXPORT_REVENUE_RULE_RECONCILIATION.md` (SPEC-18) FIRST for current reference mechanics and partial-shipment corrections.
+4. Read `docs/spec/15_DOMAIN_CONTRACTS_AND_FIXTURES.md` (SPEC-15) plus `docs/spec/15_DOMAIN_CONTRACTS.md` (SPEC-15B) for domain model and invariants; read `docs/spec/17_CROSS_SPEC_REVIEW.md` (SPEC-17) for technical contradictions.
+5. Read the per-feature specification files and `docs/spec/16_2025_REFERENCE_NUMBERS.md` (SPEC-16 historical prices) vs `docs/spec/16_ECONOMY_EXPORT_DEEP_RESEARCH.md` (SPEC-16B pricing/contract/bill research).
+6. `docs/spec/11_QA_ACCEPTANCE.md` defines regression and sign-off.
+7. `docs/spec/13_CODEX_EXECUTION.md` defines work units and reporting format.
+8. Old `docs/GDD_V0_2_STATION_BASED.md` and `docs/GDD_V0_3_REFERENCE_PARITY_MOBILE.md` are superseded for conflicting details.
 
 ## Product requirements
 - **Native iOS/Android high-fidelity 3D warehouse game**; final product is not a browser-only prototype.
@@ -45,9 +47,18 @@
 
 
 ## New evidence, 2026-10-26
-- **Read docs/spec/16_ECONOMY_EXPORT_DEEP_RESEARCH.md before working on prices, licenses, warehouse tiers, exports, contracts, income, and calendar rules.**
+- **Read docs/spec/16_ECONOMY_EXPORT_DEEP_RESEARCH.md (SPEC-16B) together with SPEC-17B and SPEC-18 before working on prices, licenses, warehouse tiers, exports, contracts, income, and calendar rules.**
 - Parcel Simulator appears to contain **special contract fulfillment via a dedicated van** and **recurring Bills** according to Steam firsthand player reports; prior exclusion as "not in the reference" was incorrect.
 - Known historical numbers include 14 original Tier prices, four license prices/per-box bonuses, parcel-type unlocks, equipment costs, batch and delivery upgrades. All require source/date tags and current-version reconciliation.
 - Screenshot IMG_0181 has a past batch of 16 correctly submitted parcels, +$1,008 correct parcel value, -$5 handling charge, +$1,003 net, while the gate itself currently reads 1/16. **Never multiply summary 16 by active gate 1/16** or assume universal unit value.
 - Do NOT fabricate all weekday flags for Air/Maritime. Community guide specifically supports Road daily and Rail not on weekends. Country Calendar resets Monday in second warehouse per official news.
 - Contracts, dedicated contract van, bill generation, and submit-day eligibility should be included in domain/test planning. Unknown amounts/formulas remain [U], with pluggable test-only [P] values.
+
+
+## Unique document identifiers and latest 2026 correction
+- **There are 22 Markdown specification files**, not 15/16/17/19. Files with equal numeric prefixes are distinct; use full paths and unique IDs. Canonical: `SPEC-15` = 15_DOMAIN_CONTRACTS_AND_FIXTURES, `SPEC-15B` = 15_DOMAIN_CONTRACTS; `SPEC-16` = 16_2025_REFERENCE_NUMBERS, `SPEC-16B` = 16_ECONOMY_EXPORT_DEEP_RESEARCH; `SPEC-17` = 17_CROSS_SPEC_REVIEW, `SPEC-17B` = 17_2026_REFERENCE_VERIFICATION_AUDIT; `SPEC-18` = 18_EXPORT_REVENUE_RULE_RECONCILIATION.
+- `docs/data/reference_catalog_2026-10-26.json` is a **research catalog with source status and nulls**. It is **not production-approved economy settings**; do not blindly import without validation.
+- 2026 developer-thread report shows **regional gate 15/16 can be manually submitted**. An end-of-day bulk Clear Doors button is a separate in-development feature (as of Sep 25). Resolve any older FULL_ONLY contradictory statements in favor of SPEC-18.
+- Regional Sorting Centre purchase ~$500,000 is supported by achievement guide and player statements; Tier 18 unlocks 12 country gates (player report). Source statuses must be retained.
+- 2025 automatic exports can submit an incorrectly timed full gate: **AutoWhenFull is not an intelligent weekday limiter**. Do not auto-correct player mistakes.
+- Early player reports disagree about pre-stickered parcels sometimes being wrong due to bugs. Do not create random intentional invalid pre-stickers without an explicit evidence-backed rule. Test scanner/inventory race conditions separately.
