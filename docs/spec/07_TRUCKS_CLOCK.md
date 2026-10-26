@@ -102,3 +102,11 @@ QA-TRK-07 ヤード可視中は道路上で突然ワープしない。
 QA-TRK-08 FPS変動が搬送量/荷役レートを変えない。
 
 出典 S3=https://shippobox.com/archives/16245 / S2=https://steamcommunity.com/app/2424010/announcements/
+
+
+
+## 2026-10-26 時計・契約便の補正（SPEC-16）
+- 2025年のSteam実測で旧倉庫の9:00～17:00は現実約8分、つまり約1ゲーム分/現実1秒との観察。時計倍率はゲーム設定と時刻停止を考慮して検証する。
+- 旧倉庫の搬入口は5、全強化で各26便/日×7箱=182箱/日、全5ベイ=910箱/日という2026攻略者の計算。これらは2025バージョンや理想的な装置配置の参考上限であり、原作の確約最大値ではない。
+- 契約専用の`ContractVanRun`を追加する。契約が有効な状態で呼び出し、ContractPackageIdを積み、別操作で納品するため通常の`ParcelInbound`/Shop`Delivery`/一般の`OutboundPickup`と区別。確認先: https://steamcommunity.com/app/2424010/discussions/0/591777299172521111/
+- `ContractRunId, ContractId, ContractItemIds, CompletionEventId`を別管理し、車両演出のみで報酬を加算しない。一般のトラックと同じ道路モデルを使っても、論理便IDは別。
