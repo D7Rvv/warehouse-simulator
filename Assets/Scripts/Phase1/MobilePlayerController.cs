@@ -1,3 +1,5 @@
+#if WAREHOUSE_LEGACY_FREE_WALK
+// Historical walking prototype. This symbol is intentionally absent in all current profiles.
 using UnityEngine;
 
 namespace WarehouseSimulator.Phase1
@@ -99,3 +101,5 @@ namespace WarehouseSimulator.Phase1
         }
     }
 }
+
+#endif

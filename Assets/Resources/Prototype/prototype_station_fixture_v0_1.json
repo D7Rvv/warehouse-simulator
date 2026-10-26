@@ -1,0 +1,244 @@
+{
+  "schemaVersion": "prototype_station_fixture_v0.1",
+  "description": "S0/S1専用・Codexテスト用の例示データ。本番の原作再現値ではない。",
+  "prototypeOnly": true,
+  "promoteToProduction": false,
+  "sourceStatus": "P",
+  "mustNeverOverrideReferenceCatalog": true,
+  "gameplayAuthority": "read-only mock for S1, never used for financial persistence",
+  "world": {
+    "profileId": "ORIGINAL_PROTOTYPE",
+    "day": 1,
+    "weekday": "MON",
+    "time": "09:00",
+    "currencyUSD": 2500,
+    "currencySourceStatus": "P_DEMO_ONLY",
+    "tier": 0,
+    "simulationClockResetOnCameraChange": false,
+    "tickSeconds": 0.1,
+    "initialStation": "LOC-WAREHOUSE-OVERVIEW"
+  },
+  "ui": {
+    "orientation": "landscape",
+    "mode": "tap-station-navigation-no-player-walking",
+    "mainNavigation": [
+      "搬入",
+      "検査",
+      "仕分け",
+      "保管",
+      "出荷",
+      "倉庫",
+      "トラック",
+      "建設",
+      "ショップ",
+      "経営",
+      "契約"
+    ],
+    "stationTransitionMs": 120,
+    "sourceStatus": "P_UI",
+    "showPrototypeWatermark": true,
+    "autoCompleteParcelByMenu": false
+  },
+  "stations": [
+    {
+      "id": "LOC-WAREHOUSE-OVERVIEW",
+      "category": "Warehouse",
+      "cameraAnchor": "CAM_OVERVIEW",
+      "uiPanel": "PANEL_OVERVIEW",
+      "enabled": true
+    },
+    {
+      "id": "LOC-INBOUND-01",
+      "category": "Inbound",
+      "cameraAnchor": "CAM_INBOUND",
+      "uiPanel": "PANEL_INBOUND",
+      "enabled": true
+    },
+    {
+      "id": "LOC-INSPECTION-01",
+      "category": "Inspection",
+      "cameraAnchor": "CAM_INSPECTION",
+      "uiPanel": "PANEL_INSPECTION",
+      "enabled": true
+    },
+    {
+      "id": "LOC-EXPORT-AIR-01",
+      "category": "Export",
+      "cameraAnchor": "CAM_EXPORT_AIR",
+      "uiPanel": "PANEL_GATE",
+      "enabled": true
+    },
+    {
+      "id": "LOC-SORTING-01",
+      "category": "Sorting",
+      "cameraAnchor": "CAM_SORTING",
+      "uiPanel": "PANEL_SORTING",
+      "enabled": true
+    },
+    {
+      "id": "LOC-STORAGE-01",
+      "category": "Storage",
+      "cameraAnchor": "CAM_STORAGE",
+      "uiPanel": "PANEL_STORAGE",
+      "enabled": true
+    },
+    {
+      "id": "LOC-YARD-01",
+      "category": "Yard",
+      "cameraAnchor": "CAM_YARD",
+      "uiPanel": "PANEL_YARD",
+      "enabled": true
+    },
+    {
+      "id": "LOC-BUILD-01",
+      "category": "Build",
+      "cameraAnchor": "CAM_OVERVIEW",
+      "uiPanel": "PANEL_BUILD",
+      "enabled": true
+    },
+    {
+      "id": "LOC-SHOP",
+      "category": "Shop",
+      "cameraAnchor": "CAM_OVERVIEW",
+      "uiPanel": "PANEL_SHOP",
+      "enabled": true
+    },
+    {
+      "id": "LOC-ECONOMY",
+      "category": "Economy",
+      "cameraAnchor": "CAM_OVERVIEW",
+      "uiPanel": "PANEL_ECONOMY",
+      "enabled": true
+    },
+    {
+      "id": "LOC-CONTRACT",
+      "category": "Contract",
+      "cameraAnchor": "CAM_CONTRACT",
+      "uiPanel": "PANEL_CONTRACT",
+      "enabled": false,
+      "lockedReason": "契約システム未実装"
+    }
+  ],
+  "packages": [
+    {
+      "id": "DEV-PARCEL-001",
+      "owner": {
+        "kind": "TRUCK_CARGO",
+        "entityId": "DEV-RUN-001",
+        "slot": "01"
+      },
+      "visibleLabel": {
+        "cargo": "ROAD",
+        "countryName": "ALDEN",
+        "flagId": "FL-ALDEN"
+      },
+      "hiddenTruth": {
+        "cargoValid": true,
+        "countryValid": true
+      },
+      "massGrams": 4000,
+      "inspectionStatus": "NotStarted",
+      "onlyForTest": true
+    },
+    {
+      "id": "DEV-PARCEL-002",
+      "owner": {
+        "kind": "TRUCK_CARGO",
+        "entityId": "DEV-RUN-001",
+        "slot": "02"
+      },
+      "visibleLabel": {
+        "cargo": "AIR",
+        "countryName": "ALDEN",
+        "flagId": "FL-BERA"
+      },
+      "hiddenTruth": {
+        "cargoValid": true,
+        "countryValid": false
+      },
+      "massGrams": 5500,
+      "inspectionStatus": "NotStarted",
+      "onlyForTest": true
+    },
+    {
+      "id": "DEV-PARCEL-003",
+      "owner": {
+        "kind": "TRUCK_CARGO",
+        "entityId": "DEV-RUN-001",
+        "slot": "03"
+      },
+      "visibleLabel": {
+        "cargo": "AIR",
+        "countryName": "BERA",
+        "flagId": "FL-BERA"
+      },
+      "hiddenTruth": {
+        "cargoValid": true,
+        "countryValid": true
+      },
+      "massGrams": 6500,
+      "inspectionStatus": "NotStarted",
+      "onlyForTest": true
+    }
+  ],
+  "mockTruckRuns": [
+    {
+      "runId": "DEV-RUN-001",
+      "dockId": "DEV-DOCK-01",
+      "state": "DOCKED_VISUAL_SAMPLE",
+      "cargoParcelIds": [
+        "DEV-PARCEL-001",
+        "DEV-PARCEL-002",
+        "DEV-PARCEL-003"
+      ],
+      "note": "No road scheduling or physical unload logic in S1"
+    }
+  ],
+  "fakeExportGate": {
+    "gateId": "DEV-GATE-AIR-01",
+    "cargoMode": "AIR",
+    "maxCapacity": 16,
+    "currentBufferedCount": 1,
+    "capacityMeaning": "Screenshot demonstration only; actual gate limit is unknown",
+    "visualLastBatchSummary": {
+      "correctCount": 16,
+      "correctParcelValueUSD": 1008,
+      "incorrectCount": 0,
+      "incorrectParcelValueUSD": 0,
+      "handlingFeeUSD": 5,
+      "netUSD": 1003
+    },
+    "visualLastBatchSummarySource": "User screenshot IMG_0181, not the current buffer state",
+    "actualSubmitAllowed": false,
+    "actualMoneyMutationAllowed": false
+  },
+  "ghostConstruction": {
+    "equipmentTypeId": "DEV-STRAIGHT-BELT",
+    "gridPosition": {
+      "floor": 0,
+      "x": 2,
+      "z": 3
+    },
+    "rotationQuarterTurns": 0,
+    "flipped": false,
+    "validGhostColor": "blue-green",
+    "invalidGhostColor": "red",
+    "placementTransactionsEnabled": false,
+    "noCostOrInventoryMutation": true,
+    "exampleOccupiedCells": [
+      {
+        "floor": 0,
+        "x": 0,
+        "z": 0
+      }
+    ]
+  },
+  "cameraMockDoesNotModify": [
+    "packages",
+    "mockTruckRuns",
+    "fakeExportGate",
+    "world.currencyUSD",
+    "world.day",
+    "world.time"
+  ]
+}

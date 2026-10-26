@@ -1,0 +1,12 @@
+{
+  "description": "S0/S1 Japanese UI font subset; regenerate when adding characters.",
+  "source_family": "Noto Sans CJK JP",
+  "source_face": 0,
+  "license": "SIL Open Font License 1.1; WarehouseJapanese-LICENSE.txt",
+  "source_sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+  "fonttools_version": "4.61.1",
+  "characters_requested": 383,
+  "missing_codepoints": [],
+  "output_bytes": 209040,
+  "output_sha256": "96da286aaa268af9b407dc35971397800491226ece2e2983be8dfd1fcdee1d71"
+}

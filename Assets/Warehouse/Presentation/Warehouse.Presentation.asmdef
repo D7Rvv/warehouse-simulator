@@ -1,0 +1,12 @@
+{
+  "name": "Warehouse.Presentation",
+  "rootNamespace": "Warehouse.Presentation",
+  "references": [
+    "Warehouse.Domain",
+    "Warehouse.UI",
+    "Unity.InputSystem",
+    "UnityEngine.UI",
+    "Unity.RenderPipelines.Universal.Runtime"
+  ],
+  "autoReferenced": true
+}

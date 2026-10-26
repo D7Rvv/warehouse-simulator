@@ -1,0 +1,14 @@
+{
+  "name": "Warehouse.Editor",
+  "rootNamespace": "Warehouse.Editor",
+  "references": [
+    "Warehouse.Domain",
+    "Warehouse.UI",
+    "Warehouse.Presentation",
+    "Unity.RenderPipelines.Universal.Runtime"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "autoReferenced": true
+}

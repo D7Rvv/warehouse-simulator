@@ -1,0 +1,12 @@
+{
+  "assetId": "S1-ORIGINAL-PROCEDURAL-WAREHOUSE",
+  "sourceStatus": "P",
+  "prototypeOnly": true,
+  "promoteToProduction": false,
+  "owner": "Warehouse Simulator project",
+  "origin": "Original procedural geometry, seeded paper/concrete grain and text signs authored for Issue #1; no reference-game assets copied.",
+  "qualityReviewStatus": "blockout only; final art, URP appearance and phone performance NOT_RUN",
+  "grid": "[P] 1 Unity unit per preview cell; only the fixture occupied cell (0,0) contains a placed conveyor",
+  "lifecycle": "All sections, anchors and ghost geometry prepared once; visibility and transforms reused during station switching.",
+  "mobileNotes": "Shared instancing-enabled URP materials, cached renderer/collider visibility, no Rigidbody, no real-time shadows, one bounded transparent ghost; light/LOD/bake and device thermal validation still required."
+}

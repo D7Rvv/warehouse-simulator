@@ -1,0 +1,7 @@
+{
+  "name": "Warehouse.Domain",
+  "rootNamespace": "Warehouse.Domain",
+  "references": [],
+  "autoReferenced": true,
+  "noEngineReferences": true
+}

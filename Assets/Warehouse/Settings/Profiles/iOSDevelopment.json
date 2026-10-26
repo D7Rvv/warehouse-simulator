@@ -1,0 +1,26 @@
+{
+  "platform": "iOS",
+  "editor": "6000.3.27f1",
+  "developmentBuild": true,
+  "applicationIdentifier": "org.d7rvv.warehousesimulator",
+  "orientation": "Landscape",
+  "scriptingBackend": "IL2CPP",
+  "architecture": "ARM64",
+  "targetFPS": 30,
+  "sourceStatus": "P_TECHNICAL_DEFAULT",
+  "buildStatus": "NOT_RUN",
+  "deviceStatus": "NOT_RUN",
+  "thermal30Minutes": "NOT_RUN",
+  "signingConfigured": false,
+  "requiredModules": [
+    "iOS Build Support",
+    "macOS with Xcode for signing/build"
+  ],
+  "missing": [
+    "Unity Editor license",
+    "native module verification",
+    "device test",
+    "signing identity"
+  ],
+  "signingNote": "Exports an unsigned Xcode project; real Apple Team ID and macOS/Xcode signing are not configured."
+}
