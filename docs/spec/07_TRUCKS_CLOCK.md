@@ -110,3 +110,12 @@ QA-TRK-08 FPS変動が搬送量/荷役レートを変えない。
 - 旧倉庫の搬入口は5、全強化で各26便/日×7箱=182箱/日、全5ベイ=910箱/日という2026攻略者の計算。これらは2025バージョンや理想的な装置配置の参考上限であり、原作の確約最大値ではない。
 - 契約専用の`ContractVanRun`を追加する。契約が有効な状態で呼び出し、ContractPackageIdを積み、別操作で納品するため通常の`ParcelInbound`/Shop`Delivery`/一般の`OutboundPickup`と区別。確認先: https://steamcommunity.com/app/2424010/discussions/0/591777299172521111/
 - `ContractRunId, ContractId, ContractItemIds, CompletionEventId`を別管理し、車両演出のみで報酬を加算しない。一般のトラックと同じ道路モデルを使っても、論理便IDは別。
+
+
+
+## 2026-10-26 出荷トラックと日付の新しい根拠（SPEC-17B/18）
+- 2025年実測の「1入口26便/日」は自動ルートでの参考。**Pallet手動投入時48便/日**というコメントもあり、ゲーム内の絶対上限として26を固定しない。https://steamcommunity.com/sharedfiles/filedetails/?id=3509976176
+- 公式は2026年8月4日に**Shop配送トラックを空にしなくても就寝可能**へ修正。新作の睡眠ロジックもShop Truck空き必須にしない。
+- 旧倉庫/Regionalで出荷ゲートと物理回収トラックは独立。ManualSubmit / AutoWhenFull / EndOfDayClearAllも独立で、Submit後に車両が離れる表現は論理イベントに結び付けるが、送信時点の資金と車両出発時刻が同じとは未確認。
+- Regionalの15/16手動Submitは証言あり。2026-09のClear Doorsは別機能。[SPEC-18]
+- RegionalのCountryCalendarは月曜更新、固定モード切替可能。Denied出口がCountryCalendarに依存するかは元ゲームの開発者参加フォーラムに追加確認事項。[SPEC-18]
