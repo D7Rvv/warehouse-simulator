@@ -33,6 +33,8 @@
 | SPEC-17 | 17_CROSS_SPEC_REVIEW.md | 画面/ドメイン/時計/テスト間の技術矛盾解消 |
 | SPEC-17B | 17_2026_REFERENCE_VERIFICATION_AUDIT.md | **2026の公式更新・Tier18・$500k・機器・未確認の出典監査** |
 | SPEC-18 | 18_EXPORT_REVENUE_RULE_RECONCILIATION.md | **手動部分出荷・満杯時自動出荷・終業時Clear Doorsの相違、報酬の未確定式を整理** |
+| SPEC-19 | 19_DECISION_REGISTER_AND_SAFE_DEFAULTS.md | **原作未確認値を勝手に確定せず、こちらで補完できる技術仕様・UXを定義する判断ログ** |
+| SPEC-20 | 20_MOBILE_STATION_VERTICAL_SLICE.md | **次のCodex開発S0/S1の画面・操作・3D・タッチ・受入テスト** |
 
 データ定義: `docs/data/reference_catalog_2026-10-26.json`（価格54件、曜日Null、出典ステータス付きの**調査参考JSON**。製品版へ無審査で投入しない）。
 
@@ -95,7 +97,7 @@ New Regional Sorting Centre (2026-07): Expressの国別ルーティング、毎�
 - G6 時計に連動したトラック移動/荷役/出発＋倉庫2の国別仕分け。
 - G7 iOS/Androidの代表端末で30分以上測定、画質比較、Save/Load、事故系テストを通過。
 
-**現在の状態: 22本の設計Markdownと1つの出典付き数値JSONが存在。Unity実行・熱計測・原作全機能の現行照合は未完了。** Codexが開始前に「全部出来た」と言わないこと。
+**現在の状態: 本フォルダに24本の設計Markdownが存在。資料と実装方針は記録済みだが、Unity実行・熱計測・原作全機能の現行照合は未完了。** Codexが開始前に「全部出来た」と言わないこと。
 
 ## 仕様変更の手順
 1. 根拠と対象REQ/IDを特定。
@@ -119,3 +121,10 @@ SRC-PATCH https://steamdb.info/patchnotes/25526810/
 - 出荷の部分提出、誤曜日、自動化のルール: SPEC-18。
 - 収益式/契約/BillはSPEC-16B、未確認セルはSPEC-14。
 - Codexは本書に記した**一意の文書ID、フルパス、最新版ソース優先順位**を守る。
+
+## 次の実装段階 — 2026-10-26
+- **SPEC-19**で補完してよい事項と原作根拠を要する事項を分ける。
+- **SPEC-20**でスマホ向け3Dステーション移動S0/S1の受入条件を規定。
+- **Codexタスク:** `docs/tasks/CODEX_NEXT_S0_S1.md` / GitHub Issue #1 https://github.com/D7Rvv/warehouse-simulator/issues/1
+- **開発テスト用Fixture:** `docs/data/prototype_station_fixture_v0_1.json`。本番ゲームの経済や曜日の正解値とは一切混ぜない。
+- 最新のユーザー方針に従い、未確認の原作金額は調査継続しつつ、カメラ・UI・コンストラクションPreview等の独立部分は先行開発可。
