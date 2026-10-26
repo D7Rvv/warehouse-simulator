@@ -154,3 +154,23 @@ RUN-TRUCK-004: 実ゲーム時計に到着予定を2便設定、1ベイだけあ
 - **QA-PRG-NEW** 旧倉庫Tier14に到達するまでの費用合計$37100を2025歴史参考カタログの自動テストで検証。2026現行版パリティとは別テスト。
 
 全ての参考値は`SPEC-16`に記した出典番号と測定日時に紐付ける。
+
+
+
+## 2026-10-26 原作観測ルールを用いた追加必須テスト（SPEC-18）
+| TestID | 入力・条件 | 必要な判定 |
+|---|---|---|
+| QA-GATE-PARTIAL-01 | REGIONAL、容量16、箱15、手動Submit | **15件出荷できる**（2026-07のプレイヤー実例に相当）、Ledgerは一回 |
+| QA-GATE-PARTIAL-02 | ORIGINAL、箱1/16、手動Submit | プロファイルフラグによる仮実装。実機未確認のため結果は未検証扱い |
+| QA-GATE-AUTO-01 | 2025規則、Air等の非出荷曜日、箱満載、AutomaticExports有効 | **日付違いでも自動で送信し誤出荷となる可能性**を再現 |
+| QA-GATE-CLEAR-01 | 1箱入り複数ゲート、終業時 | 個別手動SubmitとBulkClearDoorsは別コマンド。Bulkは2026-09-25開発中で初期必須にしない |
+| QA-GATE-COUNTRY-01 | REGIONALのProgrammableGateにCountry A箱、投入後Country Bへ再設定、手動提出 | Submit時の国設定によって正否が評価される設定を検証 |
+| QA-GATE-DENY-01 | REGIONALのDeniedゲートでCalendar対象国未受付、箱15 | 正否とCountryCalendarの関係は原作実機確認まで未確定 |
+| QA-PRECHECK-01 | 既貼付シール入り正常箱を1000個 | シール状況とTruth独立、意図的な誤シール生成は現行証拠前に強制しない |
+| QA-CONTENTS-01 | 要開封だが禁制品なし / 要開封で禁制品あり | 要開封分岐と禁制品スキャナーの判定を区別 |
+| QA-BUILD-RACE-01 | スキャナ運転中に建設/Shopを操作 | 不適切な分岐や箱の所有重複が起きない |
+| QA-REGIONAL-TIER-01 | Tier14からRegional購入→Tier15..18進行 | $500k参考額、Tier18で全12ゲート、各TierのExpress条件は未実機数値に仮マスターを入れる |
+| QA-BILL-CYCLE-01 | ゲーム日を複数回飛ばしてBill受信 | 計算が未確定でもBill発行が再実行・二重請求にならない |
+| QA-MEMORY-01 | 1000論理箱で5回建設/撤去、1000回拠点カメラ切替 | 倉庫状態不変・発熱/CPU/GPU/メモリを実機で記録 |
+
+参照: https://steamcommunity.com/app/2424010/discussions/0/570418436974366307/ ・ https://steamcommunity.com/app/2424010/discussions/0/591774738110508320/ ・ https://steamcommunity.com/app/2424010/announcements/
