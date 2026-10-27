@@ -97,3 +97,12 @@ CRITICAL: 端末OSが危険域を通知した場合、安定保存を優先し�
 - **Unity Remoteでは実際の3D処理をPC側が実行するため、iPhoneの本来のFPS/GPU/発熱は評価できない**。温度/FPS検証にはiPhoneへネイティブアプリとしてインストールしProfilerで測定すること。
 - iOS実機向けネイティブビルドはWindows単独のUnity Editorだけでは完成できず、Mac/Xcodeまたはクラウドビルドの適切な署名・配布が必要。Unity Build AutomationはiOS対応 https://docs.unity.com/en-us/build-automation 。
 - iPhone 13 Pro Maxの実機評価が未開始の間は`TEST_NOT_RUN`を維持する。
+
+
+## 2026-10-27 現行Godot実装の性能方針
+
+Unityを使わない最新指示を反映し、現行ランタイムは `mobile/project.godot`（Godot4.6.3標準版／Compatibility）です。30fps上限、UIとは別の3D解像度、持続負荷15秒・変更後20秒待機・回復60秒の暫定制御を実装しました。3D高さの要求上限は省電力720／バランス900／高品質1080。これらは実機で確定した最適値ではありません。
+
+既定ではリアルタイム影、SSAO、SSR、MSAAを使いません。8点の独自GLBは材質別に結合し、区画カリング・再利用・小範囲の静的接地影を用います。斜めエッジのエイリアシング、最終照明・LOD・材質の磨き込みは画質予算内で引き続き確認します。
+
+OSの温度センサー連携は未実装です。診断は実フレーム間隔と注入値を区別し、熱状態をUNKNOWNとして扱います。CRITICALの注入試験では操作停止・5fps制限、背景では描画・計測停止を確認しましたが、iPhoneの熱を実測した結果ではありません。代表端末の30分以上の受入はNOT_RUNです。

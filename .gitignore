@@ -1,0 +1,39 @@
+# Unity-generated state (case variants included).
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Bb]uilds/
+/[Bb]uild/
+/MemoryCaptures/
+/Recordings/
+.vs/
+.idea/
+*.csproj
+*.sln
+*.suo
+*.user
+*.pidb
+*.booproj
+*.svd
+*.pdb
+# Prior experiment caches are retained locally, never part of the Unity project.
+/.godot/
+__pycache__/
+*.pyc
+# Signing/activation material must never enter source control.
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
+*.ulf
+.env
+.env.*
+
+# Active native Godot station project (user-approved Unity removal).
+/mobile/.godot/
+/mobile/builds/
+/mobile/art/*.blend
+/mobile/art/*.blend1

@@ -1,5 +1,16 @@
 # Developer / Codex instructions — Warehouse Simulator
 
+## Current engine decision — 2026-10-27 (latest user instruction)
+- The user explicitly changed direction to **no Unity**, with smooth phone operation and heat taking priority over extra visual effects.
+- The active implementation is **Godot 4.6.3 standard**, `mobile/project.godot`; it has no Unity, .NET or Blender runtime dependency. Godot is a [P] implementation choice; native iOS/Android, station taps, no walking and domain invariants remain [D].
+- Earlier Unity setup and the Unity S0/S1 PR are historical work. Do not restore the earlier Godot free-walk/campaign experiment or use Unity as the current build path.
+- Use `mobile/tools/check.sh`, `mobile/tools/render.sh`, `mobile/tools/package.py` and the current README. New migration/evidence: `docs/implementation/GODOT_MIGRATION_DECISION.md` and `GODOT_VISUAL_CHECKLIST.md`.
+- Default rendering cap30fps; 60fps needs explicit device verification. OS thermal sensing is unavailable, so injected thermal hints and desktop Mesa timing must never be called phone thermal measurements.
+- The first known phone is iPhone13ProMax (iOS unknown), developer PC IntelHD630/i7-7700/16GB. Their real performance remains unverified.
+- The user declined public Web hosting. Do not restore GitHub Pages game publication without a new explicit instruction. Source commits/review branches remain authorized.
+- Engine-specific Unity requirements below are superseded by this decision; gameplay, ownership, fixture isolation and original-art requirements remain in force.
+
+
 ## Source of truth
 1. Read `docs/spec/00_MASTER_INDEX.md` first (project constraints, status tags, requirements, phase gates).
 2. Read `docs/spec/01_REFERENCE_PARITY.md` (feature trace, evidence and date).

@@ -1,0 +1,48 @@
+{
+  "status": "PASS_IN_CAPTURED_DISPLAY_SCOPE",
+  "scope": "manual_review_of_actual_exported_linux_pixels_not_phone_or_reference_acceptance",
+  "observations": [
+    "Overview warehouse and Japanese HUD visible",
+    "Inbound view has truck interior and three parcels",
+    "Inspection view has bench, parcel and matching Japanese controls",
+    "Build view has green translucent conveyor and preview-only description"
+  ],
+  "captures": [
+    {
+      "file": "overview.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "c34bddef77412c41a0bce21a905614b0819fe29309436c22d7b1d4be37553b38",
+      "world_region_sha256": "bbfdd0a60fcd784206bef3288647222289032c817d282e3b309049d77d204428",
+      "sampled_color_count": 3549
+    },
+    {
+      "file": "inbound.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "04afa2ce26445b13f0c5707d3350ae7235a9555db12324607ee0b8cbff585f0d",
+      "world_region_sha256": "4937ef033958ddf3abe0800650e41591b2268a2f0e868d935d04d9e007b37479",
+      "sampled_color_count": 2877
+    },
+    {
+      "file": "inspection.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "5f8b9afebbea6c9717b47f6334f36728a3a762067ecbf5db03eb20d514f9cf84",
+      "world_region_sha256": "0d65b77168de13dcbb3972392b1551658decab4a6b33dfce9df36ac9570e0f03",
+      "sampled_color_count": 3216
+    },
+    {
+      "file": "build.png",
+      "width": 1280,
+      "height": 720,
+      "sha256": "8a4fdfeb7786cfe526a6e2e6a1040e530cdd0eae80949e4a156a10d3507bef73",
+      "world_region_sha256": "7cfd577d8a60e80f366bd46b560ec67368c3d5d072432c7276e38d024d2d396d",
+      "sampled_color_count": 3601
+    }
+  ],
+  "executable_sha256": "a7ddeec41c5bc05ca649ea6f0a857d05e6d87768b9d94ceb18703907747a78ff",
+  "runtime_export_source_hashes_match_current_source": true,
+  "official_equivalent_quality": "NOT_RUN",
+  "phone_thermal": "NOT_RUN"
+}

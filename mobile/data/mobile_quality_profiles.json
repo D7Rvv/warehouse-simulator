@@ -1,0 +1,72 @@
+{
+  "schema_version": "warehouse.mobile_quality.v1",
+  "source_status": "P_TECHNICAL_BUDGET_NOT_DEVICE_MEASUREMENT",
+  "description": "Mobile-first provisional rendering budgets. Actual iPhone/Android FPS, energy and thermal acceptance remain NOT_RUN.",
+  "initial_profile": "balanced",
+  "default_frame_limit": 30,
+  "frame_limit_60_requires_explicit_device_verification": true,
+  "adaptive": {
+    "minimum_relative_scale": 0.66,
+    "absolute_scale_floor": 0.33,
+    "scale_step": 0.08,
+    "evaluation_interval_seconds": 5.0,
+    "minimum_frame_samples": 90,
+    "overload_p95_ms": 36.5,
+    "overload_hold_seconds": 15.0,
+    "recovery_p95_ms": 34.5,
+    "recovery_hold_seconds": 60.0,
+    "change_cooldown_seconds": 20.0
+  },
+  "profiles": {
+    "battery_saver": {
+      "display_name": "省電力",
+      "base_scale": 0.72,
+      "max_3d_height": 720,
+      "max_fps": 30,
+      "detail_density": 0.65,
+      "realtime_shadows": false,
+      "ssao": false,
+      "ssr": false,
+      "msaa_3d": 0
+    },
+    "balanced": {
+      "display_name": "バランス",
+      "base_scale": 0.85,
+      "max_3d_height": 900,
+      "max_fps": 30,
+      "detail_density": 0.85,
+      "realtime_shadows": false,
+      "ssao": false,
+      "ssr": false,
+      "msaa_3d": 0
+    },
+    "high": {
+      "display_name": "高品質",
+      "base_scale": 1.0,
+      "max_3d_height": 1080,
+      "max_fps": 30,
+      "detail_density": 1.0,
+      "realtime_shadows": false,
+      "ssao": false,
+      "ssr": false,
+      "msaa_3d": 0
+    }
+  },
+  "thermal": {
+    "sensor_backend": "NOT_IMPLEMENTED",
+    "initial_state": "UNKNOWN",
+    "fps_is_not_temperature": true,
+    "critical_requests_pause": true,
+    "critical_foreground_frame_limit": 5
+  },
+  "diagnostics": {
+    "frame_ring_capacity": 1800,
+    "history_capacity": 720,
+    "history_interval_seconds": 5.0,
+    "frame_metric": "wall-clock interval between process callbacks, including deliberate FPS limiting; not CPU or GPU execution time",
+    "render_scale_metric": "requested Viewport 3D scale; exact GPU framebuffer dimensions require renderer/device verification",
+    "thermal_30_minutes": "NOT_RUN",
+    "first_ios_test_device": "iPhone 13 Pro Max (iOS version not yet recorded)",
+    "android_test_device": "NOT_SELECTED"
+  }
+}

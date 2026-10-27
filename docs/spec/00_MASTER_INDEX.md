@@ -1,6 +1,10 @@
 # Warehouse Simulator — 実装用設計書 目次・仕様統制
 文書ID: SPEC-00 / 版: 0.5 / 設計基準: 2026-10-26 / ステータス: **設計レビュー中（未確認事項の実機照合前）**
 
+## 現行エンジンの変更 — 2026-10-27
+
+最新のユーザー指示「Unityなし」「スマホの熱・滑らかさを優先」に従い、現行実装をGodot4.6.3標準版の `mobile/` へ移しました。以下のUnity固有の工程・APIは過去のバックエンド条件で、現在はGodotで検証します。ネイティブiOS／Android、自由歩行なし、元作品の未確認数値を捏造しない制約は変更しません。[移行記録](../implementation/GODOT_MIGRATION_DECISION.md)と[3D確認表](../implementation/GODOT_VISUAL_CHECKLIST.md)を優先してください。
+
 ## 目的
 スマートフォン（iOS/Android）向け高品質3D物流倉庫ゲームを、Codexが誤読せず段階的に開発する。参考作品はDansan Digital『Parcel Simulator』。自由歩行は廃止し、ステーションをボタンやタップで切替。検査・出荷・設備の手作業から自動化へ進む遊びを保つ。トラックの道路進入→接車→積卸→出発は独自拡張。
 

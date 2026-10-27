@@ -1,0 +1,89 @@
+{
+  "schema_version": "warehouse.native_targets.v1",
+  "document_kind": "planning_manifest_not_a_godot_export_preset",
+  "source_status": "P_TECHNICAL_DEFAULT",
+  "engine": {
+    "name": "Godot",
+    "version": "4.6.3",
+    "edition": "standard",
+    "unity_required": false,
+    "native_export_validated": false
+  },
+  "application_identifier": {
+    "value": "org.d7rvv.warehousesimulator.stationdemo",
+    "status": "PROVISIONAL_NOT_CONFIGURED_FOR_EXPORT",
+    "purpose": "Separate the station demonstration from the earlier economy-game application and its save/signing identity."
+  },
+  "presentation_targets": {
+    "orientation": "landscape",
+    "default_frame_limit": 30,
+    "optional_60fps_enabled": false,
+    "priority": ["sustained_smoothness", "phone_thermal_load", "visual_quality"],
+    "renderer_candidate": "gl_compatibility",
+    "renderer_native_validation": "NOT_RUN",
+    "minimum_supported_device": "UNDECIDED"
+  },
+  "thermal": {
+    "native_sensor_backend": "NOT_IMPLEMENTED",
+    "sensor_available": false,
+    "frame_rate_is_not_a_temperature_sensor": true,
+    "injected_hint_tests_are_hardware_measurements": false,
+    "physical_30_minute_acceptance": "NOT_RUN"
+  },
+  "known_development_pc": {
+    "source": "docs/development/LOCAL_PC_SPECS_2026-10-28.md",
+    "cpu": "Intel Core i7-7700 @ 3.60GHz",
+    "memory_gb": 16,
+    "gpu": "Intel HD Graphics 630",
+    "os": "Windows; exact version unrecorded",
+    "station_build_on_this_pc": "NOT_RUN",
+    "performance_is_not_phone_evidence": true
+  },
+  "platforms": {
+    "iOS": {
+      "target": "native",
+      "first_test_device": "iPhone 13 Pro Max",
+      "ios_version": "UNKNOWN",
+      "sdk_validation": "NOT_RUN",
+      "export_configuration_review": "NOT_RUN",
+      "native_build": "NOT_RUN",
+      "signing_validation": "NOT_RUN",
+      "physical_installation": "NOT_RUN",
+      "physical_execution": "NOT_RUN",
+      "fps_memory_energy_measurement": "NOT_RUN",
+      "thermal_30_minutes": "NOT_RUN",
+      "required_tools": [
+        "Godot 4.6.3 standard and matching verified export templates",
+        "macOS, supported Xcode and iPhoneOS SDK",
+        "Real Apple signing identity and provisioning configuration",
+        "An available iPhone and USB/device development setup"
+      ]
+    },
+    "Android": {
+      "target": "native",
+      "first_test_device": "NOT_SELECTED",
+      "android_version": "UNKNOWN",
+      "sdk_validation": "NOT_RUN",
+      "export_configuration_review": "NOT_RUN",
+      "native_build": "NOT_RUN",
+      "signing_validation": "NOT_RUN",
+      "physical_installation": "NOT_RUN",
+      "physical_execution": "NOT_RUN",
+      "fps_memory_energy_measurement": "NOT_RUN",
+      "thermal_30_minutes": "NOT_RUN",
+      "required_tools": [
+        "Godot 4.6.3 standard and matching verified export templates",
+        "JDK, Android SDK/NDK/build tools checked against the Godot 4.6.3 requirements",
+        "Explicit development/release signing configuration kept outside source control",
+        "An available physical Android device and adb/USB development setup"
+      ]
+    }
+  },
+  "delivery_limits": {
+    "preset_created_by_this_manifest": false,
+    "sdk_or_signing_secrets_included": false,
+    "existing_app_upgrade_or_save_migration_promised": false,
+    "desktop_rendering_is_native_phone_validation": false,
+    "store_submission": "NOT_RUN"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "version": 1,
+  "generator": "art/generate_assets.py",
+  "blender_version": "4.3.2",
+  "source_status": "P_ORIGINAL_ART",
+  "reference_match_verified": false,
+  "source": "Original procedural meshes and seeded textures, authored from written industrial design requirements. No reference-game assets or photographs used.",
+  "dimensions": "Prototype engineering estimates in meters; not a measured real vehicle or a reference-game extraction.",
+  "license": "Original generated project art; no external image or mesh content.",
+  "quality_status": "Generated and exported; Godot multi-view rendering and phone quality/performance acceptance are separate.",
+  "mobile_design": [
+    "Merged by material per prop",
+    "No skinned meshes or per-prop Rigidbody",
+    "Opaque metal-bar safety guards instead of stacked alpha fencing",
+    "Shared named materials across props",
+    "512x512 original texture maps",
+    "Transparent construction proxy generated separately at runtime"
+  ],
+  "models": {
+    "warehouse_shell": {
+      "file": "assets/models/warehouse_shell.glb",
+      "triangles": 5308,
+      "merged_meshes": 12,
+      "estimated_material_surfaces": 12,
+      "bytes": 1003040,
+      "sha256": "11f86c8bd9c45878d368cc1bedf2b9758948fc3713bf856e27bcea805870a139",
+      "blender_bounds_min": [
+        -8.300000190734863,
+        -7.300000190734863,
+        -0.2199999988079071
+      ],
+      "blender_bounds_max": [
+        8.300000190734863,
+        14.75,
+        6.448235511779785
+      ],
+      "runtime_axes": "glTF Y-up, -Z into prop; camera looks from +Z",
+      "pivot": "ground center; truck rear opening at z0, extends -Z"
+    },
+    "truck": {
+      "file": "assets/models/truck.glb",
+      "triangles": 4344,
+      "merged_meshes": 9,
+      "estimated_material_surfaces": 9,
+      "bytes": 870276,
+      "sha256": "b0d8022dde2277b9af09b5fb63a04a8ec7e40557fa58daaff696c20927e7ea0e",
+      "blender_bounds_min": [
+        -1.4282599687576294,
+        -0.31999993324279785,
+        0.0010000001639127731
+      ],
+      "blender_bounds_max": [
+        1.4282599687576294,
+        7.119999885559082,
+        3.700000047683716
+      ],
+      "runtime_axes": "glTF Y-up, -Z into prop; camera looks from +Z",
+      "pivot": "ground center; truck rear opening at z0, extends -Z"
+    },
+    "inspection_bench": {
+      "file": "assets/models/inspection_bench.glb",
+      "triangles": 2696,
+      "merged_meshes": 8,
+      "estimated_material_surfaces": 8,
+      "bytes": 475904,
+      "sha256": "e4263bd4c2eb19d69907a931c8b103165a594608f0fea8e140bd4fbb6fc0e702",
+      "blender_bounds_min": [
+        -1.4249999523162842,
+        -0.6449999809265137,
+        0.0
+      ],
+      "blender_bounds_max": [
+        1.4249999523162842,
+        0.625,
+        1.8199999332427979
+      ],
+      "runtime_axes": "glTF Y-up, -Z into prop; camera looks from +Z",
+      "pivot": "ground center; truck rear opening at z0, extends -Z"
+    },
+    "conveyor": {
+      "file": "assets/models/conveyor.glb",
+      "triangles": 2268,
+      "merged_meshes": 7,
+      "estimated_material_surfaces": 7,
+      "bytes": 742272,
+      "sha256": "9b8c8a0ef5cad2e5b5cc88c6db89b602482f5cd08d5a8f324ad3662040bb8eec",
+      "blender_bounds_min": [
+        -0.4899999797344208,
+        -0.5,
+        0.0
+      ],
+      "blender_bounds_max": [
+        0.5,
+        0.5,
+        0.9589999914169312
+      ],
+      "runtime_axes": "glTF Y-up, -Z into prop; camera looks from +Z",
+      "pivot": "ground center; truck rear opening at z0, extends -Z"
+    },
+    "export_gate": {
+      "file": "assets/models/export_gate.glb",
+      "triangles": 4148,
+      "merged_meshes": 9,
+      "estimated_material_surfaces": 9,
+      "bytes": 864716,
+      "sha256": "3577629611b0ac6cf84e2e6f9a5dc232154b1634f8837b310b72070b2d4c2b6f",
+      "blender_bounds_min": [
+        -1.7000000476837158,
+        -1.024999976158142,
+        -3.725290298461914e-09
+      ],
+      "blender_bounds_max": [
+        1.7000000476837158,
+        1.1400001049041748,
+        3.674999952316284
+      ],
+      "runtime_axes": "glTF Y-up, -Z into prop; camera looks from +Z",
+      "pivot": "ground center; truck rear opening at z0, extends -Z"
+    },
+    "rack": {
+      "file": "assets/models/rack.glb",
+      "triangles": 2324,
+      "merged_meshes": 6,
+      "estimated_material_surfaces": 6,
+      "bytes": 450024,
+      "sha256": "23b2c091126798dd9474f47b3340af32bd144594995a108b307b840373f4f390",
+      "blender_bounds_min": [
+        -1.4149999618530273,
+        -0.5949999690055847,
+        0.0
+      ],
+      "blender_bounds_max": [
+        1.4149999618530273,
+        0.5949999094009399,
+        3.200000047683716
+      ],
+      "runtime_axes": "glTF Y-up, -Z into prop; camera looks from +Z",
+      "pivot": "ground center; truck rear opening at z0, extends -Z"
+    },
+    "pallet": {
+      "file": "assets/models/pallet.glb",
+      "triangles": 1944,
+      "merged_meshes": 1,
+      "estimated_material_surfaces": 1,
+      "bytes": 137324,
+      "sha256": "dfa4458a4286563872bebacc6f85fb87cb2fc069449d27b96d453e9e7ccc410b",
+      "blender_bounds_min": [
+        -0.4000000059604645,
+        -0.6000000238418579,
+        0.0
+      ],
+      "blender_bounds_max": [
+        0.4000000059604645,
+        0.6000000238418579,
+        0.1574999988079071
+      ],
+      "runtime_axes": "glTF Y-up, -Z into prop; camera looks from +Z",
+      "pivot": "ground center; truck rear opening at z0, extends -Z"
+    },
+    "parcel": {
+      "file": "assets/models/parcel.glb",
+      "triangles": 780,
+      "merged_meshes": 5,
+      "estimated_material_surfaces": 5,
+      "bytes": 362792,
+      "sha256": "6472978b74fb366db1e8ddd309d9c34c4e45972e732b15d7dd7a043e02e2bf43",
+      "blender_bounds_min": [
+        -0.3100000023841858,
+        -0.2492000013589859,
+        0.0
+      ],
+      "blender_bounds_max": [
+        0.3100000023841858,
+        0.24650000035762787,
+        0.45899999141693115
+      ],
+      "runtime_axes": "glTF Y-up, -Z into prop; camera looks from +Z",
+      "pivot": "ground center; truck rear opening at z0, extends -Z"
+    }
+  },
+  "unique_model_triangles": 23812,
+  "model_bytes": 4906348,
+  "textures": {
+    "blue_steel_albedo.png": {
+      "bytes": 151349,
+      "sha256": "20301968a0f8bd12aae059801538331f446f5cbc7138b14282d3f0b1cd78a296"
+    },
+    "blue_steel_roughness.png": {
+      "bytes": 75190,
+      "sha256": "7e029c58cc6847151bd8735f5d03df81707bf5987940f1d3db462e1b47be4b37"
+    },
+    "concrete_albedo.png": {
+      "bytes": 187390,
+      "sha256": "d6c423d1670ad691d01746a78501d0aeedb5d9a284040cabfd2eb96a01a62601"
+    },
+    "concrete_roughness.png": {
+      "bytes": 98416,
+      "sha256": "cb529687c94226d843176b4766432d9362a235abbf1e16e7bb3c59de7e1cf578"
+    },
+    "kraft_albedo.png": {
+      "bytes": 162115,
+      "sha256": "941278d5b59bd2baa421f2634123ca532b27dd43cfed941ea0bfb69060dcd755"
+    },
+    "kraft_roughness.png": {
+      "bytes": 74738,
+      "sha256": "6d5fa4be5d83d39ebf9dda543c8154ccf1beb91784e81ff03237f9ae840b6713"
+    },
+    "rubber_albedo.png": {
+      "bytes": 146116,
+      "sha256": "6683b1e67428d6c8f5e6e424ca12ef59809d5cd15959636cb42bf141b6517c3b"
+    },
+    "rubber_roughness.png": {
+      "bytes": 70367,
+      "sha256": "97a9e78ad3c5288a465216e87038bf6964b0069e281981b44ecfe59797c1df1b"
+    }
+  },
+  "text_font": "Blender built-in Bfont shapes; sign text/layout original, no reference-game typography copied.",
+  "camera_cutaway": "warehouse_shell: CutawayRightWall node / CUTAWAY_RIGHT_ mesh prefix contains right wall, plinth and supports; hide only overview/build, keep close-view enclosure."
+}
