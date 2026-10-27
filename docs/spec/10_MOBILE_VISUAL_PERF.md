@@ -86,3 +86,14 @@ CRITICAL: 端末OSが危険域を通知した場合、安定保存を優先し�
 - Apple熱通知: https://developer.apple.com/documentation/xcode/responding-to-power-notifications
 - Android Thermal API: https://developer.android.com/games/optimize/adpf/thermal
 - 原作開発者による2026-07-30最適化: https://steamcommunity.com/app/2424010/announcements/
+
+
+## 2026-10-27 追加：iOSで使用できる最初の実機
+- **所有テスト端末：[D] iPhone 13 Pro Max**。Apple A15 Bionic（5コアGPU）、6.7インチOLED、2778×1284、最大120Hz ProMotion。公式仕様 https://support.apple.com/ja-jp/111870
+- この端末を最初のiOS実機テストに使う。**製品の最低対応端末をiPhone 13 Pro Maxに限定すると決めたわけではない**。Android実機は未確定。
+- 通常描画ターゲット30fps（暫定[P]）、60fpsは端末実測後のオプションとする。30分以上のフレーム時間p95/p99、熱状態、メモリ/バッテリー消費を記録。最大120Hzディスプレイは60/120fpsを常時保証しない。
+- Windows PCにUnity Editor 6000.0.56f1（LTS/Android module）と6000.2.1f1（Windows module）のインストールが確認されている。選ぶUnityプロジェクトのバージョンは統一すること。
+- **操作テスト**はUnity Remote 5 + USB接続で実行できる可能性がある。WindowsではiTunesの導入・USB接続/信頼設定を要する（Unity公式 https://docs.unity.com/en-us/engine/6000.6/manual/platform-specific/cross-platform-features/unity-remote5）。
+- **Unity Remoteでは実際の3D処理をPC側が実行するため、iPhoneの本来のFPS/GPU/発熱は評価できない**。温度/FPS検証にはiPhoneへネイティブアプリとしてインストールしProfilerで測定すること。
+- iOS実機向けネイティブビルドはWindows単独のUnity Editorだけでは完成できず、Mac/Xcodeまたはクラウドビルドの適切な署名・配布が必要。Unity Build AutomationはiOS対応 https://docs.unity.com/en-us/build-automation 。
+- iPhone 13 Pro Maxの実機評価が未開始の間は`TEST_NOT_RUN`を維持する。
