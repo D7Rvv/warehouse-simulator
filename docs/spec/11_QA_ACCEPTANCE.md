@@ -174,3 +174,11 @@ RUN-TRUCK-004: 実ゲーム時計に到着予定を2便設定、1ベイだけあ
 | QA-MEMORY-01 | 1000論理箱で5回建設/撤去、1000回拠点カメラ切替 | 倉庫状態不変・発熱/CPU/GPU/メモリを実機で記録 |
 
 参照: https://steamcommunity.com/app/2424010/discussions/0/570418436974366307/ ・ https://steamcommunity.com/app/2424010/discussions/0/591774738110508320/ ・ https://steamcommunity.com/app/2424010/announcements/
+
+## 2026-10-28 プレイヤーの0.5/10評価を受けた追加品質ゲート（SPEC-21優先）
+- **PLAY-001..010**（起動目的→Truckから実BoxId取得→InspectionTableへ実配置→Cargo/Country照合→決定シール→Gateへ実配置→Submission→Ledger→結果UI→やり直し）を`docs/spec/21_PLAYABLE_FIRST_SESSION_QUALITY_GATE.md`に追加。
+- **ART-PLAY-01..04**（入荷、検査、出荷の3D視覚品質とBefore/After評価）を追加。既存仮シーンの3D描画の成功は**ART_PASSではない**。
+- **PERF-PLAY-01**（iPhone 13 Pro Maxのネイティブ30分/熱/FPS/メモリ）を追加。Unity Remoteの映像はネイティブ性能の合否に用いない。
+- **PLAYER-QUALITY-001**：ユーザー評価0.5/10は`USER_REJECTED`。再レビューの前に視覚・遊び・初回ガイドの3ゲートを個別に改善、各画面の証拠画像や初回1箱の通し動画を提示する。
+- 2026-10-28時点でユーザーが試遊した方式は未確認。端末ベンチマーク実施済みと偽らない。
+- P0優先Issue: https://github.com/D7Rvv/warehouse-simulator/issues/3
