@@ -1,0 +1,19 @@
+{
+  "delivery": "public_https_safari_review",
+  "source_commit": "8ce838d31bc7fef21c16d524c9bbba8c91e548d7",
+  "engine": "Godot 4.6.3 standard",
+  "scope": "S0_S1_readonly_station_controls_not_full_logistics_game",
+  "html_bytes": 54880781,
+  "html_sha256": "c044ee39357dd1b05010f0d7b9a2c2d9992d9e8c52c053b55fd5a63bc2d2170b",
+  "url": "https://d7rvv.github.io/warehouse-simulator/",
+  "verification": {
+    "desktop_webkit_file": "9/9 PASS",
+    "chromium_loopback_touch": "62/62 PASS",
+    "godot_headless": "86/86 PASS",
+    "iphone_hardware": "NOT_RUN",
+    "phone_thermal_and_fps": "NOT_RUN"
+  },
+  "publication_authorization": "2026-10-28 user explicitly approved public Safari URL after earlier refusal",
+  "client_program_visibility": "Browser payload is downloadable; publication does not grant repository write permissions",
+  "known_copy": "Start screen retains local-review name and Scriptable fallback error text; identical tested payload is used"
+}
