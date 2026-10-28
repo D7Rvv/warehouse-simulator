@@ -1,0 +1,35 @@
+{
+  "scope": "Actual licensed Editor startup attempts; no compilation or TestRunner executed",
+  "attempts": [
+    {
+      "task": "validate",
+      "editor": "6000.3.27f1",
+      "status": "NOT_RUN",
+      "log": "Builds/Validation/validate.log",
+      "timestamp": "2026-10-26T09:27:47.018311+00:00",
+      "native_device_tested": false,
+      "exit_code": 198,
+      "reason": "Unity Editor license unavailable; compilation/TestRunner/native export did not execute."
+    },
+    {
+      "task": "editmode",
+      "editor": "6000.3.27f1",
+      "status": "NOT_RUN",
+      "log": "Builds/Validation/editmode.log",
+      "timestamp": "2026-10-26T09:30:59.586702+00:00",
+      "native_device_tested": false,
+      "exit_code": 198,
+      "reason": "Unity Editor license unavailable; compilation/TestRunner/native export did not execute."
+    },
+    {
+      "task": "playmode",
+      "editor": "6000.3.27f1",
+      "status": "NOT_RUN",
+      "log": "Builds/Validation/playmode.log",
+      "timestamp": "2026-10-26T09:31:00.696818+00:00",
+      "native_device_tested": false,
+      "exit_code": 198,
+      "reason": "Unity Editor license unavailable; compilation/TestRunner/native export did not execute."
+    }
+  ]
+}

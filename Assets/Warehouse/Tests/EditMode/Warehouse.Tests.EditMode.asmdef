@@ -1,0 +1,7 @@
+{
+  "name": "Warehouse.Tests.EditMode",
+  "references": ["Warehouse.Domain", "Warehouse.Presentation", "Warehouse.UI", "UnityEngine.UI"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "autoReferenced": false
+}

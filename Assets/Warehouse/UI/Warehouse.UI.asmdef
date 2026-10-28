@@ -1,0 +1,10 @@
+{
+  "name": "Warehouse.UI",
+  "rootNamespace": "Warehouse.UI",
+  "references": [
+    "Warehouse.Domain",
+    "Unity.InputSystem",
+    "UnityEngine.UI"
+  ],
+  "autoReferenced": true
+}

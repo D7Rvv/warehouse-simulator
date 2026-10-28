@@ -1,0 +1,26 @@
+{
+  "platform": "Android",
+  "editor": "6000.3.27f1",
+  "developmentBuild": true,
+  "applicationIdentifier": "org.d7rvv.warehousesimulator",
+  "orientation": "Landscape",
+  "scriptingBackend": "IL2CPP",
+  "architecture": "ARM64",
+  "targetFPS": 30,
+  "sourceStatus": "P_TECHNICAL_DEFAULT",
+  "buildStatus": "NOT_RUN",
+  "deviceStatus": "NOT_RUN",
+  "thermal30Minutes": "NOT_RUN",
+  "signingConfigured": false,
+  "requiredModules": [
+    "Android Build Support, SDK/NDK/OpenJDK"
+  ],
+  "missing": [
+    "Unity Editor license",
+    "native module verification",
+    "device test",
+    "signing identity"
+  ],
+  "minSdkVersion": 26,
+  "targetSdkVersion": 36
+}

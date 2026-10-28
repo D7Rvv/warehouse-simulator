@@ -1,0 +1,158 @@
+{
+  "kind": "external_real_reference_csharp_check",
+  "status": "PASS",
+  "unity_editor_import_executed": false,
+  "native_build_executed": false,
+  "reference_editor": "6000.3.27f1",
+  "reference_package_versions": {
+    "com.unity.inputsystem": "1.8.1",
+    "com.unity.render-pipelines.universal": "17.0.1",
+    "com.unity.ugui": "2.0.0"
+  },
+  "pinned_package_versions_validated": false,
+  "limitation": "Cached official template package DLLs predate manifest pins (InputSystem1.17.0/URP17.3.0). This additional source/type check is not a licensed Unity compile, TestRunner, player build, or asset/shader validation.",
+  "assemblies": [
+    {
+      "assembly": "Warehouse.Domain",
+      "sources": {
+        "Assets/Warehouse/Domain/MobileStationRegistry.cs": "3e7d58015d9ae314e6a9766d947fc048c7f55ad4dc21b099b1971430e0159628",
+        "Assets/Warehouse/Domain/PlacementPreview.cs": "436a909024d7cf1ad482e3d8b050f00a5c1bfbd5b8e00cb229d0209c13d677d9",
+        "Assets/Warehouse/Domain/PrototypeFixtureData.cs": "2d24ad27c0d9007fabef82d7a7674b98451786ae2466d59a8cf8c6c5ee138ea0",
+        "Assets/Warehouse/Domain/ReadOnlyMockWorld.cs": "03fc351f13a66a989894b947d3f2218b6c261254527b8cb3139a8aa3151d78e3"
+      }
+    },
+    {
+      "assembly": "Warehouse.UI",
+      "sources": {
+        "Assets/Warehouse/UI/GuardedMobileButton.cs": "47acf847b4311648eabf1094b43c0153b974a23fd8c0ddd92da30f95b0778d95",
+        "Assets/Warehouse/UI/WarehouseHud.cs": "79d208f08349f10144c8ebd98d4ebe3a8a303232fd96461590fcb89dc2a03fb0"
+      }
+    },
+    {
+      "assembly": "Warehouse.Presentation",
+      "sources": {
+        "Assets/Warehouse/Presentation/Diagnostics/MobileQualityDiagnostics.cs": "0c091f93cd0792115e72aa9de7ebcd672e2c07cf94d60f960df2183b8ebef6d0",
+        "Assets/Warehouse/Presentation/Input/MobileInputRouter.cs": "6fdb37beed795e1bf47f90eb973eb0e6e8824ade791d692222daf354808d9d3d",
+        "Assets/Warehouse/Presentation/Input/StationPointerOwnership.cs": "20b6cf4027b4eba0e9dff3c8f97ff5eb03aa6e54c5b1fcc3818fe11d941557e8",
+        "Assets/Warehouse/Presentation/StationApp.cs": "6fffdbded108a349e12fad9c8402a99fe7e9cd1682b1883b66189b95df4eaad3",
+        "Assets/Warehouse/Presentation/World/ConstructionGhostPresenter.cs": "264786a378e197472c0fa4ec2a33486a06090c0415735c65eb83f71227bd4c52",
+        "Assets/Warehouse/Presentation/World/SelectableEntityBinding.cs": "cb86e26364afc29cb82809e342318b4e914e6bd26e8742d04059a7a103c9035a",
+        "Assets/Warehouse/Presentation/World/StationCameraAnchor.cs": "a894e320ba4a5edb8e3e79bffb36328db4cf168da5710814f4b1961753722af4",
+        "Assets/Warehouse/Presentation/World/StationCameraController.cs": "1c8b6aecffe98b061a994cbbdbaba6b56f6b97a8b135f63ab089a8e5469e8aeb",
+        "Assets/Warehouse/Presentation/World/WarehouseSceneBlockout.cs": "e0ffbdb212777ae9ed4496d7b127e08602f1cb32609afa770011f31fd46c5573"
+      }
+    },
+    {
+      "assembly": "Warehouse.Editor",
+      "sources": {
+        "Assets/Warehouse/Editor/MobileBuilds.cs": "bfeb42e6aaf6369e9b2b4893f8cce13d53a8d21a8beb92624e7b7f56612354c6",
+        "Assets/Warehouse/Editor/ProjectValidation.cs": "c926e748278413e086c4a071bbb4e1e96c1c0fdeec7c2ca19d4a51d0c0f763da"
+      }
+    },
+    {
+      "assembly": "Warehouse.Tests.EditMode",
+      "sources": {
+        "Assets/Warehouse/Tests/EditMode/DomainEditModeTests.cs": "00f58c3244d0e36f5d7b42002185cf9d8c19a073f7fd637c527b4698f3457174",
+        "Assets/Warehouse/Tests/EditMode/DomainScenarios.cs": "93c4821f266434cecbc31d30cd6f1b390a739b89a6cfad31e75fdb4bba648e4f",
+        "Assets/Warehouse/Tests/EditMode/PointerEditModeTests.cs": "3547ef60512e30282689a898cbfad913454b5042a28e2c7d7dd6b9142f9e300f",
+        "Assets/Warehouse/Tests/EditMode/PointerScenarios.cs": "16501e22238105977b7a393fb2c058a214f888a69b7758d58aeb966c368d2aec"
+      }
+    },
+    {
+      "assembly": "Warehouse.Tests.PlayMode",
+      "sources": {
+        "Assets/Warehouse/Tests/PlayMode/StationScenePlayModeTests.cs": "a4f656fee9e659d996639c5bacd382c2d800d4f4ec3a0f80d2b30dd18c175b8c"
+      }
+    }
+  ],
+  "reference_files": {
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll": "49e4950635cca8080ae513ee0324f111382083f8485896170dd61dcb1c8f4904",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.AMDModule.dll": "5b2edae93d81554c17f398ec793f45e1d3e65051ea1f8f59d8ea295022477b71",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll": "69869ae2367fdddab06e94e81a50064cdb893df3e4a1d0df67d3cee31eb04309",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll": "9868e55193964d37817623219ef76f36e3a4d212bf2f0b5bb5614ea90e321583",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.AdaptivePerformanceModule.dll": "33e059bd3d7825e4663f8258f8e00c38301d37331b09aa8c319e9dd164d64629",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.AndroidJNIModule.dll": "8e28ac8ae64ddb88ea0c2b547c300598140e45e53db01bf8839e8c4d69004b49",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll": "275a16b46f7c40a6712171ab77d5ac56b9afab2ecdad012da222c8e3e1e24617",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll": "8d556a3028caca8a46a9f6a27bf8f94530228e0679b8c1acc95a2a2cea4b3794",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll": "e640e6a0d15a61715805386fad254063fbcaa6c4bf2f9f362ea9e6ffcda38b13",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll": "99e081d196bf7121df16ea5dba595ff62efda41448a2e0aa2b8f129a42229e6c",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll": "26a89fa0d63989b41ac9a0332e765a4de748243d8a7187a48faca14dca60e6a8",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll": "2c85a1e469d88e938a5776baec0e06a48291b11bf2c93da8bb268f40a5e7f52a",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.ContentLoadModule.dll": "dfe9150e0dc41ad0a326d269ef95c8b9e447a6bcfa72297bef98f41ba54fafbc",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll": "c26777e36f2724907c70b9a8cd72bbe418195768a8cfd4d34e8986e829dc4563",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll": "776cd42b4f16636759b8ac00272d3a6c03764f104fe2a30f2fe1a7564db704c0",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll": "068a4b6d0687e55166497167a693a75ac63050e97cd3e76ac5de52fb582dc405",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll": "79fc4c6628ee361219f74dfcb57a67571ca545c32db7356ee6bdfb1f29212e2b",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.GIModule.dll": "a8a8d22f6c85c45c21b5af570a105df7419a62593b9557f1047935bd1b108361",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll": "2282cca87894c02a6cb09e210f8d7404a63cb4ef7c101f092a70b81ae018a980",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.GraphicsStateCollectionSerializerModule.dll": "54fd6bd5e0fb857e5b4660e4a2bb17131d1fca45ff2f6919ff795f5641b3fbd6",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll": "6df9ee2ff23a2c81048f993d1fbbd8ff6876f83e3808e2faba13072accf9e7eb",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.HierarchyCoreModule.dll": "440e3d3253dcb0f0269e323215c5e51e4d2501d7f25b7599f744711ce2a13f65",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.HierarchyModule.dll": "a249d5e29ee162f49273a9cc53370e544cdc5ef3fd620007558cdfa7965f907d",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll": "ec5ead8f2b9f8ed3aab489f988f548c35cffa5a0a2a4ae1a88895f9d641f4597",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll": "eed5f0ed5071d1d750066b3852abc5ebe0378d72a03141e6d8718eaee31e46ba",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.IdentifiersModule.dll": "6079c2342ad1e0839bbdc87f3ec53e49298ddeccc740709e3a17874fc55b860f",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll": "4f7aad7fe0212af626fbe864e805c6277b78be02deadfc9e2aeb14a53dd95b7e",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputForUIModule.dll": "8e45fccfd190bd381102b852656124176c30b2bd205772161081da26f4774fb1",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll": "2846c2218f1fe6f3261e72c442ea0e2b5d82e18b549f2b4fde69a0f961a229cf",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll": "e5cd717392e8ff8b21c16dbb568a82ae30c4abf7c2d716aeeb4a7163601064e5",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.InsightsModule.dll": "3704702acfa758113ff649cf9ebe48315404b64ce2a43d375ea7560c6b78a42d",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll": "7330694271df64b90723bbf4ba3503b9226952525925068cdd26eaad516a46b9",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll": "746fb6d44236e50fa324a214a444641292c428a30f7d55379332c323d12b0b5f",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.MarshallingModule.dll": "a1480bde4c3f0daa4c89dd43ebf08ade474610e02c2cce249e6c1a861db6c2bd",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.MultiplayerModule.dll": "8219ab9de9b9f345aa5b07d0862399cb0454c422cc31feffd1b31c4ffa703cbb",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.NVIDIAModule.dll": "68bcf1cee2423f45b57f25cdad3905dde6ae41168e1e17600f3b055710bc96d1",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll": "9ef172aafef9bb6062cc1dc8c45cea7cbf1413c5aa0cbd8659ee5275de322714",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll": "8a9878b389a6995775b031712b79e045d6e144b2ba2edbbec6c6b19b0814e5b3",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll": "2a39171d705b5352b77533222ba5c55d339d6097cb3d53467897f61f4f9ed4fd",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsBackendPhysXModule.dll": "6de8ea7bedb67e2d641207096d6c175fa5b96db8dad03a53e75dd93bf3d3a6a0",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll": "f082539d2f66121d995f06c49a824e690592f44f277a07b9cad2befb605f7981",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.PropertiesModule.dll": "8095720a898a2c32dbddcca6102ed648df35d07310bc7323d541eecf2d12b025",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.RenderAs2DModule.dll": "b11131ac1dd8457f4af3c59a23a799dff6457df090af12f17024da8295ba94ed",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll": "df953602d753f1f5d6d65552209e70f1be097568dbada2fe49a94fe225a36e79",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll": "97e1c290b272332f573419b2b709e86afd5f35cb2cce2c72050e23c6e4167042",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.ShaderRuntimeModule.dll": "b290137a50777ae7471220866c60ecec099b9d0e9ed1eab0d3410a470cf7208c",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.ShaderVariantAnalyticsModule.dll": "97eb2bd0d273e4a18aa5bfa6238a95e8db0604efbd1638ed07528a3fac9889ea",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll": "e7d1e7aa44650f8dae746be58d92385632907b09be13d8846e2d293889277065",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll": "3f2c56e0bbc275108adff9025791210ac37b76667382e43637823396be9cbb86",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll": "8ffaa85ba48440cdfdeee7a93d84cc45b4d861ee93d514728a13fabfbc2f18d6",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll": "0aa0eb556c4ee54c0d286cd09cb518789ec073357e2cf09686bbdfad3b494fee",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll": "50db3a6498ea54c03ee3a54d74eedd052d3faa9dcf68f4f3e67e574615e94da8",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubsystemsModule.dll": "543cd0e6d6b9a4d279e6ad41acb149d3655ae75eb829bbf4b4a87a28a579dac7",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll": "c9aae397b26261a61ea20673cdc9328c72e185282b7f3443d502082dedb50835",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll": "40f69191ff0c10ca326ca9ec28bfa5da119e7c3d9fcaf8f7ce1b9c89ed237815",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll": "1ea4793dacadeb64c9476ec77d832b72012ede44e0d47e5cea8eb2fcbfe758b5",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreFontEngineModule.dll": "87ca33808969f94e34871ac0a01699203f076f562f39c379629d397495eb55c2",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreTextEngineModule.dll": "cad7b5d44bfd3872252c48f8eba6a9b499bdc7085ec4f2449feb690ddb5717e1",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll": "41b56ee237afe36c7ec082d79a1732b6779ddce13a17439a65e841fa3c58e5b8",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll": "247c3ab3ead852401e6c4078d82bbfb590c9fcc4376858a98a85e02fbb261366",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll": "0e703b726efd398d7b4a63f2e0e125efb13cec6c8632db528272d26d4e559e90",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll": "e135f6145a42755e2737408a14b3efcf95bb8284703a4d998206693519ebc9a2",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll": "b01e76b9788222e773e7913f388da01b18089a69027c239b143f87bb24b68afa",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsCommonModule.dll": "a60e4029e1fac184c8a98c07c2f254cc60a61d44cd0506ff2c213fa6d7904eb8",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll": "5eae2687c734a779b98fa0c24acb973b0e41060dbd409148284ac2b6dc4e807d",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll": "46076021031291c44f24a40c0198558452995e5f98c0b9ab980d9610b4e03fdd",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConsentModule.dll": "962e871e9d6c123c21d9aef666c266593dad8655d62b69fcc771f0b862d65233",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityCurlModule.dll": "d45419f90cc0da3db1c387529a22fe5a0374686dcb2b033177a1786e33a7d9fb",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll": "dd27bf0a4b89fca1f0dff3d0412bd2de779f8a20b1b693d208e40baa519b6766",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll": "fd2cde292d1993b21dd58f9ce3abf6876ae5f9bbad75bc3e19dab001fe2448d5",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll": "50559092152927c58bb6d5ca766a1bfb73be6772fc11587354a4d075f9bdb360",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll": "bed4dbba8a0bbca4fe9c97046832c69628b132a3109de71c0e2f01dd5dce7a5f",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll": "9d75dc223f13000d74f3893fbc4fad229b2e7fc9f1705d79dce3b8a147795439",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll": "06da8d4402f52afa37795ebc3883bb0c3af0023c177c9fa4ee154f9c752ac687",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll": "ada4c0230dc12cfc80f39969e4d67400cd49ffa52302f09172452a6f2fab59a1",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.VectorGraphicsModule.dll": "275937b0ba18a216ea7fe4e07cf3908d5fd4c95c3c0c44ee28b42b775c312a53",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll": "e306c470d2b75ab81e25d39ede7363757500cef68b366c00bde2db586aad03df",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll": "a22a4d9933c77f59901364d16d4a27685c018403ca993de94a0d4a01ecb15cee",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.VirtualTexturingModule.dll": "352a406f778ec4896263f5c3f203a858b65bf2d7771121ac71e643ff6d3777d1",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll": "3e6a5eda90581a3fd07b2b5add301c68ebdbd88b0ef226d8170561531ba70347",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll": "641debf7ac7f3abce87d11889e3c1d9fabf2c7f09d3ade38b6096b0ed0f52cb7",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll": "02cc4979e573c53a2e9564890d4e151c5701e22fb7bfc4365ac044d1e87aa6af",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Resources/PackageManager/ProjectTemplates/libcache/com.unity.template.3d-cross-platform-17.0.14/ScriptAssemblies/UnityEngine.UI.dll": "28aa35534b30ae473dbe1844daf9baf1c0cce03950f5e17288b8456e17b53f26",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Resources/PackageManager/ProjectTemplates/libcache/com.unity.template.3d-cross-platform-17.0.14/ScriptAssemblies/Unity.InputSystem.dll": "eb273cd5811fdb9b726c3921901b4e0467afe0c2204f3ba882ee3524fa74c9d0",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Resources/PackageManager/ProjectTemplates/libcache/com.unity.template.3d-cross-platform-17.0.14/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll": "ee1e624878502ef827e41c0b20666703dc46f217bdab7770716371ba1084132f",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Resources/PackageManager/ProjectTemplates/libcache/com.unity.template.3d-cross-platform-17.0.14/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll": "2b1263387c55b566c85d8db8b351b72b9049166104d5511e4b57cb518810a931",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Resources/PackageManager/ProjectTemplates/libcache/com.unity.template.3d-cross-platform-17.0.14/ScriptAssemblies/Unity.Mathematics.dll": "a4f5ae0be232d1fa7c487cd7995906705771311d7783d57d853b2694a42238e6",
+    "/workspace/.warehouse-cloud/unity/6000.3.27f1/Editor/Data/Resources/PackageManager/ProjectTemplates/libcache/com.unity.template.3d-cross-platform-17.0.14/ScriptAssemblies/Unity.Collections.dll": "a9c4a2d5fb7b28efa49c7ea33af892bf897a1953a5c2bf0b6c211c19ed135907"
+  }
+}

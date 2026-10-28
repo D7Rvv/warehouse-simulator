@@ -1,0 +1,6 @@
+{
+  "name": "Warehouse.Tests.PlayMode",
+  "references": ["Warehouse.Domain", "Warehouse.Presentation", "Warehouse.UI", "Unity.InputSystem", "UnityEngine.UI"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "autoReferenced": false
+}
