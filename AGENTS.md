@@ -72,3 +72,15 @@
 - Do **not** implement live purchasing, automatic parcel transport, real export/ledger, or road truck schedules in this sprint. Only preview/demo UI and fixtures; explicitly label prototype values.
 - Preserve the mobile-first high-fidelity goal while doing a blockout. Avoid excessive real-time physics, shadow overdraw or synchronous object churn on station switch.
 - Acceptance: SPEC-20 S0-01..06 and S1-01..12 with actual PASS/FAIL/NOT_RUN, Unity build/phone hardware tested only when truly run.
+
+
+## P0 USER QUALITY REJECTION — highest priority (2026-10-28)
+**The user played/viewed the current build on iPhone and rated overall quality 0.5/10. Reasons: no recognizable resemblance to reference-game visual quality, essentially no gameplay, very poor 3D fidelity, no newcomer guidance. This is a genuine failed user acceptance gate.**
+- Read **`docs/reviews/2026-10-28_USER_PLAYTEST_QUALITY_REJECTION.md`**, **`docs/spec/21_PLAYABLE_FIRST_SESSION_QUALITY_GATE.md`**, and **`docs/tasks/CODEX_NEXT_PLAYABLE_QUALITY_P0.md`** immediately. Tracking: https://github.com/D7Rvv/warehouse-simulator/issues/3
+- Previous S0/S1 instructions only delivered a **technical blockout prototype**. They are not the next product acceptance criteria. Work on real parcel ownership/transfer, real manual cargo/country inspection and approve/deny stickers, correct/incorrect export and event-ledger, first-run Japanese guided task flow, and realistic original art of loading dock / inspection / export gate.
+- Before calling anything a playable game, **a first-time user must see a clear goal and complete one real parcel flow**. Menu changes without gameplay-state changes do not count. Tutorial action completion must follow successful domain commands, not demo UI.
+- Art acceptance requires actual Unity GameView screenshots/videos at 3 corresponding stations, reference-based comparison of material/lighting/3D geometry, original/licensed models. **Do not present cube-only primitives as final realistic 3D**. Do not simply promise Blender quality or a screenshot without producing matching Unity assets.
+- Do not assert that iPhone fps/heat were measured: the phone preview method is not confirmed; Unity Remote is not native iPhone GPU evaluation.
+- Maintain PC editor-low profile for i7-7700/16GB/Intel HD630 and separate mobile graphics profile for iPhone 13 Pro Max.
+- **Do not merge/close PR #2 as a completed game.** It's a draft technical foundation; confirm Unity editor build/tests separately before promoting it. Implementation should use small PRs and update actual QA PASS/FAIL/NOT_RUN evidence.
+- Keep free-walk disabled, license/economy/calendar unknown values separate, and all reference assets/art original.
