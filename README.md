@@ -4,7 +4,7 @@
 
 ## 現在の設計資料（2026-10-26）
 
-- [**詳細仕様・全24文書の目次**](docs/spec/00_MASTER_INDEX.md)
+- [**詳細仕様・全25文書の目次**](docs/spec/00_MASTER_INDEX.md)
 - [**参考作品の機能対照表**](docs/spec/01_REFERENCE_PARITY.md)
 - [**機能ごとの試験・受入基準**](docs/spec/11_QA_ACCEPTANCE.md)
 - [**Codex用実装順序と品質基準**](docs/spec/13_CODEX_EXECUTION.md)
@@ -28,7 +28,7 @@
 
 - [x] GitHub初期化
 - [x] 原作の公式資料/攻略/ユーザー画像から確認できた仕様を整理
-- [x] Codex向け24分冊の実装仕様、テスト、未確認リスト（草案）を作成
+- [x] Codex向け25分冊の実装仕様、テスト、未確認リスト（草案）を作成
 - [ ] 現行原作の全Tier/全設備/報酬式などの実機照合
 - [ ] 新設計に合うUnity 6 LTS/URPの再現可能なシーン・プロジェクト
 - [ ] 3Dワークステーションとタップ切替
@@ -67,3 +67,16 @@
 - [S1限定の仮データ（**本番使用禁止**）](docs/data/prototype_station_fixture_v0_1.json)
 
 **現在の開発状態:** ここまでで設計書とIssueを作成済み。S0/S1のUnityコード、Editorコンパイル、ネイティブビルド、実機の発熱/FPSはまだ完了していない。原作の細かな数値が不明でも、実装値を捏造せずにUI/カメラの制作を先に進める。
+
+
+## 重要：2026-10-28 初回試遊によるユーザー受入不合格（P0）
+**ユーザーがiPhoneで現在の試作品を確認し、ゲーム性・初心者導線・3D品質を総合0.5/10と評価しました。** この結果は開発課題として記録しています。
+
+- [ユーザー試遊レビュー](docs/reviews/2026-10-28_USER_PLAYTEST_QUALITY_REJECTION.md)
+- [SPEC-21：最初の5分で本当に遊べる状態・初心者ガイド・3D品質合格条件](docs/spec/21_PLAYABLE_FIRST_SESSION_QUALITY_GATE.md)
+- [Codex向けの次のP0実装指示](docs/tasks/CODEX_NEXT_PLAYABLE_QUALITY_P0.md)
+- [Issue #3：ゲーム性/初心者向け導線/独自高品質3Dを最優先で是正](https://github.com/D7Rvv/warehouse-simulator/issues/3)
+
+**現在あるS0/S1の3Dと固定カメラは、技術検証用のブロックアウトです。原作同等のグラフィック、実際の荷物検査、出荷、台帳、完全な初回チュートリアルは完成していません。** Draft [PR #2](https://github.com/D7Rvv/warehouse-simulator/pull/2)を「完成ゲーム」として承認しないでください。
+
+ユーザーが実際に1箱を受け取り、伝票を確認し、合否を貼り、正しい出荷口へ入れて報酬の結果を理解できるループを最優先で実装します。搬入口・検査台・出荷口には独自の実物らしいHeroAssetを制作し、参照画像との質感・情報・奥行きの差を見て受入れます。高画質とiPhoneの熱/FPSは、Unity RemoteやPCの性能ではなくネイティブ実機計測で最終判定します。
