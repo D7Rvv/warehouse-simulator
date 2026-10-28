@@ -6,7 +6,7 @@
 
 ## 起動と操作
 
-iPhoneだけで使う **Scriptable用オフライン確認版** を追加しました。無料のScriptable本体から単一HTMLを選んで実行します。PC・公開URL・Unityは不要です。[iPhoneで開く手順](docs/play/PLAY_ON_IPHONE.md) を参照してください。署名済みの独立iOSアプリや、本編の物流ゲームの完成を意味しません。
+iPhoneは [Safari確認版](https://d7rvv.github.io/warehouse-simulator/) を開き、横向きにして「倉庫を開く」を押します。2026-10-28にユーザーから一般公開の了承を得ました。初回のHTMLは約55MBです。PC・Scriptable・Unityは不要です。[iPhoneで開く手順](docs/play/PLAY_ON_IPHONE.md) を参照してください。署名済みの独立iOSアプリや、本編の物流ゲームの完成を意味しません。
 
 Windows確認版はZIPを展開して `WarehouseStation.exe` から起動します。
 
@@ -50,4 +50,4 @@ iPhoneローカル確認版は `builds/godot-mobile/WarehouseStation-iPhone-Offl
 - OS熱センサーは未実装です。注入したCRITICALヒントでの操作停止・5fps制限を、本物の端末熱の測定と混同しません。
 - 計測はフレーム間隔、p95／p99、切替CPU処理、描画数、メモリ推定です。GPU実行時間、電池、温度、30分後のiPhone／Android性能は **NOT_RUN** です。
 
-仕様の入口は [SPEC-00](docs/spec/00_MASTER_INDEX.md)、[SPEC-19](docs/spec/19_DECISION_REGISTER_AND_SAFE_DEFAULTS.md)、[SPEC-20](docs/spec/20_MOBILE_STATION_VERTICAL_SLICE.md)。以前のUnity実装は過去のPR・履歴として保全し、以前のGodot自由歩行／7日間キャンペーンは再導入していません。公開しないという回答を保持し、Web版の再公開は行いません。
+仕様の入口は [SPEC-00](docs/spec/00_MASTER_INDEX.md)、[SPEC-19](docs/spec/19_DECISION_REGISTER_AND_SAFE_DEFAULTS.md)、[SPEC-20](docs/spec/20_MOBILE_STATION_VERTICAL_SLICE.md)。以前のUnity実装は過去のPR・履歴として保全し、以前のGodot自由歩行／7日間キャンペーンは再導入していません。Safari版は新しい公開許可に基づくS0/S1の確認用配信です。[公開・検証記録](docs/implementation/IPHONE_SAFARI_PUBLICATION.md)に確認範囲を記録します。

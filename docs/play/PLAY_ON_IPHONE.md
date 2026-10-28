@@ -1,4 +1,16 @@
-# iPhoneだけで開く
+# iPhoneのSafariで開く
+
+1. Safariで **https://d7rvv.github.io/warehouse-simulator/** を開きます。
+2. iPhoneの画面回転ロックを解除して、横向きにします。
+3. 「倉庫を開く」を押し、3D画面の読込みを待ちます。
+
+PC・Scriptable・ZIPの展開は不要です。初回のHTMLは54,880,781bytes（約55MB）あるため、Wi-Fiを推奨します。Safari15.2以上とWebGL2/WASMが必要です。iPhone実機での起動・速度・発熱は未検証です。
+
+公開するのは、後述のS0/S1操作試作です。誰でもアクセスでき、ブラウザに配信したプログラムは取得・解析できます。閲覧者へGitHubの書き込み権限を付与するものではありません。
+
+2026-10-28、以前の公開拒否後に、ユーザーから一般公開の明示的な了承を得ました。検証済みHTMLをそのまま使うため、開始画面の「ローカル版」表示と、失敗時のScriptable向け案内が残っています。SafariのHTTPS URLからはScriptableを使用しません。[配信・検証記録](../implementation/IPHONE_SAFARI_PUBLICATION.md)を参照してください。
+
+## 端末内ファイルから開く従来の方法
 
 **Scriptable用のローカル確認版です。PC、Unity、公開サーバー、Apple Developer登録は不要です。**
 App Storeから無料の [Scriptable](https://apps.apple.com/jp/app/scriptable/id1405459188) を入れて使います。独立したiOSゲームアプリとしてインストールする版ではありません。
@@ -34,4 +46,4 @@ if (files.length) await WebView.loadFile(files[0], undefined, true);
 
 通常のHTTPによるWi-Fi配信は安全なコンテキストにならず、前回の試験では起動できませんでした。今回はWebKitが正式に安全なコンテキストとして扱うローカルfile://を使用します。HTTPS判定やブラウザ管理ポリシーは変更していません。
 
-生成コマンドは `python3 mobile/tools/package_iphone_local.py`。生成物は `builds/godot-mobile/`、詳しい証跡は [iPhoneローカル版の実装記録](../implementation/IPHONE_LOCAL_REVIEW.md) を参照してください。Webゲームの一般公開は行っていません。
+生成コマンドは `python3 mobile/tools/package_iphone_local.py`。生成物は `builds/godot-mobile/`、詳しい証跡は [iPhoneローカル版の実装記録](../implementation/IPHONE_LOCAL_REVIEW.md) を参照してください。ローカル版の生成は自動公開を行いません。Safariへの配信は別の公開手順です。

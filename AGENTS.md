@@ -10,7 +10,7 @@
 - Use `mobile/tools/check.sh`, `mobile/tools/render.sh`, `mobile/tools/package.py` and the current README. New migration/evidence: `docs/implementation/GODOT_MIGRATION_DECISION.md` and `GODOT_VISUAL_CHECKLIST.md`.
 - Default rendering cap30fps; 60fps needs explicit device verification. OS thermal sensing is unavailable, so injected thermal hints and desktop Mesa timing must never be called phone thermal measurements.
 - The first known phone is iPhone13ProMax (iOS unknown), developer PC IntelHD630/i7-7700/16GB. Their real performance remains unverified.
-- The user declined public Web hosting. Do not restore GitHub Pages game publication without a new explicit instruction. Source commits/review branches remain authorized.
+- 2026-10-28: after the earlier refusal, the user explicitly approved publishing an iPhone Safari review URL. Deploy only the tested S0/S1 payload to the existing `gh-pages` branch; do not restore the legacy walking game. Source and browser payload are publicly readable/downloadable; publication grants no visitor write permissions. Real iPhone acceptance remains NOT_RUN.
 - Engine-specific Unity requirements below are superseded by this decision; gameplay, ownership, fixture isolation and original-art requirements remain in force.
 
 

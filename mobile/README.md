@@ -2,7 +2,9 @@
 
 このフォルダの `project.godot` を **Godot4.6.3標準版** で開いて実行します。Unity、Unityライセンス、.NET、Blenderは実行に不要です。横向きの固定ステーション操作で、自由歩行はありません。
 
-iPhoneだけで使うローカル確認版は `python3 tools/package_iphone_local.py` で生成します。Scriptable本体のWebViewで単一HTMLを開く方式です。起動手順は `iphone-local/README-ja.txt`。PC・公開サーバー・独立iOSアプリの署名を必要としません。iPhone実機の動作・発熱は未検証です。
+iPhoneは [Safari確認版](https://d7rvv.github.io/warehouse-simulator/) を横向きで開き、「倉庫を開く」を押します。公開は2026-10-28にユーザーが了承済みです。PC・Scriptable・署名済みIPAは不要です。初回のHTMLは約55MB、iPhone実機の動作・発熱は未検証です。[起動手順](../docs/play/PLAY_ON_IPHONE.md)を参照してください。
+
+端末内ファイルのローカル確認版も `python3 tools/package_iphone_local.py` で生成できます。Scriptable本体のWebViewで単一HTMLを開く従来の方式です。手順は `iphone-local/README-ja.txt`。この生成コマンドに公開・アップロード機能はありません。
 
 搬入・検査・出荷・倉庫・建設をタップで切替。検査は箱の回転と伝票拡大、倉庫はパン／ピンチ、建設は表示プレビューの格子移動・回転・反転・取消を操作できます。全て隔離した試作Fixtureで、実際の移送・購入・検査合否・収益は未実装です。
 
