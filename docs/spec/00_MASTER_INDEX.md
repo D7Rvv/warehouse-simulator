@@ -34,7 +34,8 @@
 | SPEC-17B | 17_2026_REFERENCE_VERIFICATION_AUDIT.md | **2026の公式更新・Tier18・$500k・機器・未確認の出典監査** |
 | SPEC-18 | 18_EXPORT_REVENUE_RULE_RECONCILIATION.md | **手動部分出荷・満杯時自動出荷・終業時Clear Doorsの相違、報酬の未確定式を整理** |
 | SPEC-19 | 19_DECISION_REGISTER_AND_SAFE_DEFAULTS.md | **原作未確認値を勝手に確定せず、こちらで補完できる技術仕様・UXを定義する判断ログ** |
-| SPEC-20 | 20_MOBILE_STATION_VERTICAL_SLICE.md | **次のCodex開発S0/S1の画面・操作・3D・タッチ・受入テスト** |
+| SPEC-20 | 20_MOBILE_STATION_VERTICAL_SLICE.md | **S0/S1技術プロトタイプの画面・操作・3D・タッチ・受入テスト** |
+| SPEC-21 | 21_PLAYABLE_FIRST_SESSION_QUALITY_GATE.md | **2026-10-28の0.5/10評価を是正する、初回5分の本物の遊び・チュートリアル・3Dアート・実機品質ゲート** |
 
 データ定義: `docs/data/reference_catalog_2026-10-26.json`（価格54件、曜日Null、出典ステータス付きの**調査参考JSON**。製品版へ無審査で投入しない）。
 
@@ -128,3 +129,10 @@ SRC-PATCH https://steamdb.info/patchnotes/25526810/
 - **Codexタスク:** `docs/tasks/CODEX_NEXT_S0_S1.md` / GitHub Issue #1 https://github.com/D7Rvv/warehouse-simulator/issues/1
 - **開発テスト用Fixture:** `docs/data/prototype_station_fixture_v0_1.json`。本番ゲームの経済や曜日の正解値とは一切混ぜない。
 - 最新のユーザー方針に従い、未確認の原作金額は調査継続しつつ、カメラ・UI・コンストラクションPreview等の独立部分は先行開発可。
+
+## 2026-10-28 重大なユーザー試遊評価と現行最優先事項
+- User Playtest: `docs/reviews/2026-10-28_USER_PLAYTEST_QUALITY_REJECTION.md`。ユーザーがiPhoneで確認後、モデル・ゲーム性・初心者導線・3D品質について**0.5/10**と評価。**ユーザー受入 FAIL**。これは単にEditorを表示できる/ロジックテストが走ることと別の品質ゲート。
+- **SPEC-21** `docs/spec/21_PLAYABLE_FIRST_SESSION_QUALITY_GATE.md`が最優先。Truck→Inspection→Manual Sticker→Gate→Submission/Resultを本物の状態更新で実装し、初心者へ導線を出す。3シーンの独自HeroAssetを実際のGameViewで確認。
+- **Codexタスク**: `docs/tasks/CODEX_NEXT_PLAYABLE_QUALITY_P0.md` / Issue #3 https://github.com/D7Rvv/warehouse-simulator/issues/3
+- 現在のS0/S1 Draft PR #2は未受入の**技術基盤のみ**。ゲームの可用性/美術品質を合格扱いしない。以前のS0/S1優先指示よりも本項が優先。
+- iPhone試遊方式（Unity Remote/ネイティブ）は未確認。FPS/発熱を実測済と断言しない。
