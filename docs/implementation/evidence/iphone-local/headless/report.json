@@ -1,0 +1,461 @@
+{
+	"actual_phone_fps": "NOT_RUN",
+	"checks": [
+		{
+			"description": "Canonical prototype fixture loads",
+			"id": "FIXTURE-01",
+			"status": "PASS"
+		},
+		{
+			"description": "Real station model script loads",
+			"id": "MODEL-01",
+			"status": "PASS"
+		},
+		{
+			"description": "Valid canonical fixture is accepted",
+			"id": "MODEL-02",
+			"status": "PASS"
+		},
+		{
+			"description": "Money/time remain canonical demo values",
+			"id": "MODEL-03",
+			"status": "PASS"
+		},
+		{
+			"description": "Current buffer and previous batch are distinct",
+			"id": "MODEL-04",
+			"status": "PASS"
+		},
+		{
+			"description": "Previous net display is not multiplied by active buffer",
+			"id": "MODEL-05",
+			"status": "PASS"
+		},
+		{
+			"description": "Truck manifest matches three unique sample parcels",
+			"id": "MODEL-06",
+			"status": "PASS"
+		},
+		{
+			"description": "Parcel IDs and owner slots are unique",
+			"id": "MODEL-07",
+			"status": "PASS"
+		},
+		{
+			"description": "Visible parcel data does not disclose inspection truth",
+			"id": "MODEL-08",
+			"status": "PASS"
+		},
+		{
+			"description": "Public nested snapshots are isolated copies",
+			"id": "MODEL-09",
+			"status": "PASS"
+		},
+		{
+			"description": "Mutating the source DTO cannot modify the loaded model",
+			"id": "MODEL-10",
+			"status": "PASS"
+		},
+		{
+			"description": "Unsafe promotion is rejected atomically",
+			"id": "MODEL-11",
+			"status": "PASS"
+		},
+		{
+			"description": "Production fixture cannot replace S1 mock",
+			"id": "MODEL-12",
+			"status": "PASS"
+		},
+		{
+			"description": "Duplicate parcel ID is rejected",
+			"id": "MODEL-13",
+			"status": "PASS"
+		},
+		{
+			"description": "Duplicate owner slot is rejected",
+			"id": "MODEL-14",
+			"status": "PASS"
+		},
+		{
+			"description": "Truck manifest and parcel ownership cannot disagree",
+			"id": "MODEL-15",
+			"status": "PASS"
+		},
+		{
+			"description": "Unknown station preserves current selection",
+			"id": "MODEL-16",
+			"status": "PASS"
+		},
+		{
+			"description": "Locked contract preserves selection and reports a reason",
+			"id": "MODEL-17",
+			"status": "PASS"
+		},
+		{
+			"description": "Unavailable navigation supplies feedback",
+			"id": "MODEL-18",
+			"status": "PASS"
+		},
+		{
+			"description": "Missing camera anchor cannot change active station",
+			"id": "MODEL-19",
+			"status": "PASS"
+		},
+		{
+			"description": "Real entity target registers against its station",
+			"id": "MODEL-20",
+			"status": "PASS"
+		},
+		{
+			"description": "3D target selection retains entity ID",
+			"id": "MODEL-21",
+			"status": "PASS"
+		},
+		{
+			"description": "Target cannot be selected through an unrelated station",
+			"id": "MODEL-22",
+			"status": "PASS"
+		},
+		{
+			"description": "Menu selection restores the target for that station",
+			"id": "MODEL-23",
+			"status": "PASS"
+		},
+		{
+			"description": "Deleted visual target falls back without changing station",
+			"id": "MODEL-24",
+			"status": "PASS"
+		},
+		{
+			"description": "Per-parcel inspection draft survives selection changes",
+			"id": "MODEL-25",
+			"status": "PASS"
+		},
+		{
+			"description": "Fifty station changes preserve authoritative state",
+			"id": "MODEL-26",
+			"status": "PASS"
+		},
+		{
+			"description": "Navigation does not empty HandSlot or inspection draft",
+			"id": "MODEL-27",
+			"status": "PASS"
+		},
+		{
+			"description": "Deleting a selected visual preserves its active draft and reserved HandSlot",
+			"id": "MODEL-37",
+			"status": "PASS"
+		},
+		{
+			"description": "One thousand logical switches cannot reset the world",
+			"id": "MODEL-28",
+			"status": "PASS"
+		},
+		{
+			"description": "Occupied grid cell is invalid with a reason",
+			"id": "MODEL-29",
+			"status": "PASS"
+		},
+		{
+			"description": "Out-of-bounds preview is rejected",
+			"id": "MODEL-30",
+			"status": "PASS"
+		},
+		{
+			"description": "Preview on unsupported floor is invalid",
+			"id": "MODEL-31",
+			"status": "PASS"
+		},
+		{
+			"description": "Unoccupied in-range cell permits a visual preview",
+			"id": "MODEL-32",
+			"status": "PASS"
+		},
+		{
+			"description": "Four visible rotations return to original direction",
+			"id": "MODEL-33",
+			"status": "PASS"
+		},
+		{
+			"description": "Two flips restore flow direction",
+			"id": "MODEL-34",
+			"status": "PASS"
+		},
+		{
+			"description": "Thirty preview sequences never install equipment or charge money",
+			"id": "MODEL-35",
+			"status": "PASS"
+		},
+		{
+			"description": "Reset restores the fixture preview without rebuilding world state",
+			"id": "MODEL-36",
+			"status": "PASS"
+		},
+		{
+			"description": "Read-only presentation obstruction can invalidate a preview without changing authority",
+			"id": "MODEL-38",
+			"status": "PASS"
+		},
+		{
+			"description": "Removing a presentation-only obstruction context revalidates without changing world data",
+			"id": "MODEL-39",
+			"status": "PASS"
+		},
+		{
+			"description": "Actual pointer router script loads",
+			"id": "INPUT-01",
+			"status": "PASS"
+		},
+		{
+			"description": "Ordinary target tap fires once and releases capture",
+			"id": "INPUT-02",
+			"status": "PASS"
+		},
+		{
+			"description": "UI-origin pointer cannot fall through into world commands",
+			"id": "INPUT-03",
+			"status": "PASS"
+		},
+		{
+			"description": "Captured world drag does not become a target tap",
+			"id": "INPUT-04",
+			"status": "PASS"
+		},
+		{
+			"description": "Two world fingers own pinch and block UI actions",
+			"id": "INPUT-05",
+			"status": "PASS"
+		},
+		{
+			"description": "Distance change emits bounded zoom intent",
+			"id": "INPUT-06",
+			"status": "PASS"
+		},
+		{
+			"description": "Pinch remainder cannot become an accidental tap",
+			"id": "INPUT-07",
+			"status": "PASS"
+		},
+		{
+			"description": "UI press before or during pinch stays invalid after fingers lift",
+			"id": "INPUT-08",
+			"status": "PASS"
+		},
+		{
+			"description": "Fresh UI press is accepted after completed gesture",
+			"id": "INPUT-09",
+			"status": "PASS"
+		},
+		{
+			"description": "Individual UI cancellation rejects queued click and preserves other capture",
+			"id": "INPUT-10",
+			"status": "PASS"
+		},
+		{
+			"description": "Independent remaining world finger still finishes its tap",
+			"id": "INPUT-11",
+			"status": "PASS"
+		},
+		{
+			"description": "Global interruption empties owners and invalidates held UI",
+			"id": "INPUT-12",
+			"status": "PASS"
+		},
+		{
+			"description": "Station mode change releases all held pointers",
+			"id": "INPUT-13",
+			"status": "PASS"
+		},
+		{
+			"description": "Fixed station does not accept free camera drag",
+			"id": "INPUT-14",
+			"status": "PASS"
+		},
+		{
+			"description": "Removed entity cannot receive delayed target tap",
+			"id": "INPUT-15",
+			"status": "PASS"
+		},
+		{
+			"description": "Actual quality controller script loads",
+			"id": "QUALITY-01",
+			"status": "PASS"
+		},
+		{
+			"description": "Quality profiles initialize on a real Godot viewport",
+			"id": "QUALITY-02",
+			"status": "PASS"
+		},
+		{
+			"description": "Default thermal state is unknown, never inferred from FPS",
+			"id": "QUALITY-03",
+			"status": "PASS"
+		},
+		{
+			"description": "Balanced mobile default caps rendering at 30 FPS",
+			"id": "QUALITY-04",
+			"status": "PASS"
+		},
+		{
+			"description": "Unverified 60 FPS is denied",
+			"id": "QUALITY-05",
+			"status": "PASS"
+		},
+		{
+			"description": "Unknown quality choice cannot silently apply",
+			"id": "QUALITY-06",
+			"status": "PASS"
+		},
+		{
+			"description": "Battery saver retains conservative 30 FPS target",
+			"id": "QUALITY-07",
+			"status": "PASS"
+		},
+		{
+			"description": "High visual mode does not automatically unlock 60 FPS",
+			"id": "QUALITY-08",
+			"status": "PASS"
+		},
+		{
+			"description": "Measured interval p95/p99 use nearest-rank statistics",
+			"id": "QUALITY-09",
+			"status": "PASS"
+		},
+		{
+			"description": "Switch telemetry records actual submitted durations",
+			"id": "QUALITY-10",
+			"status": "PASS"
+		},
+		{
+			"description": "Poor synthetic frame times do not fabricate a thermal reading",
+			"id": "QUALITY-11",
+			"status": "PASS"
+		},
+		{
+			"description": "Transient overload below fifteen seconds does not change quality",
+			"id": "QUALITY-13",
+			"status": "PASS"
+		},
+		{
+			"description": "Sustained overload steps quality down after the hold interval",
+			"id": "QUALITY-14",
+			"status": "PASS"
+		},
+		{
+			"description": "Cooldown prevents rapid repeated quality changes",
+			"id": "QUALITY-15",
+			"status": "PASS"
+		},
+		{
+			"description": "A further sustained overload waits for cooldown before another step",
+			"id": "QUALITY-16",
+			"status": "PASS"
+		},
+		{
+			"description": "Recovery does not jump early during its sixty-second hold",
+			"id": "QUALITY-17",
+			"status": "PASS"
+		},
+		{
+			"description": "A normal capped thirty-FPS interval can recover one quality step",
+			"id": "QUALITY-18",
+			"status": "PASS"
+		},
+		{
+			"description": "Frame telemetry remains bounded instead of growing per frame",
+			"id": "QUALITY-19",
+			"status": "PASS"
+		},
+		{
+			"description": "Invalid frame intervals cannot pollute telemetry",
+			"id": "QUALITY-20",
+			"status": "PASS"
+		},
+		{
+			"description": "Injected hot hint caps render scale and frame limit",
+			"id": "QUALITY-21",
+			"status": "PASS"
+		},
+		{
+			"description": "Injected thermal hint is never presented as observed phone temperature",
+			"id": "QUALITY-22",
+			"status": "PASS"
+		},
+		{
+			"description": "Critical hint requests a safety pause instead of altering gameplay state",
+			"id": "QUALITY-23",
+			"status": "PASS"
+		},
+		{
+			"description": "Critical safety state actually reduces foreground rendering frequency",
+			"id": "QUALITY-28",
+			"status": "PASS"
+		},
+		{
+			"description": "Unknown thermal hint preserves the last legitimate state",
+			"id": "QUALITY-24",
+			"status": "PASS"
+		},
+		{
+			"description": "Explicit test verification gate and high preset are both required for optional sixty FPS",
+			"id": "QUALITY-25",
+			"status": "PASS"
+		},
+		{
+			"description": "A hot hint returns even an explicitly enabled sixty-FPS profile to thirty",
+			"id": "QUALITY-26",
+			"status": "PASS"
+		},
+		{
+			"description": "Background state suspends diagnostic processing",
+			"id": "QUALITY-12",
+			"status": "PASS"
+		},
+		{
+			"description": "Background duration is excluded from the rendering frame window",
+			"id": "QUALITY-27",
+			"status": "PASS"
+		},
+		{
+			"description": "Phone-size viewport requests a capped 3D height while retaining full-resolution 2D viewport",
+			"id": "QUALITY-29",
+			"status": "PASS"
+		},
+		{
+			"description": "Requested render-scale settings do not claim verified GPU dimensions",
+			"id": "QUALITY-30",
+			"status": "PASS"
+		},
+		{
+			"description": "Battery mode lowers requested 3D height without changing the thirty-FPS cap",
+			"id": "QUALITY-31",
+			"status": "PASS"
+		}
+	],
+	"failed": 0,
+	"fixture_sha256": "89602b7aedc9b0b9bbd6465ca64805a8aad7bf1be15db0238e97a5ada7d27930",
+	"godot_version": "4.6.3-stable (official)",
+	"kind": "godot_headless_logic_and_policy",
+	"passed": 86,
+	"phone_thermal": "NOT_RUN",
+	"rendering_executed": false,
+	"source_cohort_unchanged": true,
+	"source_sha256": {
+		"res://data/mobile_quality_profiles.json": "da6757e555cf4259d3f3222c3b607f35bb920b804b127658566f4fe39f38ac7c",
+		"res://data/prototype_station_fixture_v0_1.json": "89602b7aedc9b0b9bbd6465ca64805a8aad7bf1be15db0238e97a5ada7d27930",
+		"res://scripts/mobile_quality.gd": "2e9628d3353d586964f8782e07709da1e147fa656d8ad9da4fd1a2f36974938c",
+		"res://scripts/station_model.gd": "a0936414f685721b742d9e9feb8fa46c2e248f63ba1b90814410a0233e6e475a",
+		"res://scripts/station_pointer_router.gd": "ed6e0060c5dbd26363874f9b395ec9fa0d6c2395713f62cc1852db95d2882206",
+		"res://tests/headless_suite.gd": "b1755c2d6bd165a72afb6505dca8a58d1c612ad889e9977ce20832b35fae0942"
+	},
+	"source_sha256_at_end": {
+		"res://data/mobile_quality_profiles.json": "da6757e555cf4259d3f3222c3b607f35bb920b804b127658566f4fe39f38ac7c",
+		"res://data/prototype_station_fixture_v0_1.json": "89602b7aedc9b0b9bbd6465ca64805a8aad7bf1be15db0238e97a5ada7d27930",
+		"res://scripts/mobile_quality.gd": "2e9628d3353d586964f8782e07709da1e147fa656d8ad9da4fd1a2f36974938c",
+		"res://scripts/station_model.gd": "a0936414f685721b742d9e9feb8fa46c2e248f63ba1b90814410a0233e6e475a",
+		"res://scripts/station_pointer_router.gd": "ed6e0060c5dbd26363874f9b395ec9fa0d6c2395713f62cc1852db95d2882206",
+		"res://tests/headless_suite.gd": "b1755c2d6bd165a72afb6505dca8a58d1c612ad889e9977ce20832b35fae0942"
+	},
+	"status": "PASS",
+	"synthetic_quality_policy_input": true
+}

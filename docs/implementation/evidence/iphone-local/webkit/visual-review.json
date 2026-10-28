@@ -1,0 +1,74 @@
+{
+  "status": "PASS_IN_OBSERVED_DESKTOP_DISPLAY_SCOPE",
+  "html_sha256": "c044ee39357dd1b05010f0d7b9a2c2d9992d9e8c52c053b55fd5a63bc2d2170b",
+  "scope": "manual_review_of_seven_actual_X11_WebKitGTK_captures_not_iPhone_or_reference_acceptance",
+  "captures": [
+    {
+      "name": "local-game-overview",
+      "file": "local-game-overview.png",
+      "sha256": "2e8a64d86d0c8b7c3005f677710bbb48916ebd42fb11a99d21d7d771757fdbf9"
+    },
+    {
+      "name": "local-game-inbound",
+      "file": "local-game-inbound.png",
+      "sha256": "6a2b889cc94e9b6e22543d1c412ca81346c5058795d585b77137d0763df431b5"
+    },
+    {
+      "name": "local-game-inspection",
+      "file": "local-game-inspection.png",
+      "sha256": "1bcefa7cea04f812172c408820df385e0f28ad43ff03c2f2b506fa9dd044f22b"
+    },
+    {
+      "name": "local-game-export",
+      "file": "local-game-export.png",
+      "sha256": "aa68bb67b2d780878806a908427ee673b4ed38d901e3333a3957db15e45ff589"
+    },
+    {
+      "name": "local-game-build",
+      "file": "local-game-build.png",
+      "sha256": "267145febebe6e63281837a2df975c86f5b080081fd2494cffe501057bd351fe"
+    },
+    {
+      "name": "local-game-compact-build",
+      "file": "local-game-compact-build.png",
+      "sha256": "8e10a534a4a06ea4dd7a4b12d1939a8ca036a8ffd3fe3aeb2b97f6f8a4bfe6d0"
+    },
+    {
+      "name": "local-game-compact-inspection",
+      "file": "local-game-compact-inspection.png",
+      "sha256": "71f59df73d19c6d8e20742fa4bbb29d6a48094a7ad1e28dc0f7bce85359a17b0"
+    }
+  ],
+  "observations": [
+    "Overview has original warehouse, equipment and Japanese HUD",
+    "Inbound selected by actual mouse click shows truck interior with three parcels",
+    "Inspection selected by actual mouse click shows parcel, physical label and action buttons",
+    "Export selected by actual mouse click separates current1/16 buffer from previous16-parcel summary",
+    "Build selected by actual mouse click displays green translucent conveyor and five preview controls",
+    "844x390CSS compact Build retains all five action buttons and entire bottom navigation",
+    "844x390CSS compact Inspection retains two actions and bottom navigation; actual mouse navigation remains functional"
+  ],
+  "limits": [
+    "Compact DPR1 text looks softer after viewport downscaling; no assertion of iPhone DPR3 text sharpness",
+    "Caption and part of long English Sprint wording wraps/clips in the compact prototype explanation",
+    "No physical iPhone touch panel, notch or Scriptable application was tested",
+    "Initial large-file WebKit load needed a long desktop automation wait; no phone startup timing or thermal measurements"
+  ],
+  "viewports": {
+    "desktop": {
+      "height": 762,
+      "canvasWidth": 1280,
+      "width": 1280,
+      "canvasHeight": 762
+    },
+    "compact": {
+      "height": 390,
+      "canvasWidth": 844,
+      "width": 844,
+      "canvasHeight": 390
+    }
+  },
+  "iphone_wkwebview": "NOT_RUN",
+  "phone_fps_and_thermal": "NOT_RUN",
+  "official_visual_parity": "NOT_RUN"
+}

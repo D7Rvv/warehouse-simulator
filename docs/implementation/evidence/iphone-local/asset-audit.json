@@ -1,0 +1,863 @@
+{
+  "status": "PASS",
+  "scope": "static_real_glb_payload_and_texture_audit",
+  "budget_status": "P_TECHNICAL_PROVISIONAL_NOT_PHONE_VERIFIED",
+  "unique_asset_triangles": 23812,
+  "unique_model_bytes": 4906348,
+  "provisional_unique_triangle_limit": 80000,
+  "texture_edge_limit": 1024,
+  "texture_files": {
+    "blue_steel_albedo.png": {
+      "width": 512,
+      "height": 512,
+      "bytes": 151349
+    },
+    "blue_steel_roughness.png": {
+      "width": 512,
+      "height": 512,
+      "bytes": 75190
+    },
+    "concrete_albedo.png": {
+      "width": 512,
+      "height": 512,
+      "bytes": 187390
+    },
+    "concrete_roughness.png": {
+      "width": 512,
+      "height": 512,
+      "bytes": 98416
+    },
+    "kraft_albedo.png": {
+      "width": 512,
+      "height": 512,
+      "bytes": 162115
+    },
+    "kraft_roughness.png": {
+      "width": 512,
+      "height": 512,
+      "bytes": 74738
+    },
+    "rubber_albedo.png": {
+      "width": 512,
+      "height": 512,
+      "bytes": 146116
+    },
+    "rubber_roughness.png": {
+      "width": 512,
+      "height": 512,
+      "bytes": 70367
+    }
+  },
+  "models": {
+    "warehouse_shell": {
+      "file": "assets/models/warehouse_shell.glb",
+      "bytes": 1003040,
+      "sha256": "11f86c8bd9c45878d368cc1bedf2b9758948fc3713bf856e27bcea805870a139",
+      "triangles": 5308,
+      "vertices": 9045,
+      "material_surfaces": 12,
+      "mesh_count": 12,
+      "node_count": 13,
+      "accessor_local_bounds_min": [
+        -8.300000190734863,
+        -6.830199718475342,
+        -14.75
+      ],
+      "accessor_local_bounds_max": [
+        8.300000190734863,
+        6.448235511779785,
+        7.300000190734863
+      ],
+      "scene_bounds_min": [
+        -8.300000190734863,
+        -0.2199999988079071,
+        -14.75
+      ],
+      "scene_bounds_max": [
+        8.300000190734863,
+        6.448235511779785,
+        7.300000190734863
+      ],
+      "materials": [
+        {
+          "name": "WH Brushed Steel",
+          "roughness_factor": 0.3199999928474426,
+          "metallic_factor": 0.800000011920929,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Charcoal Metal",
+          "roughness_factor": 0.6399999856948853,
+          "metallic_factor": 0.4000000059604645,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Concrete PBR",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0,
+          "has_albedo_texture": true,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Warm Galvanized Sheet",
+          "roughness_factor": 0.6200000047683716,
+          "metallic_factor": 0.3499999940395355,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Opaque Contact Detail",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Safety Ochre",
+          "roughness_factor": 0.5199999809265137,
+          "metallic_factor": 0.18000000715255737,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Blue Painted Steel PBR",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0.3499999940395355,
+          "has_albedo_texture": true,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Label Stock",
+          "roughness_factor": 0.9200000166893005,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        }
+      ],
+      "embedded_images": [
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 187390,
+          "sha256": "d6c423d1670ad691d01746a78501d0aeedb5d9a284040cabfd2eb96a01a62601",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 182944,
+          "sha256": "f98a2e586d3aa4e4d3956f5dde0e1c730c6615743aa522687f7c0a3d30292bfd",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 151349,
+          "sha256": "20301968a0f8bd12aae059801538331f446f5cbc7138b14282d3f0b1cd78a296",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 148439,
+          "sha256": "f56c674c7753c02974d2361ef026e467ee0397108cb8e8920ccfafa6e7a5cd11",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        }
+      ]
+    },
+    "truck": {
+      "file": "assets/models/truck.glb",
+      "bytes": 870276,
+      "sha256": "b0d8022dde2277b9af09b5fb63a04a8ec7e40557fa58daaff696c20927e7ea0e",
+      "triangles": 4344,
+      "vertices": 7716,
+      "material_surfaces": 9,
+      "mesh_count": 9,
+      "node_count": 9,
+      "accessor_local_bounds_min": [
+        -1.4282599687576294,
+        -1.3299999237060547,
+        -7.119999885559082
+      ],
+      "accessor_local_bounds_max": [
+        1.4282599687576294,
+        3.700000047683716,
+        0.31999993324279785
+      ],
+      "scene_bounds_min": [
+        -1.4282599687576294,
+        0.0010000001639127731,
+        -7.119999885559082
+      ],
+      "scene_bounds_max": [
+        1.4282599687576294,
+        3.700000047683716,
+        0.31999993324279785
+      ],
+      "materials": [
+        {
+          "name": "WH Charcoal Metal",
+          "roughness_factor": 0.6399999856948853,
+          "metallic_factor": 0.4000000059604645,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Brushed Steel",
+          "roughness_factor": 0.3199999928474426,
+          "metallic_factor": 0.800000011920929,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Warm Galvanized Sheet",
+          "roughness_factor": 0.6200000047683716,
+          "metallic_factor": 0.3499999940395355,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Tail Red",
+          "roughness_factor": 0.30000001192092896,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Blue Painted Steel PBR",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0.3499999940395355,
+          "has_albedo_texture": true,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Opaque Tinted Cab Glass",
+          "roughness_factor": 0.23999999463558197,
+          "metallic_factor": 0.15000000596046448,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Label Stock",
+          "roughness_factor": 0.9200000166893005,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Rubber PBR",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0,
+          "has_albedo_texture": true,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Opaque Contact Detail",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        }
+      ],
+      "embedded_images": [
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 151349,
+          "sha256": "20301968a0f8bd12aae059801538331f446f5cbc7138b14282d3f0b1cd78a296",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 148439,
+          "sha256": "f56c674c7753c02974d2361ef026e467ee0397108cb8e8920ccfafa6e7a5cd11",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 146116,
+          "sha256": "6683b1e67428d6c8f5e6e424ca12ef59809d5cd15959636cb42bf141b6517c3b",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 141316,
+          "sha256": "7d1f9b0cd752e89e556a96ca0f1a45c7772df17aa70ae025e659a9c6f78e2d47",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        }
+      ]
+    },
+    "inspection_bench": {
+      "file": "assets/models/inspection_bench.glb",
+      "bytes": 475904,
+      "sha256": "e4263bd4c2eb19d69907a931c8b103165a594608f0fea8e140bd4fbb6fc0e702",
+      "triangles": 2696,
+      "vertices": 4756,
+      "material_surfaces": 8,
+      "mesh_count": 8,
+      "node_count": 8,
+      "accessor_local_bounds_min": [
+        -1.4249999523162842,
+        -0.5350000858306885,
+        -1.7200000286102295
+      ],
+      "accessor_local_bounds_max": [
+        1.4249999523162842,
+        1.8199999332427979,
+        0.6449999809265137
+      ],
+      "scene_bounds_min": [
+        -1.4249999523162842,
+        0.0,
+        -0.625
+      ],
+      "scene_bounds_max": [
+        1.4249999523162842,
+        1.8199999332427979,
+        0.6449999809265137
+      ],
+      "materials": [
+        {
+          "name": "WH Warm Galvanized Sheet",
+          "roughness_factor": 0.6200000047683716,
+          "metallic_factor": 0.3499999940395355,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Brushed Steel",
+          "roughness_factor": 0.3199999928474426,
+          "metallic_factor": 0.800000011920929,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Charcoal Metal",
+          "roughness_factor": 0.6399999856948853,
+          "metallic_factor": 0.4000000059604645,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Opaque Contact Detail",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Standby LCD",
+          "roughness_factor": 0.36000001430511475,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Label Stock",
+          "roughness_factor": 0.9200000166893005,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Blue Painted Steel PBR",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0.3499999940395355,
+          "has_albedo_texture": true,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Tail Red",
+          "roughness_factor": 0.30000001192092896,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        }
+      ],
+      "embedded_images": [
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 151349,
+          "sha256": "20301968a0f8bd12aae059801538331f446f5cbc7138b14282d3f0b1cd78a296",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 148439,
+          "sha256": "f56c674c7753c02974d2361ef026e467ee0397108cb8e8920ccfafa6e7a5cd11",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        }
+      ]
+    },
+    "conveyor": {
+      "file": "assets/models/conveyor.glb",
+      "bytes": 742272,
+      "sha256": "9b8c8a0ef5cad2e5b5cc88c6db89b602482f5cd08d5a8f324ad3662040bb8eec",
+      "triangles": 2268,
+      "vertices": 4170,
+      "material_surfaces": 7,
+      "mesh_count": 7,
+      "node_count": 7,
+      "accessor_local_bounds_min": [
+        -0.4899999797344208,
+        0,
+        -0.5
+      ],
+      "accessor_local_bounds_max": [
+        0.5,
+        0.9589999914169312,
+        0.5
+      ],
+      "scene_bounds_min": [
+        -0.4899999797344208,
+        0.0,
+        -0.5
+      ],
+      "scene_bounds_max": [
+        0.5,
+        0.9589999914169312,
+        0.5
+      ],
+      "materials": [
+        {
+          "name": "WH Charcoal Metal",
+          "roughness_factor": 0.6399999856948853,
+          "metallic_factor": 0.4000000059604645,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Rubber PBR",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0,
+          "has_albedo_texture": true,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Blue Painted Steel PBR",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0.3499999940395355,
+          "has_albedo_texture": true,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Brushed Steel",
+          "roughness_factor": 0.3199999928474426,
+          "metallic_factor": 0.800000011920929,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Opaque Contact Detail",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Tail Red",
+          "roughness_factor": 0.30000001192092896,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Safety Ochre",
+          "roughness_factor": 0.5199999809265137,
+          "metallic_factor": 0.18000000715255737,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        }
+      ],
+      "embedded_images": [
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 146116,
+          "sha256": "6683b1e67428d6c8f5e6e424ca12ef59809d5cd15959636cb42bf141b6517c3b",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 141316,
+          "sha256": "7d1f9b0cd752e89e556a96ca0f1a45c7772df17aa70ae025e659a9c6f78e2d47",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 151349,
+          "sha256": "20301968a0f8bd12aae059801538331f446f5cbc7138b14282d3f0b1cd78a296",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 148439,
+          "sha256": "f56c674c7753c02974d2361ef026e467ee0397108cb8e8920ccfafa6e7a5cd11",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        }
+      ]
+    },
+    "export_gate": {
+      "file": "assets/models/export_gate.glb",
+      "bytes": 864716,
+      "sha256": "3577629611b0ac6cf84e2e6f9a5dc232154b1634f8837b310b72070b2d4c2b6f",
+      "triangles": 4148,
+      "vertices": 7580,
+      "material_surfaces": 9,
+      "mesh_count": 9,
+      "node_count": 9,
+      "accessor_local_bounds_min": [
+        -1.7000000476837158,
+        -0.4242001473903656,
+        -3.543839931488037
+      ],
+      "accessor_local_bounds_max": [
+        1.7000000476837158,
+        3.674999952316284,
+        1.024999976158142
+      ],
+      "scene_bounds_min": [
+        -1.7000000476837158,
+        -3.725290298461914e-09,
+        -1.1400001049041748
+      ],
+      "scene_bounds_max": [
+        1.7000000476837158,
+        3.674999952316284,
+        1.024999976158142
+      ],
+      "materials": [
+        {
+          "name": "WH Blue Painted Steel PBR",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0.3499999940395355,
+          "has_albedo_texture": true,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Brushed Steel",
+          "roughness_factor": 0.3199999928474426,
+          "metallic_factor": 0.800000011920929,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Opaque Contact Detail",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Safety Ochre",
+          "roughness_factor": 0.5199999809265137,
+          "metallic_factor": 0.18000000715255737,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Charcoal Metal",
+          "roughness_factor": 0.6399999856948853,
+          "metallic_factor": 0.4000000059604645,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Label Stock",
+          "roughness_factor": 0.9200000166893005,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Status Green",
+          "roughness_factor": 0.44999998807907104,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Rubber PBR",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0,
+          "has_albedo_texture": true,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Standby LCD",
+          "roughness_factor": 0.36000001430511475,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        }
+      ],
+      "embedded_images": [
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 151349,
+          "sha256": "20301968a0f8bd12aae059801538331f446f5cbc7138b14282d3f0b1cd78a296",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 148439,
+          "sha256": "f56c674c7753c02974d2361ef026e467ee0397108cb8e8920ccfafa6e7a5cd11",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 146116,
+          "sha256": "6683b1e67428d6c8f5e6e424ca12ef59809d5cd15959636cb42bf141b6517c3b",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 141316,
+          "sha256": "7d1f9b0cd752e89e556a96ca0f1a45c7772df17aa70ae025e659a9c6f78e2d47",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        }
+      ]
+    },
+    "rack": {
+      "file": "assets/models/rack.glb",
+      "bytes": 450024,
+      "sha256": "23b2c091126798dd9474f47b3340af32bd144594995a108b307b840373f4f390",
+      "triangles": 2324,
+      "vertices": 4049,
+      "material_surfaces": 6,
+      "mesh_count": 6,
+      "node_count": 6,
+      "accessor_local_bounds_min": [
+        -1.4149999618530273,
+        0,
+        -2.349324941635132
+      ],
+      "accessor_local_bounds_max": [
+        1.4149999618530273,
+        3.200000047683716,
+        0.5949999690055847
+      ],
+      "scene_bounds_min": [
+        -1.4149999618530273,
+        0.0,
+        -0.5949999094009399
+      ],
+      "scene_bounds_max": [
+        1.4149999618530273,
+        3.200000047683716,
+        0.5949999690055847
+      ],
+      "materials": [
+        {
+          "name": "WH Blue Painted Steel PBR",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0.3499999940395355,
+          "has_albedo_texture": true,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Brushed Steel",
+          "roughness_factor": 0.3199999928474426,
+          "metallic_factor": 0.800000011920929,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Opaque Contact Detail",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Rack Orange",
+          "roughness_factor": 0.5,
+          "metallic_factor": 0.3199999928474426,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Label Stock",
+          "roughness_factor": 0.9200000166893005,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Printed Ink",
+          "roughness_factor": 0.9200000166893005,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        }
+      ],
+      "embedded_images": [
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 151349,
+          "sha256": "20301968a0f8bd12aae059801538331f446f5cbc7138b14282d3f0b1cd78a296",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 148439,
+          "sha256": "f56c674c7753c02974d2361ef026e467ee0397108cb8e8920ccfafa6e7a5cd11",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        }
+      ]
+    },
+    "pallet": {
+      "file": "assets/models/pallet.glb",
+      "bytes": 137324,
+      "sha256": "dfa4458a4286563872bebacc6f85fb87cb2fc069449d27b96d453e9e7ccc410b",
+      "triangles": 1944,
+      "vertices": 3888,
+      "material_surfaces": 1,
+      "mesh_count": 1,
+      "node_count": 1,
+      "accessor_local_bounds_min": [
+        -0.4000000059604645,
+        0,
+        -0.6000000238418579
+      ],
+      "accessor_local_bounds_max": [
+        0.4000000059604645,
+        0.1574999988079071,
+        0.6000000238418579
+      ],
+      "scene_bounds_min": [
+        -0.4000000059604645,
+        0.0,
+        -0.6000000238418579
+      ],
+      "scene_bounds_max": [
+        0.4000000059604645,
+        0.1574999988079071,
+        0.6000000238418579
+      ],
+      "materials": [
+        {
+          "name": "WH Pallet Timber",
+          "roughness_factor": 0.949999988079071,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        }
+      ],
+      "embedded_images": []
+    },
+    "parcel": {
+      "file": "assets/models/parcel.glb",
+      "bytes": 362792,
+      "sha256": "6472978b74fb366db1e8ddd309d9c34c4e45972e732b15d7dd7a043e02e2bf43",
+      "triangles": 780,
+      "vertices": 1286,
+      "material_surfaces": 5,
+      "mesh_count": 5,
+      "node_count": 5,
+      "accessor_local_bounds_min": [
+        -0.3100000023841858,
+        0,
+        -0.24650000035762787
+      ],
+      "accessor_local_bounds_max": [
+        0.3100000023841858,
+        0.45899999141693115,
+        0.2492000013589859
+      ],
+      "scene_bounds_min": [
+        -0.3100000023841858,
+        0.0,
+        -0.24650000035762787
+      ],
+      "scene_bounds_max": [
+        0.3100000023841858,
+        0.45899999141693115,
+        0.2492000013589859
+      ],
+      "materials": [
+        {
+          "name": "WH Kraft Paper PBR",
+          "roughness_factor": 1.0,
+          "metallic_factor": 0,
+          "has_albedo_texture": true,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Charcoal Metal",
+          "roughness_factor": 0.6399999856948853,
+          "metallic_factor": 0.4000000059604645,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Packing Tape",
+          "roughness_factor": 0.47999998927116394,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Label Stock",
+          "roughness_factor": 0.9200000166893005,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        },
+        {
+          "name": "WH Printed Ink",
+          "roughness_factor": 0.9200000166893005,
+          "metallic_factor": 0,
+          "has_albedo_texture": false,
+          "has_normal_texture": false
+        }
+      ],
+      "embedded_images": [
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 162115,
+          "sha256": "941278d5b59bd2baa421f2634123ca532b27dd43cfed941ea0bfb69060dcd755",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "encoded_bytes": 149414,
+          "sha256": "57bf22762a1062a53b0620bdd00fec572b698eaec94b93dbd6b76059f41715eb",
+          "rgba8_mip_chain_bytes_estimate": 1398101
+        }
+      ]
+    }
+  },
+  "embedded_images_repeated_across_models": {
+    "20301968a0f8bd12aae059801538331f446f5cbc7138b14282d3f0b1cd78a296": 6,
+    "f56c674c7753c02974d2361ef026e467ee0397108cb8e8920ccfafa6e7a5cd11": 6,
+    "6683b1e67428d6c8f5e6e424ca12ef59809d5cd15959636cb42bf141b6517c3b": 3,
+    "7d1f9b0cd752e89e556a96ca0f1a45c7772df17aa70ae025e659a9c6f78e2d47": 3
+  },
+  "embedded_rgba8_mip_memory_upper_estimate_bytes": 30758222,
+  "memory_estimate_limitations": "Assumes duplicate embedded images remain distinct RGBA8 resources; actual GPU compression, sharing and mip allocation require runtime/device measurements.",
+  "draw_call_limitations": "Asset surfaces are not runtime draw calls. Instancing, section culling, UI, shadows and render passes affect actual counters.",
+  "reference_parity": "NOT_RUN_REFERENCE_UNAVAILABLE",
+  "actual_phone_fps": "NOT_RUN",
+  "phone_thermal_30_minutes": "NOT_RUN",
+  "overall_product_acceptance": "NOT_RUN",
+  "manifest_sha256": "ae98e35fe69762b510a132a7ec2deb8dd33e4dc6f1c9723ba57d8f0db427fbc3"
+}

@@ -90,3 +90,13 @@ SPEC-20の操作/カメラS0-S1を実装する。物流価格や曜日の未確�
 | DEC-022 | 机・ラック・パレットなど可視モデルのAABBをプレビューだけの追加干渉判定へ注入する。Fixtureや確定グリッドを変更しない | P：S1の安全な表示。S5の本配置判定ではない |
 
 価格・曜日・収益・Tierを変更する決定ではありません。元の資料とUnity実装記録は履歴として保持します。詳細は `docs/implementation/GODOT_MIGRATION_DECISION.md` を参照してください。
+
+## 2026-10-28 追加決定：iPhone単独の非公開確認版
+
+| DEC ID | 内容 | Status |
+| --- | --- | --- |
+| DEC-023 | PCでの画面転送を前提にせず、iPhoneだけで使える版を用意する。一般公開しない方針を保持 | D：最新ユーザー指示と既存制約 |
+| DEC-024 | Godotの正規Web出力を単一HTMLへ埋め込み、Scriptable本体のWebViewでfile://として開く | P：確認版の配布方式。最終ネイティブ製品の完成判定ではない |
+| DEC-025 | ローカル確認版は無音・永続セーブなし。通常のsecure-context判定を保持し、外部通信を制限。実CSS寸法で48pxの操作領域を維持し、DOMCancel時はジェスチャー全体を破棄 | P：S0/S1の技術方針。ゲーム経済・物流の仕様は変更しない |
+
+詳細は `docs/implementation/IPHONE_LOCAL_REVIEW.md`。iPhone実機の互換性・性能・30分熱測定は引き続きNOT_RUNです。

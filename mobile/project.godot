@@ -28,6 +28,7 @@ renderer/rendering_method.mobile="gl_compatibility"
 textures/default_filters/use_nearest_mipmap_filter=false
 lights_and_shadows/directional_shadow/size=1024
 textures/default_filters/anisotropic_filtering_level=1
+textures/vram_compression/import_etc2_astc=true
 
 [physics]
 common/physics_ticks_per_second=30

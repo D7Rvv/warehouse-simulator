@@ -6,7 +6,9 @@
 
 ## 起動と操作
 
-配布用Windows確認版はZIPを展開して `WarehouseStation.exe` から起動します。iPhoneへ直接導入できる版はまだありません。PCが使える場合のSteam Link手順と現在の制限は [確認版を触る手順](docs/play/PLAY_ON_IPHONE.md) を参照してください。
+iPhoneだけで使う **Scriptable用オフライン確認版** を追加しました。無料のScriptable本体から単一HTMLを選んで実行します。PC・公開URL・Unityは不要です。[iPhoneで開く手順](docs/play/PLAY_ON_IPHONE.md) を参照してください。署名済みの独立iOSアプリや、本編の物流ゲームの完成を意味しません。
+
+Windows確認版はZIPを展開して `WarehouseStation.exe` から起動します。
 
 1. Godot **4.6.3標準版** で `mobile/project.godot` をインポートしてF5。
 2. 横向き画面の下部から搬入 → 検査 → 出荷 → 倉庫 → 建設を切り替えます。3D設備や箱のタップも同じ選択へつながります。
@@ -31,11 +33,14 @@ Windows開発PCは既存記録のIntelHD630／i7-7700／16GBを考慮したCompa
 mobile/tools/check.sh
 mobile/tools/render.sh
 python3 mobile/tools/package.py
+python3 mobile/tools/package_iphone_local.py
 ```
 
 Godotのヘッドレス検証と、実描画での複数フレームのタッチ／ドラッグ／ピンチ／取消、箱3個のRaycast、50回のボタン切替、1,000回のエンジン切替を実行します。画像、実フレーム統計、資産・ソースのハッシュを記録します。描画には実DisplayまたはXvfb＋Mesaが必要で、ダミーレンダラーを画像確認の代用にしません。
 
 Linux／Windowsの確認用ビルドと、このフォルダだけのソースZIPを `builds/godot-mobile/packages/` に作成します。自動公開は行いません。iOSの署名・実機導入には引き続きmacOS／Xcodeや実際のTeam情報等が必要です。詳細は[移行・検証記録](docs/implementation/GODOT_MIGRATION_DECISION.md)と [mobileの案内](mobile/README.md)を参照してください。
+
+iPhoneローカル確認版は `builds/godot-mobile/WarehouseStation-iPhone-Offline.zip`。ScriptableのWebView内で動く版で、上記の独立ネイティブiOSアプリとは配布経路が異なります。[今回の実装・検証記録](docs/implementation/IPHONE_LOCAL_REVIEW.md)に、デスクトップWebKitとiPhone実機の検証範囲を記録します。
 
 ## データと性能の制約
 

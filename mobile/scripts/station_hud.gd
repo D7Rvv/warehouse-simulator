@@ -327,6 +327,9 @@ func _release_visual(pointer_id: int) -> void:
 		(press.button as Button).modulate = Color.WHITE
 	_presses.erase(pointer_id)
 
+func cancel_input_captures() -> void:
+	_cancel_captures()
+
 func _cancel_captures() -> void:
 	for pointer_id: int in _presses.keys():
 		_release_visual(pointer_id)
@@ -433,6 +436,13 @@ func _layout() -> void:
 	var dpi: float = 160.0 if headless else float(DisplayServer.screen_get_dpi())
 	var density: float = dpi / 160.0 if OS.has_feature("mobile") and dpi >= 100 else 1.0
 	_ui_scale = maxf(0.75, density * physical_to_viewport.y)
+	# WebView DPI is a browser estimate. Keep 48 CSS-pixel touch targets even
+	# when the project viewport stretches from its 1280x720 reference size.
+	if OS.has_feature("iphone_local_review") and Engine.has_singleton("JavaScriptBridge"):
+		var bridge: Object = Engine.get_singleton("JavaScriptBridge")
+		var css_height: Variant = bridge.call("eval", "document.getElementById('canvas').getBoundingClientRect().height", true)
+		if (css_height is float or css_height is int) and float(css_height) > 0.0:
+			_ui_scale = maxf(0.1, viewport_size.y / float(css_height))
 	if _last_layout_rect.size.x > 0 and (_last_layout_rect != _safe_viewport_rect or not is_equal_approx(_last_layout_scale, _ui_scale)):
 		_cancel_captures()
 	_last_layout_rect = _safe_viewport_rect

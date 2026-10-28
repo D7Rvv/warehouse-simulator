@@ -1,35 +1,37 @@
-# 今の確認版を触る
+# iPhoneだけで開く
 
-現在の配布用確認版はWindows用です。UnityやGodot Editorのインストールは不要です。
-ZIPをWindows PCへ保存して「すべて展開」し、`WarehouseStation/WarehouseStation.exe` を起動します。
-Windows用ファイルの書き出し・ZIP/実行ファイルのSHA256とCRC確認は済んでいますが、このクラウドからWindows OSでの起動は検証していません。
+**Scriptable用のローカル確認版です。PC、Unity、公開サーバー、Apple Developer登録は不要です。**
+App Storeから無料の [Scriptable](https://apps.apple.com/jp/app/scriptable/id1405459188) を入れて使います。独立したiOSゲームアプリとしてインストールする版ではありません。
 
-操作できるのは、3D倉庫の作業場所切替、検査箱の回転と伝票拡大、コンベアの半透明配置プレビューです。
-荷物の搬入→検査合否→出荷→収益まで進むゲーム本編は未実装です。
+## 最初の起動
 
-## iPhoneからPCの画面を操作する方法
+1. `WarehouseStation-iPhone-Offline.zip` をiPhoneでダウンロードし、「ファイル」へ保存します。
+2. 「ファイル」でZIPをタップして展開します。中の `WarehouseStation-iPhone.html` がゲーム本体です。
+3. Scriptable本体を開き、「＋」で新しいスクリプトを作って、次のコードを貼り付けます。
 
-**Windows PCを起動したまま使います。iPhone単独で動くアプリではありません。**
-一般公開をしない選択肢として、Steam LinkによるPC画面の転送があります。
-このゲームとSteam Linkの組合せ、iPhoneの入力・画質・発熱は未検証です。
+```javascript
+const files = await DocumentPicker.open(["public.html"]);
+if (files.length) await WebView.loadFile(files[0], undefined, true);
+```
 
-1. Windows PCで確認版を展開し、まず `WarehouseStation.exe` を起動できるか確認します。
-2. PCのSteamで「ゲーム」→「非Steamゲームをマイライブラリに追加」→「参照」から、そのexeを追加します。
-3. iPhoneのApp StoreでValveの **Steam Link** を入れます。PCとiPhoneを同じWi-Fiにつなぎ、Steam Linkの案内でPCとペアリングします。
-4. Steam Linkで接続し、追加したゲームを選びます。横向きで、タッチ操作をマウス操作として使います。
+4. 保存して実行し、展開した `WarehouseStation-iPhone.html` を選びます。
+5. iPhoneを横向きにし、「倉庫を開く」を押します。
 
-メニュー、箱の回転、ズーム用の画面ボタンを利用できます。スマホの2本指イベントがPCへそのまま伝わるとは確認していません。
-Steam Linkの案内は [Steam Remote Play](https://store.steampowered.com/remoteplay) を参照してください。
+次回は同じスクリプトを実行してHTMLを選びます。同梱の `Open-Warehouse.js` でも起動できます。Scriptableのウィジェット・ショートカット拡張ではなく、本体から実行してください。HTMLをSafariや「ファイル」のプレビューで直接開いても動作しません。
 
-## iPhoneだけではまだ起動できない理由
+## 操作できる範囲
 
-署名済みiOSアプリはまだ作成しておらず、Safariで開ける配信URLもありません。
-ユーザーの「公開しない」という選択を保持し、Webゲームの公開・公開Release・外部トンネルは実行していません。
+搬入・検査・出荷・倉庫・建設の切替、箱の回転、伝票拡大、倉庫のパン／ズーム、半透明コンベアの移動・90度回転・反転・取消を操作します。右上「画質」から省電力を選べます。
 
-2026-10-28に、Godot4.6.3の正規single-thread Web書き出しを、実Chromiumの安全なコンテキストではないHTTPオリジンで確認しました。
-ゲーム起動前に `Secure Context - Check web server configuration (use HTTPS)` が出ます。
-したがって、単にPCからHTTPで同じWi-Fiへ配信するだけでは、この版は起動しません。
-この方式の試作ZIPを動作品として配布しません。確認用に生成したファイルは、無視対象のビルドフォルダへ隔離しています。
+これは **S0/S1の操作試作** です。本物の荷物移送、検査合否、購入、確定設置、出荷精算は未実装です。無音で、永続セーブもありません。
 
-HTTPS要件を無効化したり、iPhoneへ証明書の信頼設定を追加したりする手順は採用していません。
-PCなしで遊べる状態は、実際のiOS署名・導入、または利用条件に合うHTTPS配信の成立を確認してから案内します。
+## 対応と検証の範囲
+
+- ゲームエンジンはSafari15.2未満を拒否します。Scriptableの現行対応iOSもApp Storeで確認してください。
+- 初回ダウンロードとScriptable導入後、ゲーム本体は端末内のファイルから実行します。サーバー起動や証明書の信頼設定は不要です。
+- デスクトップWebKitの実file://起動と、Chromiumの実ループバックHTTPで表示・入力を検証します。iPhone実機の動作や性能を代用したとは扱いません。
+- iPhone 13 Pro Maxの実OS版、実機の互換性・30fps・30分以上の発熱は **未検証** です。読込み速度も実機では未測定です。
+
+通常のHTTPによるWi-Fi配信は安全なコンテキストにならず、前回の試験では起動できませんでした。今回はWebKitが正式に安全なコンテキストとして扱うローカルfile://を使用します。HTTPS判定やブラウザ管理ポリシーは変更していません。
+
+生成コマンドは `python3 mobile/tools/package_iphone_local.py`。生成物は `builds/godot-mobile/`、詳しい証跡は [iPhoneローカル版の実装記録](../implementation/IPHONE_LOCAL_REVIEW.md) を参照してください。Webゲームの一般公開は行っていません。

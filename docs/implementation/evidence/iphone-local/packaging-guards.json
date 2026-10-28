@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scope": "packaging_provenance_guard_real_tool_invocations_not_iphone_execution",
+  "checks": [
+    {
+      "test": "Verified matching source/export cohort can be reused",
+      "status": "PASS"
+    },
+    {
+      "test": "Mismatched source provenance is rejected before delivery",
+      "status": "PASS"
+    },
+    {
+      "test": "Modified exported engine bytes cannot be reused as verified",
+      "status": "PASS"
+    }
+  ],
+  "html_sha256": "c044ee39357dd1b05010f0d7b9a2c2d9992d9e8c52c053b55fd5a63bc2d2170b",
+  "cohort_restored": true,
+  "export_bytes_restored": true,
+  "tool_sha256": "6cf400e4ed9615fd93feb8cb04fc3874074e6a270113b6a1d146c8f02a3cef6d"
+}

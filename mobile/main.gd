@@ -19,6 +19,8 @@ var _header_elapsed := 0.0
 var _suspended := false
 var _thermal_suspended := false
 var _last_stat_target := ""
+var _local_web_state: Object
+var _local_web_cancel_epoch := 0
 
 func _ready() -> void:
 	_initialize()
@@ -65,15 +67,29 @@ func _initialize() -> void:
 		push_error(quality.last_error)
 		return
 	is_ready_state = true
+	if OS.has_feature("iphone_local_review") and Engine.has_singleton("JavaScriptBridge"):
+		var bridge: Object = Engine.get_singleton("JavaScriptBridge")
+		_local_web_state = bridge.call("get_interface", "warehouseLocal")
+		if _local_web_state != null: _local_web_cancel_epoch = int(_local_web_state.cancelEpoch)
 	navigate(str(model.world().initialStation))
 	hud.show_feedback("試作データ [P]：タップで作業場所を切替。物流・購入・収益は未実装です。")
 	_update_header()
 
 func _input(event: InputEvent) -> void:
-	if not is_ready_state or _suspended: return
+	if not is_ready_state: return
+	_sync_local_web_cancellation()
+	if _suspended: return
 	# World/UI capture is resolved before a UI release can invoke an action.
 	router.feed_event(event)
 	hud.feed_event(event)
+
+func _sync_local_web_cancellation() -> void:
+	if _local_web_state == null: return
+	var epoch: int = int(_local_web_state.cancelEpoch)
+	if epoch == _local_web_cancel_epoch: return
+	_local_web_cancel_epoch = epoch
+	router.cancel_all()
+	hud.cancel_input_captures()
 
 func navigate(station_id: String, target_id: String = "") -> bool:
 	if not is_ready_state: return false

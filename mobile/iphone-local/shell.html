@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=contain, user-scalable=no">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval'; style-src 'unsafe-inline'; img-src data: blob:; connect-src 'none'; worker-src 'none'; media-src 'none'">
+<title>Warehouse Station — iPhoneローカル版</title>
+<style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#14212a;color:#f1f5f7;font:16px -apple-system,sans-serif;touch-action:none}
+#canvas{display:block;width:100%;height:100%;outline:none}
+#welcome{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;background:#14212a;z-index:10}
+article{max-width:540px;text-align:center}h1{font-size:24px}p{line-height:1.6}button{min-height:52px;min-width:180px;padding:12px 20px;border:0;border-radius:12px;background:#74d8b9;color:#10251e;font-size:18px;font-weight:600}
+#error{white-space:pre-wrap;color:#ffcbaf}#progress{font-size:14px;color:#bbccd5}
+details{font-size:12px;margin:12px auto;max-width:500px}pre{text-align:left;white-space:pre-wrap;max-height:120px;overflow:auto;color:#bbccd5}
+#orientation{display:none;position:fixed;inset:0;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20;background:#14212a}
+@media(orientation:portrait){#orientation{display:flex}}
+</style>
+</head>
+<body data-warehouse-local="1">
+<canvas id="canvas" tabindex="0"></canvas>
+<div id="welcome"><article>
+<h1>Warehouse Station</h1>
+<p>iPhoneローカル版・操作試作</p>
+<p>倉庫の切替、箱の回転と伝票拡大、コンベア配置プレビューを操作できます。<br>搬入から出荷まで進む本編は開発中です。</p>
+<button id="start" type="button">倉庫を開く</button>
+<p id="progress">横向きで開始してください。音は出ません。</p><p id="error" role="alert"></p>
+<details><summary>第三者ライセンス</summary><pre>@@LICENSE_NOTICES_HTML@@</pre></details>
+</article></div>
+<div id="orientation">iPhoneを横向きにしてください。<br>画面の縦向きロックも確認してください。</div>
+<script id="wasm-payload" type="application/octet-stream">@@WASM_BASE64@@</script>
+<script id="pck-payload" type="application/octet-stream">@@PCK_BASE64@@</script>
+<script>@@ENGINE_JS@@</script>
+<script>
+'use strict';
+window.warehouseLocal = {phase:'waiting', externalRequests:0, cancelEpoch:0, errors:[], logs:[], secureContext:isSecureContext, missingFeatures:[]};
+// Godot 4.6.3 maps DOM touchcancel to an ordinary release. Record cancellation
+// before its canvas handler runs so the input router can discard held actions.
+document.addEventListener('touchcancel', () => { window.warehouseLocal.cancelEpoch++; }, {capture:true, passive:true});
+window.addEventListener('pagehide', () => { window.warehouseLocal.cancelEpoch++; });
+document.addEventListener('visibilitychange', () => { if(document.hidden) window.warehouseLocal.cancelEpoch++; });
+function decodePayload(id) {
+  const node = document.getElementById(id);
+  const text = node.textContent.trim();
+  node.textContent = ''; node.remove();
+  const padding = text.endsWith('==') ? 2 : text.endsWith('=') ? 1 : 0;
+  const result = new Uint8Array(text.length / 4 * 3 - padding);
+  const step = 512 * 1024;
+  let written = 0;
+  for (let offset = 0; offset < text.length; offset += step) {
+    const block = atob(text.slice(offset, offset + step));
+    for (let i = 0; i < block.length; ++i) result[written++] = block.charCodeAt(i);
+  }
+  if (written !== result.length) throw new Error('ファイルの展開に失敗しました。もう一度ダウンロードしてください。');
+  return result;
+}
+function showError(error) {
+  const message = String(error && error.message || error);
+  window.warehouseLocal.phase = 'error';
+  window.warehouseLocal.errors.push(message);
+  document.getElementById('error').textContent = message;
+  document.getElementById('progress').textContent = '起動できませんでした。Scriptable本体から実行し、iOSの更新も確認してください。';
+}
+document.getElementById('start').addEventListener('click', async function () {
+  this.disabled = true;
+  const diagnostic = window.warehouseLocal;
+  try {
+    diagnostic.missingFeatures = Engine.getMissingFeatures({threads:false});
+    if (diagnostic.missingFeatures.length) throw new Error(diagnostic.missingFeatures.join('\n'));
+    diagnostic.phase = 'decoding';
+    document.getElementById('progress').textContent = '倉庫を読み込んでいます…';
+    await new Promise(resolve => setTimeout(resolve, 30));
+    let wasm = decodePayload('wasm-payload');
+    let pack = decodePayload('pck-payload');
+    // Resolve only the embedded engine. No fetch is forwarded to the network.
+    window.fetch = async function (input) {
+      const raw = typeof input === 'string' ? input : input.url;
+      const url = new URL(raw, document.baseURI);
+      if (url.pathname.endsWith('/index.wasm') && wasm !== null) {
+        const response = new Response(wasm, {status:200, headers:{'Content-Type':'application/wasm'}});
+        wasm = null;
+        return response;
+      }
+      diagnostic.externalRequests++;
+      throw new Error('このローカル版は外部ファイルを読み込みません。');
+    };
+    const engine = new Engine({
+      executable:'index', mainPack:'index.pck', canvas:document.getElementById('canvas'),
+      canvasResizePolicy:2, focusCanvas:true, persistentPaths:[], persistentDrops:false,
+      serviceWorker:'', gdextensionLibs:[], locale:'ja',
+      args:['--main-pack','index.pck','--audio-driver','Dummy'],
+      onPrint:function (message) { diagnostic.logs.push(String(message)); if(diagnostic.logs.length>30) diagnostic.logs.shift(); },
+      onPrintError:function (message) { diagnostic.errors.push(String(message)); if(diagnostic.errors.length>30) diagnostic.errors.shift(); }
+    });
+    diagnostic.phase = 'initializing';
+    await engine.preloadFile(pack, 'index.pck');
+    pack = null;
+    await engine.init('index');
+    await engine.start();
+    diagnostic.phase = 'running';
+    document.getElementById('welcome').remove();
+    document.getElementById('canvas').focus();
+  } catch (error) { showError(error); }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,652 @@
+{
+  "status": "PASS",
+  "scope": "actual_desktop_chromium_webgl2_frame_spanning_touch_pixels_not_internal_state_or_iphone_acceptance",
+  "transport": "actual_loopback_http_same_html_bytes_not_a_file_url_verification",
+  "environment_block": null,
+  "html_sha256": "c044ee39357dd1b05010f0d7b9a2c2d9992d9e8c52c053b55fd5a63bc2d2170b",
+  "html_bytes": 54880781,
+  "browser_version": "154.0.8037.57",
+  "checks": [
+    {
+      "status": "PASS",
+      "description": "The unchanged HTML uses the recorded actual transport: http:"
+    },
+    {
+      "status": "PASS",
+      "description": "The actual origin is a genuine secure context without overrides"
+    },
+    {
+      "status": "PASS",
+      "description": "Landscape start is unobstructed"
+    },
+    {
+      "status": "PASS",
+      "description": "Start button is enabled before initialization"
+    },
+    {
+      "status": "PASS",
+      "description": "Local embedded engine reaches running phase",
+      "detail": {
+        "phase": "running",
+        "externalRequests": 0,
+        "cancelEpoch": 0,
+        "errors": [],
+        "logs": [
+          "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org",
+          "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL",
+          "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+        ],
+        "secureContext": true,
+        "missingFeatures": []
+      }
+    },
+    {
+      "status": "PASS",
+      "description": "Standard Godot feature checks find no missing requirements"
+    },
+    {
+      "status": "PASS",
+      "description": "Loader records the real secure-context result"
+    },
+    {
+      "status": "PASS",
+      "description": "Local loader attempted no external fetch"
+    },
+    {
+      "status": "PASS",
+      "description": "Consumed Base64 payload nodes are removed from the DOM"
+    },
+    {
+      "status": "PASS",
+      "description": "Start overlay is removed after initialization"
+    },
+    {
+      "status": "PASS",
+      "description": "Actual WebGL2 canvas is initialized",
+      "detail": {
+        "width": 844,
+        "height": 390,
+        "webgl2": true,
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)"
+      }
+    },
+    {
+      "status": "PASS",
+      "description": "overview: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Overview world region has actual rendered detail; visual review still required"
+    },
+    {
+      "status": "PASS",
+      "description": "inbound: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "inbound: nonblank actual 3D display after frame-spanning touch"
+    },
+    {
+      "status": "PASS",
+      "description": "inspection: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "inspection: nonblank actual 3D display after frame-spanning touch"
+    },
+    {
+      "status": "PASS",
+      "description": "export: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "export: nonblank actual 3D display after frame-spanning touch"
+    },
+    {
+      "status": "PASS",
+      "description": "overview_return: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "overview_return: nonblank actual 3D display after frame-spanning touch"
+    },
+    {
+      "status": "PASS",
+      "description": "build: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "build: nonblank actual 3D display after frame-spanning touch"
+    },
+    {
+      "status": "PASS",
+      "description": "Five navigation touches produce distinct 3D display regions; internal Station IDs are not exposed"
+    },
+    {
+      "status": "PASS",
+      "description": "inspection_before_drag: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "inspection_after_drag: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Frame-spanning native browser drag changes inspection pixels; visual review needed for rotation"
+    },
+    {
+      "status": "PASS",
+      "description": "inspection_after_rotate_button: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Inspection rotate button produces visible model-region change"
+    },
+    {
+      "status": "PASS",
+      "description": "inspection_label_overlay: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Label button produces an actual overlay display change"
+    },
+    {
+      "status": "PASS",
+      "description": "inspection_label_closed: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Overlay close area changes the actual displayed image"
+    },
+    {
+      "status": "PASS",
+      "description": "build_before_actions: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "build_after_rotate: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Preview rotate touch changes the actual display"
+    },
+    {
+      "status": "PASS",
+      "description": "build_after_flip: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Preview IN/OUT touch changes the actual display"
+    },
+    {
+      "status": "PASS",
+      "description": "build_after_drag: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Frame-spanning build drag changes the visible preview context"
+    },
+    {
+      "status": "PASS",
+      "description": "build_after_cancel: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Preview cancel touch changes the actual display"
+    },
+    {
+      "status": "PASS",
+      "description": "overview_before_cancel: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Overview navigation indicator is visibly selected before Cancel regression",
+      "detail": {
+        "column": 3,
+        "green_pixel_counts": [
+          0,
+          0,
+          0,
+          510,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "status": "PASS",
+      "description": "overview_after_touch_cancel: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Canceled native browser navigation touch preserves the selected navigation indicator",
+      "detail": {
+        "column": 3,
+        "green_pixel_counts": [
+          0,
+          0,
+          0,
+          510,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "status": "PASS",
+      "description": "overview_after_pan: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Actual overview drag changes the 3D region"
+    },
+    {
+      "status": "PASS",
+      "description": "overview_after_pinch: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Two simultaneous native browser touches change the overview 3D region"
+    },
+    {
+      "status": "PASS",
+      "description": "overview_after_pinch_ui_guard: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "A held navigation touch preserves the selected navigation indicator after an overlapping two-finger browser gesture ends",
+      "detail": {
+        "column": 3,
+        "green_pixel_counts": [
+          0,
+          0,
+          0,
+          510,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "status": "PASS",
+      "description": "Portrait viewport displays the rotation gate"
+    },
+    {
+      "status": "PASS",
+      "description": "portrait_gate: actual display dimensions",
+      "detail": [
+        390,
+        844
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Returning to landscape removes the rotation gate"
+    },
+    {
+      "status": "PASS",
+      "description": "inbound_after_orientation_return: actual display dimensions",
+      "detail": [
+        844,
+        390
+      ]
+    },
+    {
+      "status": "PASS",
+      "description": "Fresh touch produces a new 3D display after orientation recovery"
+    },
+    {
+      "status": "PASS",
+      "description": "Local engine remains running with no external fetches after all interactions"
+    },
+    {
+      "status": "PASS",
+      "description": "Godot loader/printErr diagnostics contain no errors",
+      "detail": []
+    },
+    {
+      "status": "PASS",
+      "description": "Browser page and console contain no errors",
+      "detail": {
+        "page": [],
+        "console": []
+      }
+    },
+    {
+      "status": "PASS",
+      "description": "Actual browser made zero external HTTP/HTTPS/WebSocket requests; loopback document transport is recorded separately",
+      "detail": []
+    },
+    {
+      "status": "PASS",
+      "description": "Standalone HTML bytes remain unchanged throughout the test"
+    }
+  ],
+  "captures": [
+    {
+      "name": "overview",
+      "file": "overview.png",
+      "sha256": "1213ccc0986b51e6377776a30712e99769ce467535a0a90a054464cdf231e74d",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "dbfa6f05e6a95f0cc50791be405d33e5986e9b4e03d9dfbf39fdc7e69ab815a7",
+      "world_region_color_count": 10451
+    },
+    {
+      "name": "inbound",
+      "file": "inbound.png",
+      "sha256": "38aadf23a9c6e4772e7af76b7fbbe6f4b79045bfb06a98e5e035475459e963ab",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "d7042c4ae74f14474520263c8b78bb5c734a377c25d5b9006a531588ceaa13ff",
+      "world_region_color_count": 4590
+    },
+    {
+      "name": "inspection",
+      "file": "inspection.png",
+      "sha256": "3434b8fc368c82c1086c80a9c39ab4cb12347f2e4fc64ea4df8ae45ebedda5a1",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "caa9a99adceb6662887cd4dc26aae1567ae083507880aa2231e3e33e71be08e1",
+      "world_region_color_count": 6752
+    },
+    {
+      "name": "export",
+      "file": "export.png",
+      "sha256": "ab0f476fced7b90ed09f5bba228fe33857fb20f9f68cf0ba14c0e3a22e37a491",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "ae6ad7359dc79e6ff17efd3986824971c8521d538fb9890dcd63220174bc1782",
+      "world_region_color_count": 5823
+    },
+    {
+      "name": "overview_return",
+      "file": "overview_return.png",
+      "sha256": "159d071075d18a4aecfbb333bdf6244172da350dc35693a1f8539bbb933e5a45",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "875e876f3906e7a3b7021b7c201e498cbd63ae5fa61b7fab75a52da045f5ea59",
+      "world_region_color_count": 9454
+    },
+    {
+      "name": "build",
+      "file": "build.png",
+      "sha256": "038df7425d7af4876344b1108a59db5154c88f12589ea79ae3662744cfcf3369",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "12a68ea180c48abd6095a729b4d48ded8eb66b30867f5f3239359ac69bd1d7ee",
+      "world_region_color_count": 9875
+    },
+    {
+      "name": "inspection_before_drag",
+      "file": "inspection_before_drag.png",
+      "sha256": "9061dbcf34c95ff01c04719dae05b6d6993c3e85efb0d1beb8761d57a3557227",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "c337baa7c3405e0f6ea7a3b846322dc2de46a279f1812d6432759de2caf4f6b0",
+      "world_region_color_count": 6752
+    },
+    {
+      "name": "inspection_after_drag",
+      "file": "inspection_after_drag.png",
+      "sha256": "15b08a75bf2945e3477100c8a50d51029110f2ed7ee8415c4b5d50bc5bd4186b",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "a4fab141980d023c972c8f78659421f5224031c0c6723403cb905af40f5d65f8",
+      "world_region_color_count": 6560
+    },
+    {
+      "name": "inspection_after_rotate_button",
+      "file": "inspection_after_rotate_button.png",
+      "sha256": "9cbd00c64e04a7901ce1fe19f8dcd6451644e760b52004f89070e1cc704ffb67",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "53cc34624fa44eb2b8af3acf67cb9e03174ad4a84b95bfef05b42a0463be285a",
+      "world_region_color_count": 6483
+    },
+    {
+      "name": "inspection_label_overlay",
+      "file": "inspection_label_overlay.png",
+      "sha256": "1f27522f2d0311cec612a68b7df5cbc946d449105ef06b528de93530d87090ac",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "d25f1d87a54970322c904d00e565b1c771bb7f7c6220fc4c8e6f3b27126600b2",
+      "world_region_color_count": 1154
+    },
+    {
+      "name": "inspection_label_closed",
+      "file": "inspection_label_closed.png",
+      "sha256": "4a6b38f84c70ab0f7e22b21dd36f7522f67850926b3f51b25cd46c8d50d9dd19",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "53cc34624fa44eb2b8af3acf67cb9e03174ad4a84b95bfef05b42a0463be285a",
+      "world_region_color_count": 6483
+    },
+    {
+      "name": "build_before_actions",
+      "file": "build_before_actions.png",
+      "sha256": "b1bb24d2b79b0aa8203b1185ae7c140b282dcc3ff114d15ecb2c504fd185efd7",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "bcd7e43890bd2c9b284b7c5274905bab4030f7269d19f5d667b4967e258ca6b9",
+      "world_region_color_count": 10024
+    },
+    {
+      "name": "build_after_rotate",
+      "file": "build_after_rotate.png",
+      "sha256": "e7e6b55ab856018475d3f305483067e4c708f39e80f75ef91cfccb5e12e0f421",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "6df5ecca7427fe68a3f6f90f59fd76c469e76876afb505c8c232e601b2e78cec",
+      "world_region_color_count": 10011
+    },
+    {
+      "name": "build_after_flip",
+      "file": "build_after_flip.png",
+      "sha256": "56c7c59accbd2385fa5fac13aa4328a35d6e593e242d1eb9209be48cec0c70fe",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "80223edb0a13be51f518f452238fd86fe0f510f8e76295d9e9a45c393af66471",
+      "world_region_color_count": 10009
+    },
+    {
+      "name": "build_after_drag",
+      "file": "build_after_drag.png",
+      "sha256": "9b8154beb29cb04491891fee6efd7f9a0652d99dcffa58aee8047117e41ea65d",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "8b0caf4c1194d8ec7bbc1060a9a554a4b431a09b324b72eb5c32f2569a29da65",
+      "world_region_color_count": 9766
+    },
+    {
+      "name": "build_after_cancel",
+      "file": "build_after_cancel.png",
+      "sha256": "768a91bcd72c64d341e0bc050f6bdefd89e45ed287e87cf3aec4b3051082c503",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "c2963eed8671474fc17f74e61904ae7c198a91eb19fb82b5ae9613ab87e0e132",
+      "world_region_color_count": 9686
+    },
+    {
+      "name": "overview_before_cancel",
+      "file": "overview_before_cancel.png",
+      "sha256": "aa3bc11019b2f20a09211235ad458a967da1bcd5e47f526eba2028f88f899533",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "c2963eed8671474fc17f74e61904ae7c198a91eb19fb82b5ae9613ab87e0e132",
+      "world_region_color_count": 9686
+    },
+    {
+      "name": "overview_after_touch_cancel",
+      "file": "overview_after_touch_cancel.png",
+      "sha256": "eaf2b446c2dbbb467a65c06e4aec0b49a13419c5156d6bd8f51d5b6434af4915",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "c2963eed8671474fc17f74e61904ae7c198a91eb19fb82b5ae9613ab87e0e132",
+      "world_region_color_count": 9686
+    },
+    {
+      "name": "overview_after_pan",
+      "file": "overview_after_pan.png",
+      "sha256": "ef3cc6d7386428f4cea2645465046b8c77dfab0f336c0861af02ad17705df259",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "340e7c75c1aa2adfac80c969e8d3410c2f5b530545dc949754fd4252c88d77e0",
+      "world_region_color_count": 9004
+    },
+    {
+      "name": "overview_after_pinch",
+      "file": "overview_after_pinch.png",
+      "sha256": "35d9771941747f0e2dffd6302bb639690f101842d13cf98907beec11ab067051",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "4e6fd6dce6c29d6f10e9aa81405cc6d2a9d7655b47f26b0e150ea81017043d2a",
+      "world_region_color_count": 9379
+    },
+    {
+      "name": "overview_after_pinch_ui_guard",
+      "file": "overview_after_pinch_ui_guard.png",
+      "sha256": "9d74be6b87653c22f2ab2beb2f9e91c86c9a23250d9fdbde4a24640949d40797",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "b910927819eca48f17e402cd42dec99d42d0f37de7a9195da00d8edd3c02bc91",
+      "world_region_color_count": 9650
+    },
+    {
+      "name": "portrait_gate",
+      "file": "portrait_gate.png",
+      "sha256": "0b0441c72d8a28db5f756b504755cf7739d3b2b47861f21f392677ea3ac90db1",
+      "width": 390,
+      "height": 844,
+      "world_region_sha256": "615cd6bf0838cf05349c9fdb58f38790d37a17aaaa5a69eeedb4c57b8bf37c06",
+      "world_region_color_count": 1
+    },
+    {
+      "name": "inbound_after_orientation_return",
+      "file": "inbound_after_orientation_return.png",
+      "sha256": "950fbf2a29bb3c097e4a4c1ac26ce7edc2ec186ca4a54029a8a8d577350bf7b0",
+      "width": 844,
+      "height": 390,
+      "world_region_sha256": "721d61523e3a76c11e4352f42dc6b0742a8ccad27e81a425dfb6c28148b23848",
+      "world_region_color_count": 4990
+    }
+  ],
+  "diagnostic": {
+    "phase": "running",
+    "externalRequests": 0,
+    "cancelEpoch": 1,
+    "errors": [],
+    "logs": [
+      "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org",
+      "OpenGL API OpenGL ES 3.0 (WebGL 2.0 (OpenGL ES 3.0 Chromium)) - Compatibility - Using Device: WebKit - WebKit WebGL",
+      "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+    ],
+    "secureContext": true,
+    "missingFeatures": []
+  },
+  "page_errors": [],
+  "console_errors": [],
+  "requests": [
+    {
+      "scheme": "http",
+      "url": "http://127.0.0.1:44931/WarehouseStation-iPhone.html"
+    },
+    {
+      "scheme": "blob",
+      "url": "blob:http://127.0.0.1:44931/927ce1f0-c76e-421f-bc97-72f7eb2722b6"
+    }
+  ],
+  "network_request_count": 1,
+  "external_network_request_count": 0,
+  "loopback_server_stopped": true,
+  "visual_review": "REQUIRED",
+  "iPhone_Scriptable": "NOT_RUN",
+  "iPhone_Safari": "NOT_RUN",
+  "phone_fps": "NOT_RUN",
+  "phone_thermal": "NOT_RUN",
+  "public_hosting": "NOT_PERFORMED"
+}

@@ -1,6 +1,9 @@
 # Developer / Codex instructions — Warehouse Simulator
 
 ## Current engine decision — 2026-10-27 (latest user instruction)
+- 2026-10-28: the user requests an iPhone-only playable version. `mobile/iphone-local/` plus `tools/package_iphone_local.py` provide a private single-HTML review build for Scriptable's local WebView. Keep the independent native iOS/Android product goal and S0/S1 readonly scope distinct from this container-based delivery.
+- Local WebKit `file://` is a genuine secure context; use the standard Godot feature checks. Do not fake secure-context flags, change browser administration policy, publish a site, or install device trust certificates to make tests pass. Chromium may reject file URLs by environment policy; record that separately from WebKit file tests and loopback HTTP touch tests.
+- `iphone_local_review` adjusts HUD dimensions to CSS pixels so browser DPI estimates cannot shrink touch targets. Native builds retain their original DPI path. A capture-phase DOM cancellation epoch also prevents Godot4.6.3 from interpreting touchcancel as a normal UI release. The local review is muted and has no persistent saves; phone heat/FPS remain unverified.
 - The user explicitly changed direction to **no Unity**, with smooth phone operation and heat taking priority over extra visual effects.
 - The active implementation is **Godot 4.6.3 standard**, `mobile/project.godot`; it has no Unity, .NET or Blender runtime dependency. Godot is a [P] implementation choice; native iOS/Android, station taps, no walking and domain invariants remain [D].
 - Earlier Unity setup and the Unity S0/S1 PR are historical work. Do not restore the earlier Godot free-walk/campaign experiment or use Unity as the current build path.

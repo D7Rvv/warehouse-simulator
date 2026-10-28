@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "scope": "desktop_WebKitGTK_2.50.4_file_origin_selfcontained_engine_actual_X11_not_iPhone_acceptance",
+  "checks": [
+    {
+      "name": "file origin is naturally a secure context without overrides",
+      "status": "PASS"
+    },
+    {
+      "name": "Selfcontained entry and start UI load",
+      "status": "PASS"
+    },
+    {
+      "name": "Embedded Godot engine reaches running phase",
+      "status": "PASS"
+    },
+    {
+      "name": "Welcome exits into real game canvas",
+      "status": "PASS"
+    },
+    {
+      "name": "Godot official feature check passes",
+      "status": "PASS"
+    },
+    {
+      "name": "No external asset requests attempted",
+      "status": "PASS"
+    },
+    {
+      "name": "Compact landscape viewport has expected actual CSS dimensions",
+      "status": "PASS"
+    },
+    {
+      "name": "Real mouse navigation leaves offline engine running",
+      "status": "PASS"
+    },
+    {
+      "name": "No Godot printError diagnostics after navigation",
+      "status": "PASS"
+    }
+  ],
+  "captures": [
+    {
+      "name": "local-game-overview",
+      "file": "local-game-overview.png",
+      "sha256": "2e8a64d86d0c8b7c3005f677710bbb48916ebd42fb11a99d21d7d771757fdbf9"
+    },
+    {
+      "name": "local-game-inbound",
+      "file": "local-game-inbound.png",
+      "sha256": "6a2b889cc94e9b6e22543d1c412ca81346c5058795d585b77137d0763df431b5"
+    },
+    {
+      "name": "local-game-inspection",
+      "file": "local-game-inspection.png",
+      "sha256": "1bcefa7cea04f812172c408820df385e0f28ad43ff03c2f2b506fa9dd044f22b"
+    },
+    {
+      "name": "local-game-export",
+      "file": "local-game-export.png",
+      "sha256": "aa68bb67b2d780878806a908427ee673b4ed38d901e3333a3957db15e45ff589"
+    },
+    {
+      "name": "local-game-build",
+      "file": "local-game-build.png",
+      "sha256": "267145febebe6e63281837a2df975c86f5b080081fd2494cffe501057bd351fe"
+    },
+    {
+      "name": "local-game-compact-build",
+      "file": "local-game-compact-build.png",
+      "sha256": "8e10a534a4a06ea4dd7a4b12d1939a8ca036a8ffd3fe3aeb2b97f6f8a4bfe6d0"
+    },
+    {
+      "name": "local-game-compact-inspection",
+      "file": "local-game-compact-inspection.png",
+      "sha256": "71f59df73d19c6d8e20742fa4bbb29d6a48094a7ad1e28dc0f7bce85359a17b0"
+    }
+  ],
+  "viewports": {
+    "desktop": {
+      "height": 762,
+      "canvasWidth": 1280,
+      "width": 1280,
+      "canvasHeight": 762
+    },
+    "compact": {
+      "height": 390,
+      "canvasWidth": 844,
+      "width": 844,
+      "canvasHeight": 390
+    }
+  },
+  "diagnostic": {
+    "cancelEpoch": 0,
+    "errors": [],
+    "logs": [
+      "Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org",
+      "OpenGL API OpenGL ES 3.0 (WebGL 2.0) - Compatibility - Using Device: WebKit - WebKit WebGL",
+      "Build configuration: Emscripten 4.0.20, single-threaded, no GDExtension support."
+    ],
+    "externalRequests": 0,
+    "missingFeatures": [],
+    "phase": "running",
+    "secureContext": true
+  },
+  "failure": null,
+  "html_sha256": "c044ee39357dd1b05010f0d7b9a2c2d9992d9e8c52c053b55fd5a63bc2d2170b",
+  "html_sha256_at_end": "c044ee39357dd1b05010f0d7b9a2c2d9992d9e8c52c053b55fd5a63bc2d2170b",
+  "source_cohort_unchanged": true,
+  "iphone_wkwebview": "NOT_RUN",
+  "phone_thermal": "NOT_RUN",
+  "network": "container_disconnected_from_network_no_secure_context_override"
+}
