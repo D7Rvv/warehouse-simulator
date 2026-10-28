@@ -114,3 +114,10 @@ Codexが仕様欠陥を見つけたら ISSUE（GapID）を登録→根拠（実�
 - 無断で原作の単価・曜日・Tierに仮数値を入れず、テスト専用Fixture（`docs/data/prototype_station_fixture_v0_1.json`）を読み取り専用で表示。
 - 古い自由歩行Bootstrapは`RuntimeInitializeOnLoadMethod`が残っているため、Scriptの参照解除だけでは旧Playerが勝手に生成される。プロジェクト全体から起動フックを解除して検証する。
 - 次のS2は1箱のOwnership移動/検査/出荷を縦切りで実装。その前にS0/S1のテスト一覧をPASS/FAIL/NOT_RUNで報告。
+
+## 2026-10-28 P0 — 次の工程は「最初に遊べる1箱のゲーム」と3D品質の回復
+**ユーザー試遊: 0.5/10、グラフィックが原作と大きく異なり初心者には目的不明、ゲーム性不足。** S0/S1をゲーム本体として完成とは主張しない。
+- **最優先 Issue #3** https://github.com/D7Rvv/warehouse-simulator/issues/3 。必読: `docs/reviews/2026-10-28_USER_PLAYTEST_QUALITY_REJECTION.md`、`docs/spec/21_PLAYABLE_FIRST_SESSION_QUALITY_GATE.md`、`docs/tasks/CODEX_NEXT_PLAYABLE_QUALITY_P0.md`。
+- 制作を`実Parcel移送`→`初期Cargo/Country検査・ステッカー・出荷・台帳`→`初心者チュートリアル`→`入荷/検査/出荷のHeroAsset`→`iPhone実機性能測定`へ分ける。
+- 技術基盤PR #2（Draft）のUnity上のコンパイル/PlayModeが未確認なら、まず実機Editorで点検する。S0/S1の仮アートを最終品質と見なさない。
+- 個別の工程にテスト/比較GameView/ユーザー再評価が揃うまで「ゲーム性ができた」「画質改善完了」と言わない。
